@@ -63,6 +63,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Converters.cs" />
+    <Compile Include="Helpers\UnitConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -120,6 +122,7 @@
     <Resource Include="Images\scales.jpg" />
     <Resource Include="Images\calculator.jpg" />
     <Resource Include="Images\grains.jpg" />
+    <Content Include="PhoneToolkit.sln" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup />

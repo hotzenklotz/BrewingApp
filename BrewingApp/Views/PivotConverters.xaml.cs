@@ -14,32 +14,32 @@ using BrewingApp.Data;
 
 namespace BrewingApp.Pages
 {
-    public partial class PivotPage2 : PhoneApplicationPage
+    public partial class PivotConverters : PhoneApplicationPage
     {
-        private Converters DataModel;
+        private UnitConversion DataModel;
 
-        public PivotPage2()
+        public PivotConverters()
         {
             InitializeComponent();
 
-            this.DataModel = new Converters();
+            this.DataModel = new UnitConversion();
             DataContext = this.DataModel;
 
-            USFluidPicker.SelectionChanged += new SelectionChangedEventHandler(USFluidPicker_SelectionChanged);
-            MetricFluidPicker.SelectionChanged +=new SelectionChangedEventHandler(MetricFluidPicker_SelectionChanged);
+            //USFluidPicker.SelectionChanged += new SelectionChangedEventHandler(USFluidPicker_SelectionChanged);
+            //MetricFluidPicker.SelectionChanged +=new SelectionChangedEventHandler(MetricFluidPicker_SelectionChanged);
 
         }
 
         private void USFluidPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListPicker picker = (ListPicker)sender;
-            this.DataModel.USUnit = picker.SelectedItem.ToString();
+            this.DataModel.Volume.USUnit = picker.SelectedItem.ToString();
         }
 
         private void MetricFluidPicker_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListPicker picker = (ListPicker)sender;
-            this.DataModel.MetricUnit = picker.SelectedItem.ToString();
+            this.DataModel.Volume.MetricUnit = picker.SelectedItem.ToString();
         }
 
 

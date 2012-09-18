@@ -10,14 +10,19 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using BrewingApp.ViewModels;
 
 namespace BrewingApp.Pages
 {
-    public partial class PivotPage4 : PhoneApplicationPage
+    public partial class PivotHopsMalt : PhoneApplicationPage
     {
-        public PivotPage4()
+        public PivotHopsMalt()
         {
             InitializeComponent();
+
+            this.DataContext = new BitternessVM();
+
         }
+            
     }
 }

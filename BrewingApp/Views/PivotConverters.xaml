@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="BrewingApp.Pages.PivotPage2"
+    x:Class="BrewingApp.Pages.PivotConverters"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -42,7 +42,8 @@
                             </Grid.RowDefinitions>
                             <toolkit:ListPicker 
                                 Header=""
-                                Grid.Row="0">
+                                Grid.Row="0"
+                                >
                                 <sys:String>Fahrenheit</sys:String>
                             </toolkit:ListPicker>
                             <TextBox
@@ -51,7 +52,7 @@
                                 HorizontalAlignment="Stretch" 
                                 Name="txtFahrenheit" 
                                 InputScope="NumberFullWidth"
-                                Text="{Binding Path=Fahrenheit, Mode=TwoWay}">
+                                Text="{Binding Path=Temperature.Fahrenheit, Mode=TwoWay}">        
                             </TextBox>
                          </Grid>
                     </Border>
@@ -72,8 +73,8 @@
                                 Grid.Row="0"
                                 HorizontalAlignment="Stretch" 
                                 Name="txtCelsius" 
-                                Text="{Binding Path=Celsius, Mode=TwoWay}" 
-                                InputScope="NumberFullWidth" Margin="0,6,0,2">
+                                InputScope="NumberFullWidth" Margin="0,6,0,2"
+                                Text="{Binding Path=Temperature.Celsius, Mode=TwoWay}">                              
                             </TextBox>
                             <toolkit:ListPicker 
                                 Header="" 
@@ -108,16 +109,15 @@
                             </Grid.RowDefinitions>
                             <toolkit:ListPicker 
                                 Header=""
-                                Grid.Row="0" Name="USFluidPicker">
-                                <sys:String>US Ounce</sys:String>
-                                <sys:String>US Gallon</sys:String>
+                                Grid.Row="0" Name="USFluidPicker"
+                                ItemsSource="{Binding Volume.USUnitList}">
                             </toolkit:ListPicker>
                             <TextBox
                                 Grid.Row="1"
                                 HorizontalAlignment="Stretch" 
                                 Name="txtUSFliuds" 
                                 InputScope="NumberFullWidth"
-                                Text="{Binding Path=USFluid, Mode=TwoWay}">
+                                Text="{Binding Path=Volume.USFluid, Mode=TwoWay}">
                             </TextBox>
                         </Grid>
                     </Border>
@@ -137,16 +137,15 @@
                                 Grid.Row="0"
                                 HorizontalAlignment="Stretch" 
                                 Name="txtMetricFluids" 
-                                Text="{Binding MetricFluid, Mode=TwoWay}" 
-                                InputScope="NumberFullWidth" Margin="0,6,0,2">
+                                InputScope="NumberFullWidth" Margin="0,6,0,2"
+                                Text="{Binding Volume.MetricFluid, Mode=TwoWay}">
                             </TextBox>
                             <toolkit:ListPicker 
                                 Header="" 
                                 Grid.Row="1" 
                                 Margin="12,0,12,12" 
-                                Name="MetricFluidPicker">
-                                <sys:String>Liter</sys:String>
-                                <sys:String>Milliliter</sys:String>
+                                Name="MetricFluidPicker"
+                                ItemsSource="{Binding Volume.USUnitList}">
                             </toolkit:ListPicker>
                         </Grid>
                     </Border>

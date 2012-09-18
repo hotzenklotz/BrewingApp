@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <hop name="Admiral" alpha="2.50"/>
+  <hop name="Ahtanum" alpha="6.00"/>
+  <hop name="Aquila" alpha="7.00"/>
+  <hop name="Amarillo" alpha="7.00"/>
+  <hop name="Banner" alpha="10.00"/>
+  <hop name="B. C. Goldings" alpha="5.00"/>
+  <hop name="Bramling Cross" alpha="6.50"/>
+  <hop name="Brewer's Gold" alpha="8.50"/>
+  <hop name="Bullion" alpha="9.50"/>
+  <hop name="Cascade" alpha="6.60"/>
+  <hop name="Centennial" alpha="10.50"/>
+  <hop name="Challenger" alpha="7.50"/>
+  <hop name="Chinook" alpha="12.00"/>
+  <hop name="Cluster" alpha="7.70"/>
+  <hop name="Columbus" alpha="15.40"/>
+  <hop name="Comet" alpha="10.00"/>
+  <hop name="Crystal" alpha="3.50"/>
+  <hop name="Czech Saaz" alpha="5.00"/>
+  <hop name="East Kent Goldings" alpha="5.00"/>
+  <hop name="Eroica" alpha="2.40"/>
+  <hop name="First Gold" alpha="7.50"/>
+  <hop name="Fuggles" alpha="5.10"/>
+  <hop name="Galena" alpha="11.70"/>
+  <hop name="Goldings" alpha="5.00"/>
+  <hop name="Hallertau" alpha="3.10"/>
+  <hop name="Hallertau Hersbruck" alpha="4.50"/>
+  <hop name="Hallertau Mittelfruh" alpha="4.50"/>
+  <hop name="Hallertau Tradition" alpha="6.00"/>
+  <hop name="Herald" alpha="12.00"/>
+  <hop name="Hersbrucker" alpha="4.00"/>
+  <hop name="Huller Bitterer" alpha="5.75"/>
+  <hop name="Liberty" alpha="4.00"/>
+  <hop name="Lublin" alpha="4.50"/>
+  <hop name="Magnum" alpha="14.50"/>
+  <hop name="Mount Hood" alpha="5.00"/>
+  <hop name="Northdown" alpha="8.60"/>
+  <hop name="Northern Brewer" alpha="6.90"/>
+  <hop name="Nugget" alpha="13.00"/>
+  <hop name="Omega" alpha="10.00"/>
+  <hop name="Orion" alpha="7.00"/>
+  <hop name="Pacific Gem" alpha="12.00"/>
+  <hop name="Perle" alpha="8.00"/>
+  <hop name="Phoenix" alpha="10.00"/>
+  <hop name="Pioneer" alpha="9.00"/>
+  <hop name="Pride of Ringwood" alpha="6.70"/>
+  <hop name="Progress" alpha="6.25"/>
+  <hop name="Record" alpha="6.50"/>
+  <hop name="Saaz" alpha="3.50"/>
+  <hop name="Spalt Spalter" alpha="4.50"/>
+  <hop name="Sticklebract" alpha="11.50"/>
+  <hop name="Strisselspalt" alpha="3.50"/>
+  <hop name="Styrian Goldings" alpha="5.50"/>
+  <hop name="Super Alpha" alpha="13.00"/>
+  <hop name="Super Styrians" alpha="9.00"/>
+  <hop name="Talisman" alpha="8.00"/>
+  <hop name="Target" alpha="11.50"/>
+  <hop name="Tettnanger" alpha="4.50"/>
+  <hop name="Ultra" alpha="4.50"/>
+  <hop name="Whitbread Golding" alpha="6.00"/>
+  <hop name="Willamette" alpha="5.50"/>
+  <hop name="Wye Target" alpha="10.00"/>
+  <hop name="Yeoman" alpha="7.25"/>
+  <hop name="Zenith" alpha="9.00"/>
+  <hop name="Sterling" alpha="6.30"/>
+  <hop name="Spalt Select" alpha="4.50"/>
+  <hop name="Simcoe" alpha="13.00"/>
+  <hop name="Horizon" alpha="12.50"/>
+  <hop name="Kent Golding" alpha="4.50"/>
+  <hop name="Olympic" alpha="12.00"/>
+  <hop name="Santiam" alpha="6.50"/>
+  <hop name="Satus" alpha="13.00"/>
+  <hop name="Tomahawk" alpha="16.00"/>
+  <hop name="Vanguard" alpha="5.00"/>
+  <hop name="Warrior" alpha="16.00"/>
+  <hop name="Yakima Cluster" alpha="7.00"/>
+  <hop name="Zeus" alpha="15.00"/>
+  <hop name="Glacier" alpha="5.50"/>
+  <hop name="Newport" alpha="15.50"/>
+  <hop name="Millenium" alpha="15.50"/>
+  <hop name="Mount Rainier" alpha="6.80"/>
+  <hop name="Palisade" alpha="7.50"/>
+  <hop name="Summit" alpha="18.50"/>
+</root>

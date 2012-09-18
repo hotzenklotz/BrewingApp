@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using BrewingApp.Models;
 
 namespace BrewingApp
 {
@@ -19,6 +20,7 @@ namespace BrewingApp
         public MainPage()
         {
             InitializeComponent();
+            new Settings();
         }
 
         private void HubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -29,16 +31,16 @@ namespace BrewingApp
             switch (tile.Name)
             {
                 case "BrewHouse":
-                    page = new Uri("/Pages/PivotBrewHouse.xaml", UriKind.RelativeOrAbsolute);
+                    page = new Uri("/Views/PivotBrewHouse.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "HopsMalt":
-                    page = new Uri("/Pages/PivotHopsMalt.xaml", UriKind.RelativeOrAbsolute);
+                    page = new Uri("/Views/PivotHopsMalt.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "Converters":
-                    page = new Uri("/Pages/PivotConverters.xaml", UriKind.RelativeOrAbsolute);
+                    page = new Uri("/Views/PivotConverters.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "Mashing":
-                    page = new Uri("/Pages/PivotMashing.xaml", UriKind.RelativeOrAbsolute);
+                    page = new Uri("/Views/PivotMashing.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 default :
                     page = new Uri("");

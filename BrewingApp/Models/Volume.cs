@@ -9,69 +9,49 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 using BrewingApp.Helpers;
 
-namespace BrewingApp.Data
+namespace BrewingApp.Models
 {
-   public class Converters : INotifyPropertyChanged
+    public class Volume : INotifyPropertyChanged
     {
-        #region Temperature Properties
 
-        private float _celsius;
-
-        public float Fahrenheit
+        private ObservableCollection<string> _USUnitList = new ObservableCollection<string>() 
         {
-            get { return UnitConverter.CelsiusToFahrenheit(_celsius); }
-            set
-            {
-                float cels = UnitConverter.FahrenheitToCelsius(value);
-                if (cels != _celsius)
-                {
-                    _celsius = cels;
-                    TempPropertiesChanged();
-                }
-            }
-        }
+            "US Gallon",
+            "US Ounce"
 
-        public float Celsius
+        };
+
+        private ObservableCollection<string> _MetricUnitList = new ObservableCollection<string>() 
         {
-            get { return _celsius; }
-            set
-            {
-                if (value != _celsius)
-                {
-                    _celsius = value;
-                    TempPropertiesChanged();
-                }
-            }
-        }
+            "Liter",
+            "Milliliter"
 
-        private void TempPropertiesChanged()
-        {
-            NotifyPropertyChanged("Fahrenheit");
-            NotifyPropertyChanged("Celsius");
-        }
+        };
 
-        #endregion
 
-        #region Fluid Properties
+
+
         private float _liter;
         private string _USUnit;
         private string _MetricUnit;
 
-        public string USUnit 
+        public string USUnit
         {
-            get 
-            { 
+            get
+            {
                 return this._USUnit;
             }
 
-            set 
+            set
             {
                 _USUnit = value;
                 FluidPropertiesChanged();
             }
         }
+
         public string MetricUnit
         {
             get { return this._MetricUnit; }
@@ -85,7 +65,7 @@ namespace BrewingApp.Data
         public float USFluid
         {
             get { return UnitConverter.MetricToUSFluid(this._liter, this.USUnit); }
-            set 
+            set
             {
                 float tmpLiter = UnitConverter.USToMetricFluid(value, this.USUnit);
                 if (MetricFluid != tmpLiter)
@@ -97,8 +77,8 @@ namespace BrewingApp.Data
         public float MetricFluid
         {
             get { return UnitConverter.LiterToMetric(this._liter, this.MetricUnit); }
-            set 
-            { 
+            set
+            {
                 this._liter = UnitConverter.MetricToLiter(value, this.MetricUnit);
                 FluidPropertiesChanged();
             }
@@ -110,7 +90,7 @@ namespace BrewingApp.Data
             NotifyPropertyChanged("MetricFluid");
         }
 
-        #endregion
+
         // Declare the PropertyChanged event.
         public event PropertyChangedEventHandler PropertyChanged;
 

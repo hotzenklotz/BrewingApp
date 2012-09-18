@@ -48,39 +48,52 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.WP71, Version=4.0.23.35541, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Phone7.Fx">
+      <HintPath>..\..\Phone7.Fx.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Converters.cs" />
+    <Compile Include="Converters\TemperatureConverter.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\Temperature.cs" />
+    <Compile Include="Models\UnitConversion.cs" />
     <Compile Include="Helpers\UnitConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PivotBrewHouse.xaml.cs">
+    <Compile Include="Models\Volume.cs" />
+    <Compile Include="ViewModels\BitternessVM.cs" />
+    <Compile Include="Views\PivotBrewHouse.xaml.cs">
       <DependentUpon>PivotBrewHouse.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PivotConverters.xaml.cs">
+    <Compile Include="Views\PivotConverters.xaml.cs">
       <DependentUpon>PivotConverters.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PivotMashing.xaml.cs">
+    <Compile Include="Views\PivotMashing.xaml.cs">
       <DependentUpon>PivotMashing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PivotHopsMalt.xaml.cs">
+    <Compile Include="Views\PivotHopsMalt.xaml.cs">
       <DependentUpon>PivotHopsMalt.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CustomControls\HopListItem.xaml.cs">
+      <DependentUpon>HopListItem.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -91,19 +104,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PivotBrewHouse.xaml">
+    <Page Include="Views\PivotBrewHouse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PivotConverters.xaml">
+    <Page Include="Views\PivotConverters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PivotMashing.xaml">
+    <Page Include="Views\PivotMashing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PivotHopsMalt.xaml">
+    <Page Include="Views\PivotHopsMalt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\HopListItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,10 +136,13 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\plusButton.png" />
+    <Content Include="XML\HopVarities.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Resource Include="Images\scales.jpg" />
     <Resource Include="Images\calculator.jpg" />
     <Resource Include="Images\grains.jpg" />
-    <Content Include="PhoneToolkit.sln" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup />

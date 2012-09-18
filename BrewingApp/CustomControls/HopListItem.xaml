@@ -8,7 +8,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    d:DesignHeight="130" d:DesignWidth="480">
+    d:DesignHeight="130" d:DesignWidth="480" >
     
     <Grid x:Name="LayoutRoot">
         <Grid >
@@ -21,15 +21,17 @@
                 VerticalAlignment="Top" 
                 Header="" 
                 Margin="10,0" 
-                Name="hopVarityPicker">
+                Name="hopVarityPicker"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                FullModeHeader="Choose a hop varity!">
             </toolkit:ListPicker>
 
             <Grid
                 Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
                 <toolkit:PhoneTextBox  
@@ -37,7 +39,7 @@
                     Grid.Column="0"
                     Grid.Row="1"
                     Hint="Boil Time"
-                    Text="{Binding BoilTime}"
+                    Text="{Binding BoilTime, Mode=TwoWay}"
                     HorizontalAlignment="Stretch" 
                     Margin="0" Grid.RowSpan="2" 
                     Padding="0" 
@@ -52,7 +54,7 @@
                     HorizontalAlignment="Stretch" 
                     Margin="0" 
                     Grid.RowSpan="2"
-                    Text="{Binding AlphaAcid}"
+                    Text="{Binding AlphaAcid, Mode=TwoWay}"
                     InputScope="NumberFullWidth">
                 </toolkit:PhoneTextBox>
 
@@ -65,7 +67,7 @@
                     Margin="0" 
                     Grid.RowSpan="2" 
                     ActualHintVisibility="Visible"
-                    Text="{Binding Amount}"
+                    Text="{Binding Amount, Mode=TwoWay}"
                     InputScope="NumberFullWidth">
                 </toolkit:PhoneTextBox>
             </Grid>

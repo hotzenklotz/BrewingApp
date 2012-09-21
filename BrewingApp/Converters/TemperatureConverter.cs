@@ -9,67 +9,82 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Data;
-using BrewingApp.Models;
 using System.IO.IsolatedStorage;
 
 namespace BrewingApp.Converters
 {
+    /// <summary>
+    /// Converts any Temperature to "Celsius", the only internally used measurement unit for volumes
+    /// </summary>
     public class TemperatureConverter : IValueConverter
     {
         private string _DefaultUnit;
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public float Convert(float value, string parameter)
         {
-            float factor = 1.0f;
-            switch ( this._DefaultUnit )
-            {
-                case "Liter":
-                    factor = 1.0f;
+            string measurementUnit;
+
+            if (parameter == null)
+            { measurementUnit = (string)parameter; }
+            else
+            { measurementUnit = this._DefaultUnit; }
+
+            float temp = 1.0f;
+            switch (measurementUnit)
+                {
+                case "Celsius" :
+                    temp = value;
                     break;
-                case "Milliliter":
-                    factor = 0.001f;
-                    break;
-                case "US Gallon":
-                    factor = 0.264172052f;
-                    break;
-                case "US Ounce":
-                    factor = 33.8140227f;
+                case "Fahrenheit" :
+                    temp = ((value - 32.0f) * 5.0f) / 9.0f;
                     break;
                 default:
-                    factor = 1.0f;
                     break;
             }
-            return (float) value * factor;
+
+            return temp;
+ 
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public float ConvertBack(float value, string parameter)
         {
-            float factor = 1.0f;
-            switch ( this._DefaultUnit )
+            string measurementUnit;
+
+            if (parameter == null)
+            { measurementUnit = (string)parameter; }
+            else
+            { measurementUnit = this._DefaultUnit; }
+
+            float temp = 1.0f;
+            switch (measurementUnit)
             {
-                case "Liter":
-                    factor = 1.0f;
+                case "Celsius" :
+                    temp = value;
                     break;
-                case "Milliliter":
-                    factor = 1000.0f;
-                    break;
-                case "US Gallon":
-                    factor = 3.78541178f;
-                    break;
-                case "US Ounce":
-                    factor = 0.0295735296f;
+                case "Fahrenheit" :
+                    temp = value * 1.8f + 32.0f; 
                     break;
                 default:
-                    factor = 1.0f;
                     break;
             }
-            return (float) value * factor;
+
+            return temp;
         }
 
         public TemperatureConverter()
         {
-            this._DefaultUnit = (string) IsolatedStorageSettings.ApplicationSettings["TemperatureUnit"];
+            this._DefaultUnit = (string)IsolatedStorageSettings.ApplicationSettings["TemperatureUnit"]; 
         }
 
+        //interface for IValueConverter
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return Convert( (float) value, (string) parameter);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return ConvertBack((float)value, (string)parameter);
+        }
     }
 }

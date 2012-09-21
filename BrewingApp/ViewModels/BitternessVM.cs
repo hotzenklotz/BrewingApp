@@ -21,7 +21,7 @@ namespace BrewingApp.ViewModels
         private ICommand _RemoveCommand;
         private ICommand _AddCommand;
 
-        private float _IBU;
+        private int _IBU;
         private float _BatchVolume;
         private float _SpecificGravity;
 
@@ -40,7 +40,7 @@ namespace BrewingApp.ViewModels
             set { this._BatchVolume = value; calculateIBU(); }
         }
 
-        public float IBU 
+        public int IBU 
         {
             get { return this._IBU; }
             set { this._IBU = value; RaisePropertyChanged("IBU"); }
@@ -119,13 +119,15 @@ namespace BrewingApp.ViewModels
 
                     foreach (HopListItem hop in HopList)
                     {
-                        float utilization = 18.11f + 13.86f * (float) Math.Tanh( hop.BoilTime - 31.32f) / 18.27f;
-                        IBU += hop.Amount * hop.AlphaAcid * utilization * 1000 / BatchVolume * (1 + GravityAdjustment);
+                        float utilization = 0.1811f + 0.1386f * (float) Math.Tanh( hop.BoilTime - 31.32f) / 18.27f;
+                        IBU += (int) ( hop.Amount * hop.AlphaAcid * utilization * 10 / BatchVolume * (1 + GravityAdjustment) );
                     }
                     
                     break;
 
                 case "Tinseth" :
+
+
                     break;
                 default:
                     break;

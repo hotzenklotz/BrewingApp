@@ -43,16 +43,13 @@
                             <toolkit:ListPicker 
                                 Header=""
                                 Grid.Row="0"
-                                >
-                                <sys:String>Fahrenheit</sys:String>
+                                ItemsSource="{Binding Temperature.TemperatureUnits}">
                             </toolkit:ListPicker>
                             <TextBox
                                 Grid.Row="1"
-
                                 HorizontalAlignment="Stretch" 
-                                Name="txtFahrenheit" 
                                 InputScope="NumberFullWidth"
-                                Text="{Binding Path=Temperature.Fahrenheit, Mode=TwoWay}">        
+                                Text="{Binding Path=Temperature.Temp1, Mode=TwoWay}">        
                             </TextBox>
                          </Grid>
                     </Border>
@@ -72,16 +69,15 @@
                             <TextBox 
                                 Grid.Row="0"
                                 HorizontalAlignment="Stretch" 
-                                Name="txtCelsius" 
                                 InputScope="NumberFullWidth" Margin="0,6,0,2"
-                                Text="{Binding Path=Temperature.Celsius, Mode=TwoWay}">                              
+                                Text="{Binding Path=Temperature.Temp2, Mode=TwoWay}">                              
                             </TextBox>
                             <toolkit:ListPicker 
                                 Header="" 
                                 Grid.Row="1" 
                                 Height="60" Margin="12,0,12,12" 
-                                VerticalAlignment="Bottom">
-                                <sys:String>Celsius</sys:String>
+                                VerticalAlignment="Bottom"
+                                ItemsSource="{Binding Temperature.TemperatureUnits}">
                             </toolkit:ListPicker>
                          </Grid>
                     </Border>

@@ -71,14 +71,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\TemperatureConverter.cs" />
+    <Compile Include="Converters\VolumeConverter.cs" />
     <Compile Include="Models\Settings.cs" />
-    <Compile Include="Models\Temperature.cs" />
-    <Compile Include="Models\UnitConversion.cs" />
-    <Compile Include="Helpers\UnitConverter.cs" />
+    <Compile Include="ViewModels\TemperatureVM.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Volume.cs" />
+    <Compile Include="ViewModels\UnitConversionVM.cs" />
+    <Compile Include="ViewModels\VolumeVM.cs" />
     <Compile Include="ViewModels\BitternessVM.cs" />
     <Compile Include="Views\PivotBrewHouse.xaml.cs">
       <DependentUpon>PivotBrewHouse.xaml</DependentUpon>

@@ -9,24 +9,47 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
+using System.Collections.ObjectModel;
 
 namespace BrewingApp.Models
 {
-    public class Settings
+    public static class Settings
     {
 
-        private string _VolumeUnit;
-        private string _WeightUnit;
-        private string _TemperatureUnit;
-        private string _IBUFormula;
+        public static string VolumeUnit;
+        public static string WeightUnit;
+        public static string TemperatureUnit;
+        private static string IBUFormula;
 
-        private IsolatedStorageSettings _UserSettings;
+        public static IsolatedStorageSettings UserSettings;
 
-        public Settings()
+        public static ObservableCollection<string> TemperatureUnits = new ObservableCollection<string>
         {
-            this._UserSettings = IsolatedStorageSettings.ApplicationSettings;
+            "Celsius",
+            "Fahrenheit"
+        };
 
-            if (this._UserSettings.Count == 0)
+        public static ObservableCollection<string> USVolumeUnits = new ObservableCollection<string>() 
+        {
+            "US Gallon",
+            "US Ounce"
+
+        };
+
+        public static ObservableCollection<string> MetricVolumeUnits = new ObservableCollection<string>() 
+        {
+            "Liter",
+            "Milliliter"
+
+        };
+
+
+
+        public static void Initialize()
+        {
+            UserSettings = IsolatedStorageSettings.ApplicationSettings;
+
+            if (UserSettings.Count == 0)
             {
                 SetDefaultValues();
             } else {
@@ -34,30 +57,30 @@ namespace BrewingApp.Models
             }       
         }
 
-        private void LoadValues()
+        private static void LoadValues()
         {
-            this._TemperatureUnit = (string) this._UserSettings["TemperatureUnit"];
-            this._WeightUnit = (string) this._UserSettings["WeightUnit"];
-            this._VolumeUnit = (string) this._UserSettings["VolumeUnit"];
-            this._IBUFormula = (string)this._UserSettings["IBUFormula"];
+            TemperatureUnit = (string) UserSettings["TemperatureUnit"];
+            WeightUnit = (string) UserSettings["WeightUnit"];
+            VolumeUnit = (string) UserSettings["VolumeUnit"];
+            IBUFormula = (string)UserSettings["IBUFormula"];
         }
 
-        private void SetDefaultValues()
+        private static void SetDefaultValues()
         {
-            this._TemperatureUnit = "Celsius";
-            this._WeightUnit = "Gramm";
-            this._VolumeUnit = "Liter";
-            this._IBUFormula = "Rager";
+            TemperatureUnit = "Celsius";
+            WeightUnit = "Gramm";
+            VolumeUnit = "Liter";
+            IBUFormula = "Rager";
 
-            this._UserSettings.Add("TemperatureUnit", this._TemperatureUnit);
-            this._UserSettings.Add("WeightUnit", this._WeightUnit);
-            this._UserSettings.Add("VolumeUnit", this._VolumeUnit);
-            this._UserSettings.Add("IBUFormula", this._IBUFormula);
+            UserSettings.Add("TemperatureUnit", TemperatureUnit);
+            UserSettings.Add("WeightUnit", WeightUnit);
+            UserSettings.Add("VolumeUnit", VolumeUnit);
+            UserSettings.Add("IBUFormula", IBUFormula);
         }
 
         public void Save()
         {
-            this._UserSettings.Save();
+            UserSettings.Save();
         }
 
     }

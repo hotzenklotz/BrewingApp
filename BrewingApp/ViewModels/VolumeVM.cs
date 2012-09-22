@@ -11,63 +11,45 @@ namespace BrewingApp.ViewModels
         public ObservableCollection<string> USUnitList;
         public ObservableCollection<string> MetricUnitList;
 
+        public string Unit1Selection;
+        public string Unit2Selection;
+
 
         private float _liter;
-        private string _USUnit;
-        private string _MetricUnit;
+        private string _Unit1;
+        private string _Unit2;
 
         private VolumeConverter _Converter;
 
         public VolumeVM()
         {
             this._Converter = new VolumeConverter();
+
             MetricUnitList = Settings.MetricVolumeUnits;
             USUnitList = Settings.USVolumeUnits;
 
+            Unit1Selection = MetricUnitList.
+
         }
 
-        public string USUnit
+        public float Unit1
         {
-            get
-            {
-                return this._USUnit;
-            }
-
+            get { return this._Converter.ConvertBack(this._liter, Unit1Selection); }
             set
             {
-                _USUnit = value;
-                FluidPropertiesChanged();
-            }
-        }
-
-        public string MetricUnit
-        {
-            get { return this._MetricUnit; }
-            set
-            {
-                this._MetricUnit = value;
-                FluidPropertiesChanged();
-            }
-        }
-
-        public float USFluid
-        {
-            get { return UnitConverter.MetricToUSFluid(this._liter, this.USUnit); }
-            set
-            {
-                float tmpLiter = UnitConverter.USToMetricFluid(value, this.USUnit);
-                if (MetricFluid != tmpLiter)
+                float tmpLiter = this._Converter.Convert(value, Unit1Selection);
+                //if (MetricFluid != tmpLiter)
                     this._liter = tmpLiter;
                 FluidPropertiesChanged();
             }
         }
 
-        public float MetricFluid
+        public float Unit2
         {
-            get { return UnitConverter.LiterToMetric(this._liter, this.MetricUnit); }
+            get { return this._Converter.ConvertBack(this._liter, this.Unit2Selection); }
             set
             {
-                this._liter = UnitConverter.MetricToLiter(value, this.MetricUnit);
+                this._liter = this._Converter.Convert(value, this.Unit2Selection);
                 FluidPropertiesChanged();
             }
         }

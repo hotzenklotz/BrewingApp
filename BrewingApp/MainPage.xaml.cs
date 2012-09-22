@@ -20,7 +20,7 @@ namespace BrewingApp
         public MainPage()
         {
             InitializeComponent();
-            new Settings();
+           
         }
 
         private void HubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)

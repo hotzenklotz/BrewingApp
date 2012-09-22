@@ -78,7 +78,7 @@ namespace BrewingApp.Models
             UserSettings.Add("IBUFormula", IBUFormula);
         }
 
-        public void Save()
+        public static void Save()
         {
             UserSettings.Save();
         }

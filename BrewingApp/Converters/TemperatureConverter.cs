@@ -24,7 +24,7 @@ namespace BrewingApp.Converters
         {
             string measurementUnit;
 
-            if (parameter == null)
+            if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
             { measurementUnit = this._DefaultUnit; }
@@ -50,7 +50,7 @@ namespace BrewingApp.Converters
         {
             string measurementUnit;
 
-            if (parameter == null)
+            if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
             { measurementUnit = this._DefaultUnit; }

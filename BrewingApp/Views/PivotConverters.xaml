@@ -42,7 +42,8 @@
                             <toolkit:ListPicker 
                                 Header=""
                                 Grid.Row="0"
-                                ItemsSource="{Binding Temperature.TemperatureUnits}">
+                                ItemsSource="{Binding Temperature.TemperatureUnits}"
+                                SelectedItem="{Binding Temperature.Temp1Selection, Mode=TwoWay}">
                             </toolkit:ListPicker>
                             <TextBox
                                 Grid.Row="1"
@@ -74,9 +75,10 @@
                             <toolkit:ListPicker 
                                 Header="" 
                                 Grid.Row="1" 
-                                Height="60" Margin="12,0,12,12" 
+                                Margin="12,0,12,12" 
                                 VerticalAlignment="Bottom"
-                                ItemsSource="{Binding Temperature.TemperatureUnits}">
+                                ItemsSource="{Binding Temperature.TemperatureUnits}"
+                                SelectedItem="{Binding Temperature.Temp2Selection, Mode=TwoWay}">
                             </toolkit:ListPicker>
                          </Grid>
                     </Border>

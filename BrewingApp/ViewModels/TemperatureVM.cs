@@ -8,65 +8,67 @@ namespace BrewingApp.ViewModels
     public class TemperatureVM : ViewModelBase
     {
         private float _Celsius;
+        private string _Temp1Selection;
+        private string _Temp2Selection;
+
         private TemperatureConverter _Converter;
-        public ObservableCollection<string> TemperatureUnits;
+
+        public ObservableCollection<string> TemperatureUnits{ get; set; }
 
         public TemperatureVM()
         {
             this._Converter = new TemperatureConverter();
             this.TemperatureUnits = Settings.TemperatureUnits;
+
+            Temp1Selection = TemperatureUnits[0];
+            Temp2Selection = TemperatureUnits[1];
         }
+
+        public string Temp1Selection
+        {
+          get { return _Temp1Selection; }
+            set { _Temp1Selection = value; TemperaturePropertiesChanged(); }
+        }
+                
+        public string Temp2Selection
+        {
+          get { return _Temp2Selection; }
+            set { _Temp2Selection = value; TemperaturePropertiesChanged(); }
+        }
+
 
         /// <summary>
         /// Stores the temperature value for the first textbox / dropdown
         /// </summary>
         public float Temp1
         {
-            get { return this._Converter.ConvertBack(this._Celsius, ""); }
+            get { return this._Converter.ConvertBack(this._Celsius, Temp1Selection); }
             set
             {
-                float cels = this._Converter.Convert(value, "");
-                if (cels != this._Celsius)
-                {
-                    this._Celsius = cels;
-                    RaisePropertyChanged("Temp1");
-                }
+                this._Celsius = this._Converter.Convert(value, Temp1Selection);
+                TemperaturePropertiesChanged();               
             }
         }
 
         /// <summary>
-        ///         /// <summary>
         /// Stores the temperature value for the second textbox / dropdown
-        /// </summary>
         /// </summary>
         public float Temp2
         {
-            get { return this._Converter.ConvertBack(this._Celsius, ""); }
+            get { return this._Converter.ConvertBack(this._Celsius, Temp2Selection); }
             set
             {
-                float cels = this._Converter.Convert(value, "");
-                if (cels != this._Celsius)
-                {
-                    this._Celsius = cels;
-                    RaisePropertyChanged("Temp2");
-                }
+                 this._Celsius= this._Converter.Convert(value, Temp2Selection);
+                 TemperaturePropertiesChanged();
             }
         }
 
 
-        //public float Temp2
-        //{
-        //    get { return _Celsius; }
-        //    set
-        //    {
-        //        if (value != this._Celsius)
-        //        {
-        //            this._Celsius = value;
-        //            RaisePropertyChanged("Celsius");
-        //        }
-        //    }
-        //}
-
+        private void TemperaturePropertiesChanged()
+        {
+            RaisePropertyChanged("Temp1");
+            RaisePropertyChanged("Temp2");
+        }
   
     }
 }

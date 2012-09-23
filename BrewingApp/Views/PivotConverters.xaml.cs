@@ -8,9 +8,9 @@ namespace BrewingApp.Pages
 
         public PivotConverters()
         {
-            InitializeComponent();
+            this.DataContext = new UnitConversionVM();
 
-            DataContext = new UnitConversionVM();
+            InitializeComponent();
 
         }
     }

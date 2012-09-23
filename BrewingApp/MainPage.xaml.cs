@@ -20,6 +20,7 @@ namespace BrewingApp
         public MainPage()
         {
             InitializeComponent();
+            Settings.Initialize();
            
         }
 

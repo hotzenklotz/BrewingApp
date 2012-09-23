@@ -9,7 +9,6 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:vm="clr-namespace:BrewingApp.Data"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -105,15 +104,15 @@
                             </Grid.RowDefinitions>
                             <toolkit:ListPicker 
                                 Header=""
-                                Grid.Row="0" Name="USFluidPicker"
-                                ItemsSource="{Binding Volume.USUnitList}">
+                                Grid.Row="0"
+                                ItemsSource="{Binding Volume.MetricUnitList}"
+                                SelectedItem="{Binding Volume.Unit1Selection, Mode=TwoWay}">
                             </toolkit:ListPicker>
                             <TextBox
                                 Grid.Row="1"
                                 HorizontalAlignment="Stretch" 
-                                Name="txtUSFliuds" 
                                 InputScope="NumberFullWidth"
-                                Text="{Binding Path=Volume.USFluid, Mode=TwoWay}">
+                                Text="{Binding Path=Volume.Unit1, Mode=TwoWay}">
                             </TextBox>
                         </Grid>
                     </Border>
@@ -132,16 +131,16 @@
                             <TextBox 
                                 Grid.Row="0"
                                 HorizontalAlignment="Stretch" 
-                                Name="txtMetricFluids" 
-                                InputScope="NumberFullWidth" Margin="0,6,0,2"
-                                Text="{Binding Volume.MetricFluid, Mode=TwoWay}">
+                                InputScope="NumberFullWidth" 
+                                Margin="0,6,0,2"
+                                Text="{Binding Volume.Unit2, Mode=TwoWay}">
                             </TextBox>
                             <toolkit:ListPicker 
                                 Header="" 
                                 Grid.Row="1" 
                                 Margin="12,0,12,12" 
-                                Name="MetricFluidPicker"
-                                ItemsSource="{Binding Volume.USUnitList}">
+                                ItemsSource="{Binding Volume.USUnitList}"
+                                SelectedItem="{Binding Volume.Unit2Selection, Mode=TwoWay}">
                             </toolkit:ListPicker>
                         </Grid>
                     </Border>

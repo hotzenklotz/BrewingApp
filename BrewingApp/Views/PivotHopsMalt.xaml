@@ -33,54 +33,63 @@
             		</Grid.RowDefinitions>
                     
             		<Grid >
-            			<Grid.RowDefinitions>
-            				<RowDefinition Height="Auto"/>
-            				<RowDefinition Height="Auto"/>
-            			</Grid.RowDefinitions>
+            		<Grid.RowDefinitions>
+            			<RowDefinition Height="Auto"/>
+            			<RowDefinition Height="Auto"/>
+            		</Grid.RowDefinitions>
                             
-                        <!-- VOLUMNE / SG -->
-            			<Grid >
-            				<Grid.ColumnDefinitions>
-            					<ColumnDefinition Width="1*"/>
-            					<ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="0.7*"/>
-            				</Grid.ColumnDefinitions>
+                    <!-- VOLUMNE / SG -->
+            		<Grid >
+            			<Grid.ColumnDefinitions>
+            				<ColumnDefinition Width="1*"/>
+            				<ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.7*"/>
+            			</Grid.ColumnDefinitions>
                                 
-            				<StackPanel  
-            					Orientation="Vertical"
-            					Grid.Column="0">
+            			<StackPanel  
+            				Orientation="Vertical"
+            				Grid.Column="0">
                                     
-            					<TextBlock Text="Batch Volume" FontSize="{StaticResource PhoneFontSizeNormal}" FontFamily="{StaticResource PhoneFontFamilyNormal}" VerticalAlignment="Top" LineHeight="31" LineStackingStrategy="BlockLineHeight" Foreground="{StaticResource PhoneSubtleBrush}" TextWrapping="Wrap" Margin="12,0,12,-5"/>
-            					<TextBox 
-            						HorizontalAlignment="Stretch" 
-            						x:Name="txtBitternessVolumne" 
-            						Text="{Binding BatchVolume, Mode=TwoWay}" 
-            						InputScope="NumberFullWidth" Margin="0,6,0,2"/>
-            				</StackPanel>
+            				<TextBlock Text="Batch Volume" FontSize="{StaticResource PhoneFontSizeNormal}" FontFamily="{StaticResource PhoneFontFamilyNormal}" VerticalAlignment="Top" LineHeight="31" LineStackingStrategy="BlockLineHeight" Foreground="{StaticResource PhoneSubtleBrush}" TextWrapping="Wrap" Margin="12,0,12,-5"/>
+            				<TextBox 
+            					HorizontalAlignment="Stretch" 
+            					x:Name="txtBitternessVolumne" 
+            					Text="{Binding BatchVolume, Mode=TwoWay}" 
+            					InputScope="NumberFullWidth" Margin="0,6,0,2"/>
+            			</StackPanel>
                                 
-            				<StackPanel 
-            					Orientation="Vertical"
-            					Grid.Column="1">
+            			<StackPanel 
+            				Orientation="Vertical"
+            				Grid.Column="1">
                                     
-            					<TextBlock Text="Specific Gravity" FontSize="{StaticResource PhoneFontSizeNormal}" FontFamily="{StaticResource PhoneFontFamilyNormal}" VerticalAlignment="Top" LineHeight="31" LineStackingStrategy="BlockLineHeight" Foreground="{StaticResource PhoneSubtleBrush}" TextWrapping="Wrap" Margin="12,0,12,-5"/>
-            					<TextBox 
-            						HorizontalAlignment="Stretch" 
-            						x:Name="txtBitternessGravity" 
-            						Text="{Binding SpecificGravity, Mode=TwoWay}" 
-            						InputScope="NumberFullWidth" Margin="0,6,0,2"/>
-            				</StackPanel>
+            				<TextBlock Text="Specific Gravity" FontSize="{StaticResource PhoneFontSizeNormal}" FontFamily="{StaticResource PhoneFontFamilyNormal}" VerticalAlignment="Top" LineHeight="31" LineStackingStrategy="BlockLineHeight" Foreground="{StaticResource PhoneSubtleBrush}" TextWrapping="Wrap" Margin="12,0,12,-5"/>
+            				<TextBox 
+            					HorizontalAlignment="Stretch" 
+            					x:Name="txtBitternessGravity" 
+            					Text="{Binding SpecificGravity, Mode=TwoWay}" 
+            					InputScope="NumberFullWidth" Margin="0,6,0,2"/>
+            			</StackPanel>
 
-                            <TextBlock 
-                                Height="Auto"
-                                HorizontalAlignment="Center"
-                                Name="txtIBU"
-                                Text="{Binding IBU, Mode=TwoWay}"
-                                VerticalAlignment="Bottom"
-                                Grid.Column="2" FontSize="84" />
-                        </Grid>
+                        <TextBlock 
+                            Height="Auto"
+                            HorizontalAlignment="Center"
+                            Name="txtIBU"
+                            Text="{Binding IBU, Mode=TwoWay}"
+                            VerticalAlignment="Bottom"
+                            Grid.Column="2" FontSize="84" />
+                    </Grid>
 
-                    
-                    <!-- LISTBOX WITH HOPS-->
+                    <Rectangle
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Height="1" 
+                        Stroke="Red" 
+                        StrokeThickness="1" 
+                        Margin="0,0,0,15">
+                    </Rectangle>
+                        
+                        <!-- LISTBOX WITH HOPS-->
             		<ListBox
                         Grid.Row="1"
             			x:Name="HopList"
@@ -102,7 +111,8 @@
                     
                     <phone7fx:BindableApplicationBar 
             			x:Name="AppBar" 
-            			IsVisible="True" >
+            			IsVisible="True" 
+                        Mode="Minimized">
             			<phone7fx:BindableApplicationBarIconButton 
             				Command="{Binding AddCommand}" 
             				Text="Add" 

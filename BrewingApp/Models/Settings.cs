@@ -43,6 +43,18 @@ namespace BrewingApp.Models
 
         };
 
+        public static ObservableCollection<string> MetricWeightUnits = new ObservableCollection<string>()
+        {
+            "Gram",
+            "Kilogram"
+        };
+
+        public static ObservableCollection<string> USWeightUnits = new ObservableCollection<string>()
+        {
+            "US Ounce",
+            "US Pound"
+        };
+
 
 
         public static void Initialize()
@@ -68,7 +80,7 @@ namespace BrewingApp.Models
         private static void SetDefaultValues()
         {
             TemperatureUnit = "Celsius";
-            WeightUnit = "Gramm";
+            WeightUnit = "Gram";
             VolumeUnit = "Liter";
             IBUFormula = "Rager";
 

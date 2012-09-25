@@ -20,7 +20,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
         <controls:Pivot Title="Unit Converters" Name="ConverterPivot">
-            <!--Pivot item one-->
+            <!--Pivot TEMPERATURE-->
             <controls:PivotItem Header="Heat">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -86,8 +86,76 @@
                 </Grid>
             </controls:PivotItem>
             
-            <!--Pivot item two-->
+            <!--Pivot item VOLUME-->
             <controls:PivotItem Header="Fluids">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush 
+                            ImageSource="/BrewingApp;component/Images/icon_scales_big.png" 
+                            AlignmentX="Right" 
+                            AlignmentY="Bottom" 
+                            Stretch="None" 
+                            Opacity="0.5" />
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <toolkit:ListPicker 
+                            Header=""
+                            Grid.Row="0"
+                            ItemsSource="{Binding Volume.MetricUnitList}"
+                            SelectedItem="{Binding Volume.Unit1Selection, Mode=TwoWay}">
+                        </toolkit:ListPicker>
+                        <TextBox
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch" 
+                            InputScope="NumberFullWidth"
+                            Text="{Binding Path=Volume.Unit1, Mode=TwoWay}">
+                        </TextBox>
+                    </Grid>
+                    
+                    <Rectangle
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Height="1" 
+                        Stroke="Red" 
+                        StrokeThickness="1">
+                    </Rectangle>
+                    
+                    <Grid
+                        Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBox 
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch" 
+                            InputScope="NumberFullWidth" 
+                            Text="{Binding Volume.Unit2, Mode=TwoWay}">
+                        </TextBox>
+                        <toolkit:ListPicker 
+                            Header="" 
+                            Grid.Row="1" 
+                            Margin="12,0,12,12"
+                            ItemsSource="{Binding Volume.USUnitList}"
+                            SelectedItem="{Binding Volume.Unit2Selection, Mode=TwoWay}" Height="210">
+                        </toolkit:ListPicker>
+                    </Grid>
+                </Grid>
+
+            </controls:PivotItem>
+
+            <!--Pivot item WEIGHTS-->
+            <controls:PivotItem Header="Weights">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -108,14 +176,14 @@
                             <toolkit:ListPicker 
                                 Header=""
                                 Grid.Row="0"
-                                ItemsSource="{Binding Volume.MetricUnitList}"
-                                SelectedItem="{Binding Volume.Unit1Selection, Mode=TwoWay}">
+                                ItemsSource="{Binding Weight.MetricUnitList}"
+                                SelectedItem="{Binding Weight.Unit1Selectio, Mode=TwoWay}">
                             </toolkit:ListPicker>
                             <TextBox
                                 Grid.Row="1"
                                 HorizontalAlignment="Stretch" 
                                 InputScope="NumberFullWidth"
-                                Text="{Binding Path=Volume.Unit1, Mode=TwoWay}">
+                                Text="{Binding Path=Weight.Unit1, Mode=TwoWay}">
                             </TextBox>
                         </Grid>
                     </Border>
@@ -136,37 +204,20 @@
                                 HorizontalAlignment="Stretch" 
                                 InputScope="NumberFullWidth" 
                                 Margin="0,6,0,2"
-                                Text="{Binding Volume.Unit2, Mode=TwoWay}">
+                                Text="{Binding Weight.Unit2, Mode=TwoWay}">
                             </TextBox>
                             <toolkit:ListPicker 
                                 Header="" 
                                 Grid.Row="1" 
                                 Margin="12,0,12,12" 
-                                ItemsSource="{Binding Volume.USUnitList}"
-                                SelectedItem="{Binding Volume.Unit2Selection, Mode=TwoWay}">
+                                ItemsSource="{Binding Weight.UnitList}"
+                                SelectedItem="{Binding Weight.Unit2Selection, Mode=TwoWay}">
                             </toolkit:ListPicker>
                         </Grid>
                     </Border>
                 </Grid>
             </controls:PivotItem>
-
-            <!--Pivot item three-->
-            <controls:PivotItem Header="Weights">
-                <Grid/>
-            </controls:PivotItem>
         </controls:Pivot>
     </Grid>
-
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
     
 </phone:PhoneApplicationPage>

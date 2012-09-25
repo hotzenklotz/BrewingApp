@@ -84,6 +84,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\WeightConverter.cs" />
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Converters\VolumeConverter.cs" />
     <Compile Include="Models\Settings.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="ViewModels\UnitConversionVM.cs" />
     <Compile Include="ViewModels\VolumeVM.cs" />
     <Compile Include="ViewModels\BitternessVM.cs" />
+    <Compile Include="ViewModels\WeightVM.cs" />
     <Compile Include="Views\PivotBrewHouse.xaml.cs">
       <DependentUpon>PivotBrewHouse.xaml</DependentUpon>
     </Compile>
@@ -154,6 +156,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Images\plusButton.png" />
+    <Resource Include="Images\icon_scales_big.png" />
+    <Content Include="Images\svg\icon_scales.svg" />
     <Content Include="XML\HopVarities.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -162,6 +166,7 @@
     <Resource Include="Images\grains.jpg" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

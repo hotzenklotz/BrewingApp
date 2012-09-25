@@ -7,6 +7,13 @@ namespace BrewingApp.ViewModels
     {
        private ViewModelBase _Temperature;
        private ViewModelBase _Volume;
+       private ViewModelBase _Weight;
+
+       public ViewModelBase Weight
+       {
+           get { return this._Weight; }
+           set { }
+       }
 
        public ViewModelBase Temperature
        {
@@ -24,6 +31,7 @@ namespace BrewingApp.ViewModels
        {
            this._Temperature = new TemperatureVM();
            this._Volume = new VolumeVM();
+           this._Weight = new WeightVM();
        }
        
     }

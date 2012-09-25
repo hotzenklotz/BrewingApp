@@ -116,7 +116,7 @@
             			<phone7fx:BindableApplicationBarIconButton 
             				Command="{Binding AddCommand}" 
             				Text="Add" 
-            				IconUri="/Images/plusButton.png" />
+            				IconUri="BrewingApp;content/Images/plusButton.png" />
             		</phone7fx:BindableApplicationBar>
                    
                 </Grid>

@@ -14,20 +14,6 @@ namespace BrewingApp.ViewModels
         private string _Unit1Selection;
         private string _Unit2Selection;
 
-
-        public string Unit1Selection
-        {
-            get { return _Unit1Selection; }
-            set { _Unit1Selection = value; VolumePropertiesChanged(); }
-        }
-
-        public string Unit2Selection
-        {
-            get { return _Unit2Selection; }
-            set { _Unit2Selection = value; VolumePropertiesChanged();  }
-        }
-
-
         private float _liter;
 
         private VolumeConverter _Converter;
@@ -42,6 +28,18 @@ namespace BrewingApp.ViewModels
             Unit1Selection = MetricUnitList[0];
             Unit2Selection = USUnitList[0];
             
+        }
+
+        public string Unit1Selection
+        {
+            get { return _Unit1Selection; }
+            set { _Unit1Selection = value; VolumePropertiesChanged(); }
+        }
+
+        public string Unit2Selection
+        {
+            get { return _Unit2Selection; }
+            set { _Unit2Selection = value; VolumePropertiesChanged();  }
         }
 
         public float Unit1

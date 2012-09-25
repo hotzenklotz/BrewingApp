@@ -24,24 +24,29 @@ namespace BrewingApp
            
         }
 
+        // FIX ME background of tile visible
+        // http://blog.humann.info/post/2011/11/06/Silverlight-Toolkit-bug-on-HubTile-control-the-solution.aspx
         private void HubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Uri page;
-            HubTile tile = (HubTile)sender;
+            HubTile tile = (HubTile) sender;
 
             switch (tile.Name)
             {
-                case "BrewHouse":
+                case "BrewHouseTile":
                     page = new Uri("/Views/PivotBrewHouse.xaml", UriKind.RelativeOrAbsolute);
                     break;
-                case "HopsMalt":
+                case "HopsMaltTile":
                     page = new Uri("/Views/PivotHopsMalt.xaml", UriKind.RelativeOrAbsolute);
                     break;
-                case "Converters":
+                case "ConvertersTile":
                     page = new Uri("/Views/PivotConverters.xaml", UriKind.RelativeOrAbsolute);
                     break;
-                case "Mashing":
+                case "MashingTile":
                     page = new Uri("/Views/PivotMashing.xaml", UriKind.RelativeOrAbsolute);
+                    break;
+                case "SettingsTile":
+                    page = new Uri("/Views/Settings.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 default :
                     page = new Uri("");

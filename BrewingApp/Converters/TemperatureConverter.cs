@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using System.Windows.Data;
-using System.IO.IsolatedStorage;
+using BrewingApp.Models;
 
 namespace BrewingApp.Converters
 {
@@ -18,16 +9,15 @@ namespace BrewingApp.Converters
     /// </summary>
     public class TemperatureConverter : IValueConverter
     {
-        private string _DefaultUnit;
 
         public float Convert(float value, string parameter)
         {
             string measurementUnit;
 
             if (parameter != null)
-            { measurementUnit = (string)parameter; }
+            { measurementUnit = (string) parameter; }
             else
-            { measurementUnit = this._DefaultUnit; }
+            { measurementUnit = Settings.TemperatureUnit; } //default settings
 
             float temp = 1.0f;
             switch (measurementUnit)
@@ -53,7 +43,7 @@ namespace BrewingApp.Converters
             if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
-            { measurementUnit = this._DefaultUnit; }
+            { measurementUnit = Settings.TemperatureUnit; }
 
             float temp = 1.0f;
             switch (measurementUnit)
@@ -69,11 +59,6 @@ namespace BrewingApp.Converters
             }
 
             return temp;
-        }
-
-        public TemperatureConverter()
-        {
-            this._DefaultUnit = (string)IsolatedStorageSettings.ApplicationSettings["TemperatureUnit"]; 
         }
 
         //interface for IValueConverter

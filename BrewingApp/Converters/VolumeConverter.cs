@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows.Data;
 using System.IO.IsolatedStorage;
+using BrewingApp.Models;
 
 namespace BrewingApp.Converters
 {
     public class VolumeConverter : IValueConverter
     {
-        private string _DefaultUnit;
 
         /// <summary>
         /// Converts any volume to "liters", the only internally used measurement unit for volumes
@@ -19,7 +19,7 @@ namespace BrewingApp.Converters
             if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
-            { measurementUnit = this._DefaultUnit; }
+            { measurementUnit = Settings.VolumeUnit; }
 
 
             float factor = 1.0f;
@@ -52,7 +52,7 @@ namespace BrewingApp.Converters
             if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
-            { measurementUnit = this._DefaultUnit; }
+            { measurementUnit = Settings.VolumeUnit; }
 
             float factor = 1.0f;
             switch (measurementUnit)
@@ -74,12 +74,6 @@ namespace BrewingApp.Converters
                     break;
             }
             return value * factor;
-        }
-
-
-        public VolumeConverter()
-        {
-            this._DefaultUnit = (string)IsolatedStorageSettings.ApplicationSettings["VolumeUnit"];
         }
 
         // provide compatible interface for IValueConverter

@@ -40,6 +40,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <toolkit:HubTile Grid.Row="1" Grid.Column="0" 
@@ -47,37 +48,32 @@
                                          Title="Brew &#13;House"
                                          Source=""
                                          Tap="HubTile_Tap" 
-                                         Name="BrewHouse" />
+                                         Name="BrewHouseTile" />
                     <toolkit:HubTile Grid.Row="1" Grid.Column="1" 
                                          Margin="12,12,0,0"
                                          Title="Hops &amp; &#13;Malt" 
                                          Tap="HubTile_Tap" 
-                                          Name="HopsMalt" />
+                                          Name="HopsMaltTile" />
                     <toolkit:HubTile Grid.Row="2" Grid.Column="0" 
                                          Margin="12,12,0,0"
                                          Title="Convert &#13;Units" 
                                          Tap="HubTile_Tap"
-                                         Name="Converters" />
+                                         Name="ConvertersTile" />
                     <toolkit:HubTile Grid.Row="2" Grid.Column="1" 
                                          Margin="12,12,0,0"
                                          Title="Mashing" 
                                          Tap="HubTile_Tap" 
-                                         Name="Mashing" />           
+                                         Name="MashingTile" />
+                    <toolkit:HubTile Grid.Row="3" Grid.Column="0" 
+                                         Margin="12,12,0,0"
+                                         Title="Settings" 
+                                         Tap="HubTile_Tap" 
+                                         Name="SettingsTile" />
                 </Grid>
             </ScrollViewer>
         </Grid>
     </Grid>
  
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+
 
 </phone:PhoneApplicationPage>

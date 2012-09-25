@@ -19,7 +19,7 @@ namespace BrewingApp.Models
         public static string VolumeUnit;
         public static string WeightUnit;
         public static string TemperatureUnit;
-        private static string IBUFormula;
+        public static string HopFormula;
 
         public static IsolatedStorageSettings UserSettings;
 
@@ -55,6 +55,12 @@ namespace BrewingApp.Models
             "Pound"
         };
 
+        public static ObservableCollection<string> HopFormulas = new ObservableCollection<string>()
+        {
+            "Rager",
+            "Tinseth"
+        };
+
 
 
         public static void Initialize()
@@ -74,7 +80,7 @@ namespace BrewingApp.Models
             TemperatureUnit = (string) UserSettings["TemperatureUnit"];
             WeightUnit = (string) UserSettings["WeightUnit"];
             VolumeUnit = (string) UserSettings["VolumeUnit"];
-            IBUFormula = (string)UserSettings["IBUFormula"];
+            HopFormula = (string) UserSettings["HopFormula"];
         }
 
         private static void SetDefaultValues()
@@ -82,12 +88,12 @@ namespace BrewingApp.Models
             TemperatureUnit = "Celsius";
             WeightUnit = "Gram";
             VolumeUnit = "Liter";
-            IBUFormula = "Rager";
+            HopFormula = "Rager";
 
             UserSettings.Add("TemperatureUnit", TemperatureUnit);
             UserSettings.Add("WeightUnit", WeightUnit);
             UserSettings.Add("VolumeUnit", VolumeUnit);
-            UserSettings.Add("IBUFormula", IBUFormula);
+            UserSettings.Add("HopFormula", HopFormula);
         }
 
         public static void Save()

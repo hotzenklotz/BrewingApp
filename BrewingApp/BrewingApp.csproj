@@ -88,6 +88,7 @@
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Converters\VolumeConverter.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="ViewModels\SettingsVM.cs" />
     <Compile Include="ViewModels\TemperatureVM.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -96,6 +97,9 @@
     <Compile Include="ViewModels\VolumeVM.cs" />
     <Compile Include="ViewModels\BitternessVM.cs" />
     <Compile Include="ViewModels\WeightVM.cs" />
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PivotBrewHouse.xaml.cs">
       <DependentUpon>PivotBrewHouse.xaml</DependentUpon>
     </Compile>
@@ -119,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,6 +165,9 @@
     </Content>
     <Resource Include="Images\plusButton.png" />
     <Resource Include="Images\icon_scales_big.png" />
+    <Resource Include="Images\icon_scales_small.png" />
+    <Resource Include="Images\icon_gears_big.png" />
+    <Content Include="Images\svg\icon_gears.svg" />
     <Content Include="Images\svg\icon_scales.svg" />
     <Content Include="XML\HopVarities.xml">
       <SubType>Designer</SubType>

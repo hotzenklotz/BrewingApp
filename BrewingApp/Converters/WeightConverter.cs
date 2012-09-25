@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Windows.Data;
-using System.IO.IsolatedStorage;
+using BrewingApp.Models;
 
 namespace BrewingApp.Converters
 {
     public class WeightConverter : IValueConverter
     {
-        private string _DefaultUnit;
-
         /// <summary>
         /// Converts any weight to "grams", the only internally used measurement unit for weghts
         /// </summary>
@@ -19,7 +17,7 @@ namespace BrewingApp.Converters
             if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
-            { measurementUnit = this._DefaultUnit; }
+            { measurementUnit = Settings.WeightUnit; } //default unit
 
 
             float factor = 1.0f;
@@ -52,7 +50,7 @@ namespace BrewingApp.Converters
             if (parameter != null)
             { measurementUnit = (string)parameter; }
             else
-            { measurementUnit = this._DefaultUnit; }
+            { measurementUnit = Settings.WeightUnit; }
 
             float factor = 1.0f;
             switch (measurementUnit)
@@ -76,11 +74,6 @@ namespace BrewingApp.Converters
             return value * factor;
         }
 
-
-        public WeightConverter()
-        {
-            this._DefaultUnit = (string)IsolatedStorageSettings.ApplicationSettings["WeightUnit"];
-        }
 
         // provide compatible interface for IValueConverter
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

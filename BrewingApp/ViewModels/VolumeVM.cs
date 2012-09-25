@@ -47,8 +47,7 @@ namespace BrewingApp.ViewModels
             get { return this._Converter.ConvertBack(this._liter, Unit1Selection); }
             set
             {
-                float tmpLiter = this._Converter.Convert(value, Unit1Selection);
-                this._liter = tmpLiter;
+                this._liter = this._Converter.Convert(value, Unit1Selection);
                 VolumePropertiesChanged();
             }
         }

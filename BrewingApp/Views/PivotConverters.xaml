@@ -23,66 +23,67 @@
             <!--Pivot TEMPERATURE-->
             <controls:PivotItem Header="Heat">
                 <Grid>
+                    <Grid.Background>
+                        <ImageBrush 
+                            ImageSource="/BrewingApp;component/Images/icon_scales_big.png" 
+                            AlignmentX="Right" 
+                            AlignmentY="Bottom" 
+                            Stretch="None" 
+                            Opacity="0.5" />
+                    </Grid.Background>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Border
-                        Grid.Row="0"
-                        BorderThickness="6"
-                        BorderBrush="Silver"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Top" 
-                        Margin="0,0,0,10">
-                        <Grid >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <toolkit:ListPicker 
-                                Header=""
-                                Grid.Row="0"
-                                ItemsSource="{Binding Temperature.TemperatureUnits}"
-                                SelectedItem="{Binding Temperature.Temp1Selection, Mode=TwoWay}">
-                            </toolkit:ListPicker>
-                            <TextBox
-                                Grid.Row="1"
-                                HorizontalAlignment="Stretch" 
-                                InputScope="NumberFullWidth"
-                                Text="{Binding Path=Temperature.Temp1, Mode=TwoWay}">        
-                            </TextBox>
-                         </Grid>
-                    </Border>
-                    
-                    <Border
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <toolkit:ListPicker 
+                            Header=""
+                            Grid.Row="0"
+                            ItemsSource="{Binding Temperature.TemperatureUnits}"
+                            SelectedItem="{Binding Temperature.Temp1Selection, Mode=TwoWay}">
+                        </toolkit:ListPicker>
+                        <TextBox
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch" 
+                            InputScope="NumberFullWidth"
+                            Text="{Binding Temperature.Temp1, Mode=TwoWay}">
+                        </TextBox>
+                    </Grid>
+
+                    <Rectangle
                         Grid.Row="1"
-                        BorderThickness="6"
-                        BorderBrush="Silver"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
-                        Margin="0,10,0,0">
-                    
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBox 
-                                Grid.Row="0"
-                                HorizontalAlignment="Stretch" 
-                                InputScope="NumberFullWidth" Margin="0,6,0,2"
-                                Text="{Binding Path=Temperature.Temp2, Mode=TwoWay}">                              
-                            </TextBox>
-                            <toolkit:ListPicker 
-                                Header="" 
-                                Grid.Row="1" 
-                                Margin="12,0,12,12" 
-                                VerticalAlignment="Bottom"
-                                ItemsSource="{Binding Temperature.TemperatureUnits}"
-                                SelectedItem="{Binding Temperature.Temp2Selection, Mode=TwoWay}">
-                            </toolkit:ListPicker>
-                         </Grid>
-                    </Border>
+                        Height="1" 
+                        Stroke="Red" 
+                        StrokeThickness="1">
+                    </Rectangle>
+
+                    <Grid
+                        Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBox 
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch" 
+                            InputScope="NumberFullWidth" 
+                            Text="{Binding Temperature.Temp2, Mode=TwoWay}">
+                        </TextBox>
+                        <toolkit:ListPicker 
+                            Header="" 
+                            Grid.Row="1" 
+                            Margin="12,0,12,12"
+                            ItemsSource="{Binding Temperature.TemperatureUnits}"
+                            SelectedItem="{Binding Temperature.Temp2Selection, Mode=TwoWay}" Height="210">
+                        </toolkit:ListPicker>
+                    </Grid>
                 </Grid>
             </controls:PivotItem>
             
@@ -117,7 +118,7 @@
                             Grid.Row="1"
                             HorizontalAlignment="Stretch" 
                             InputScope="NumberFullWidth"
-                            Text="{Binding Path=Volume.Unit1, Mode=TwoWay}">
+                            Text="{Binding Volume.Unit1, Mode=TwoWay}">
                         </TextBox>
                     </Grid>
                     
@@ -157,64 +158,67 @@
             <!--Pivot item WEIGHTS-->
             <controls:PivotItem Header="Weights">
                 <Grid>
+                    <Grid.Background>
+                        <ImageBrush 
+                            ImageSource="/BrewingApp;component/Images/icon_scales_big.png" 
+                            AlignmentX="Right" 
+                            AlignmentY="Bottom" 
+                            Stretch="None" 
+                            Opacity="0.5" />
+                    </Grid.Background>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Border
-                        Grid.Row="0"
-                        BorderThickness="6"
-                        BorderBrush="Silver"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Top" 
-                        Margin="0,0,0,10">
-                        <Grid >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <toolkit:ListPicker 
-                                Header=""
-                                Grid.Row="0"
-                                ItemsSource="{Binding Weight.MetricUnitList}"
-                                SelectedItem="{Binding Weight.Unit1Selectio, Mode=TwoWay}">
-                            </toolkit:ListPicker>
-                            <TextBox
-                                Grid.Row="1"
-                                HorizontalAlignment="Stretch" 
-                                InputScope="NumberFullWidth"
-                                Text="{Binding Path=Weight.Unit1, Mode=TwoWay}">
-                            </TextBox>
-                        </Grid>
-                    </Border>
-                    <Border
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <toolkit:ListPicker 
+                            Header=""
+                            Grid.Row="0"
+                            ItemsSource="{Binding Weight.MetricUnitList}"
+                            SelectedItem="{Binding Weight.Unit1Selection, Mode=TwoWay}">
+                        </toolkit:ListPicker>
+                        <TextBox
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch" 
+                            InputScope="NumberFullWidth"
+                            Text="{Binding Weight.Unit1, Mode=TwoWay}">
+                        </TextBox>
+                    </Grid>
+
+                    <Rectangle
                         Grid.Row="1"
-                        BorderThickness="6"
-                        BorderBrush="Silver"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top"
-                        Margin="0,10,0,0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <TextBox 
-                                Grid.Row="0"
-                                HorizontalAlignment="Stretch" 
-                                InputScope="NumberFullWidth" 
-                                Margin="0,6,0,2"
-                                Text="{Binding Weight.Unit2, Mode=TwoWay}">
-                            </TextBox>
-                            <toolkit:ListPicker 
-                                Header="" 
-                                Grid.Row="1" 
-                                Margin="12,0,12,12" 
-                                ItemsSource="{Binding Weight.UnitList}"
-                                SelectedItem="{Binding Weight.Unit2Selection, Mode=TwoWay}">
-                            </toolkit:ListPicker>
-                        </Grid>
-                    </Border>
+                        Height="1" 
+                        Stroke="Red" 
+                        StrokeThickness="1">
+                    </Rectangle>
+
+                    <Grid
+                        Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBox 
+                            Grid.Row="0"
+                            HorizontalAlignment="Stretch" 
+                            InputScope="NumberFullWidth" 
+                            Text="{Binding Weight.Unit2, Mode=TwoWay}">
+                        </TextBox>
+                        <toolkit:ListPicker 
+                            Header="" 
+                            Grid.Row="1" 
+                            Margin="12,0,12,12"
+                            ItemsSource="{Binding Weight.USUnitList}"
+                            SelectedItem="{Binding Weight.Unit2Selection, Mode=TwoWay}" Height="210">
+                        </toolkit:ListPicker>
+                    </Grid>
                 </Grid>
             </controls:PivotItem>
         </controls:Pivot>

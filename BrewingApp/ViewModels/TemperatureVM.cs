@@ -26,14 +26,14 @@ namespace BrewingApp.ViewModels
 
         public string Temp1Selection
         {
-          get { return _Temp1Selection; }
-            set { _Temp1Selection = value; TemperaturePropertiesChanged(); }
+          get { return this._Temp1Selection; }
+          set { _Temp1Selection = value; TemperaturePropertiesChanged(); }
         }
                 
         public string Temp2Selection
         {
-          get { return _Temp2Selection; }
-            set { _Temp2Selection = value; TemperaturePropertiesChanged(); }
+          get { return this. _Temp2Selection; }
+          set { _Temp2Selection = value; TemperaturePropertiesChanged(); }
         }
 
 

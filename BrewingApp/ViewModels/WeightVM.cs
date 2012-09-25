@@ -9,9 +9,9 @@ using System.Collections.ObjectModel;
 
 namespace BrewingApp.ViewModels
 {
-    class WeightVM : ViewModelBase
+    public class WeightVM : ViewModelBase
     {
-        public ObservableCollection<string> UnitList { get; set; }
+        public ObservableCollection<string> USUnitList { get; set; }
         public ObservableCollection<string> MetricUnitList{ get; set; }
 
         private string _Unit1Selection;
@@ -26,14 +26,14 @@ namespace BrewingApp.ViewModels
             this._Converter = new WeightConverter();
 
             MetricUnitList = Settings.MetricWeightUnits;
-            UnitList = Settings.USWeightUnits;
+            USUnitList = Settings.USWeightUnits;
 
-            Unit1Selectio = MetricUnitList[0];
-            Unit2Selection = UnitList[0];
+            Unit1Selection = MetricUnitList[0];
+            Unit2Selection = USUnitList[0];
             
         }
 
-        public string Unit1Selectio
+        public string Unit1Selection
         {
             get { return _Unit1Selection; }
             set { _Unit1Selection = value; WeightPropertiesChanged(); }
@@ -47,21 +47,20 @@ namespace BrewingApp.ViewModels
 
         public float Unit1
         {
-            get { return this._Converter.ConvertBack(this._Gram, Unit1Selectio); }
+            get { return this._Converter.ConvertBack(this._Gram, Unit1Selection); }
             set
             {
-                float tmpGram = this._Converter.Convert(value, Unit1Selectio);
-                this._Gram = tmpGram;
+                this._Gram = this._Converter.Convert(value, Unit1Selection);
                 WeightPropertiesChanged();
             }
         }
 
         public float Unit2
         {
-            get { return this._Converter.Convert(this._Gram, this.Unit2Selection); }
+            get { return this._Converter.ConvertBack(this._Gram, this.Unit2Selection); }
             set
             {
-                this._Gram = this._Converter.ConvertBack(value, this.Unit2Selection);
+                this._Gram = this._Converter.Convert(value, this.Unit2Selection);
                 WeightPropertiesChanged();
             }
         }

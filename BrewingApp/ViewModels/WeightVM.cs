@@ -57,10 +57,10 @@ namespace BrewingApp.ViewModels
 
         public float Unit2
         {
-            get { return this._Converter.ConvertBack(this._Gram, this.Unit2Selection); }
+            get { return this._Converter.Convert(this._Gram, this.Unit2Selection); }
             set
             {
-                this._Gram = this._Converter.Convert(value, this.Unit2Selection);
+                this._Gram = this._Converter.ConvertBack(value, this.Unit2Selection);
                 WeightPropertiesChanged();
             }
         }

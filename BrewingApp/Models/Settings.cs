@@ -51,8 +51,8 @@ namespace BrewingApp.Models
 
         public static ObservableCollection<string> USWeightUnits = new ObservableCollection<string>()
         {
-            "US Ounce",
-            "US Pound"
+            "Ounce",
+            "Pound"
         };
 
 

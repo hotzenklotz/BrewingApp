@@ -5,6 +5,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using BrewingApp.Models;
+using System.Windows.Controls.Primitives;
 
 namespace BrewingApp.ViewModels
 {
@@ -12,13 +13,14 @@ namespace BrewingApp.ViewModels
     {
         private ICommand _RemoveCommand;
         private ICommand _AddCommand;
+        private Popup _Popup;
 
         private int _IBU;
         private float _BatchVolume;
         private float _SpecificGravity;
 
         #region public properties
-        public ObservableCollection<HopListItem> HopList { get; set; }
+        public ObservableCollection<Hop> HopList { get; set; }
 
         public float SpecificGravity 
         {
@@ -43,8 +45,8 @@ namespace BrewingApp.ViewModels
         public BitternessVM()
         {
             //add at least one item by default to fill the list
-            HopList = new ObservableCollection<HopListItem>();
-            HopList.Add(new HopListItem());
+            HopList = new ObservableCollection<Hop>();
+            HopList.Add(new Hop());
 
             //use MVVM LightToolkit messaging for custom controls update notifications
             Messenger.Default.Register<string>
@@ -55,13 +57,26 @@ namespace BrewingApp.ViewModels
             );
 
             //MVVM LightToolkit commands for dropdown menu / applicationBar
-            this._RemoveCommand = new RelayCommand<HopListItem>(RemoveAction);
-            this._AddCommand = new RelayCommand<HopListItem>(AddAction);
+            this._RemoveCommand = new RelayCommand<Hop>(RemoveAction);
+            this._AddCommand = new RelayCommand<Hop>(AddAction);
 
             //default Values
             BatchVolume = 20;
             SpecificGravity = 1.010f;
 
+            initPopup();
+
+        }
+
+        private void initPopup()
+        {
+            this._Popup = new Popup();
+            this._Popup.Height = 300;
+            this._Popup.Width = 400;
+            this._Popup.VerticalOffset = 100;
+            HopListPopup control = new HopListPopup();
+            this._Popup.Child = control;
+            this._Popup.IsOpen = false;
         }
 
         public ICommand RemoveCommand
@@ -69,7 +84,7 @@ namespace BrewingApp.ViewModels
             get { return this._RemoveCommand;  }
         }
 
-        private void RemoveAction(HopListItem item)
+        private void RemoveAction(Hop item)
         {
             if ( item != null )
                 HopList.Remove(item);
@@ -80,9 +95,25 @@ namespace BrewingApp.ViewModels
             get { return this._AddCommand; }
         }
 
-        private void AddAction(HopListItem item)
+        private void AddAction(Hop item)
         {
-            HopList.Add( new HopListItem() );
+            Hop hop = new Hop();
+            displayPopUp(hop);
+
+            HopList.Add( hop );
+        }
+
+        private void ModifyAction(Hop item)
+        {
+            displayPopUp(item);
+        }
+
+        private void displayPopUp(Hop item)
+        {
+            var PopupChild = this._Popup.Child as HopListPopup;
+            PopupChild.HopItem = item;
+
+            this._Popup.IsOpen = true;
         }
 
         /// <summary>
@@ -109,7 +140,7 @@ namespace BrewingApp.ViewModels
                         GravityAdjustment = 0.0f;
                     }
 
-                    foreach (HopListItem hop in HopList)
+                    foreach (Hop hop in HopList)
                     {
                         float utilization = 0.1811f + 0.1386f * (float) Math.Tanh( hop.BoilTime - 31.32f) / 18.27f;
                         IBU += (int) ( hop.Amount * hop.AlphaAcid * utilization * 10 / BatchVolume * (1 + GravityAdjustment) );

@@ -95,17 +95,27 @@
             			x:Name="HopList"
             			VerticalAlignment="Top"
             			ItemsSource="{Binding HopList}">
-                        <ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem">
-                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                            </Style>
-                        </ListBox.ItemContainerStyle>
-                        <toolkit:ContextMenuService.ContextMenu>
-            				<toolkit:ContextMenu >
-            					<toolkit:MenuItem Header="Remove"
-            						Command="{Binding RemoveCommand}"/>
-            				</toolkit:ContextMenu>
-            		</toolkit:ContextMenuService.ContextMenu>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock 
+                                            Text="{Binding Amount}"
+                                            Margin="0,0,5,0"/>
+                                        <TextBlock
+                                            Text="{Binding BrewingApp.Models.Settings.WeightUnit}"
+                                            Margin="0,0,5,0"/>
+                                        <TextBlock
+                                            Text="{Binding Name}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            
+                            <toolkit:ContextMenuService.ContextMenu>
+            				    <toolkit:ContextMenu >
+            					    <toolkit:MenuItem Header="Remove"
+            						    Command="{Binding RemoveCommand}"/>
+            				    </toolkit:ContextMenu>
+            		        </toolkit:ContextMenuService.ContextMenu>
                     </ListBox>
                     </Grid>
                     

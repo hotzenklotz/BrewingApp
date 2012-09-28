@@ -2,6 +2,7 @@
 using BrewingApp.Models;
 using GalaSoft.MvvmLight;
 using Microsoft.Phone.Shell;
+using BrewingApp.Other;
 
 namespace BrewingApp.ViewModels
 {
@@ -26,14 +27,16 @@ namespace BrewingApp.ViewModels
             HopFormulaList = Settings.HopFormulas;
             
             //add both unit lists, the metric and american unit, to the listpicker
-            WeightUnitList = Settings.MetricWeightUnits;
-            foreach (var item in Settings.USWeightUnits)
-                WeightUnitList.Add(item);
+            WeightUnitList = new ObservableCollection<string>();
+            WeightUnitList.AddRange(Settings.MetricWeightUnits);
+            WeightUnitList.AddRange(Settings.USWeightUnits);
+
 
             //same here for volume units
-            VolumeUnitList = Settings.MetricVolumeUnits;
-            foreach (var item in Settings.USVolumeUnits)
-                VolumeUnitList.Add(item);
+            VolumeUnitList = new ObservableCollection<string>();
+            VolumeUnitList.AddRange(Settings.MetricVolumeUnits);
+            VolumeUnitList.AddRange(Settings.USVolumeUnits);
+
 
             //selected items
             WeightSelection = WeightUnitList[0];

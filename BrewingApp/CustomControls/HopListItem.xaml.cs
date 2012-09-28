@@ -13,15 +13,14 @@ using System.Xml.Linq;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight;
 using System.ComponentModel;
+using BrewingApp.Models;
 
 namespace BrewingApp
 {
-    public partial class HopListItem : UserControl, INotifyPropertyChanged
+    public partial class HopListPopup : UserControl, INotifyPropertyChanged
     {
         private string _SelectedItem;
-        private int _BoilTime;
-        private float _AlphaAcid;
-        private float _Amount;
+        public Hop HopItem { get; set; }
 
         #region public properties
         public Dictionary<string, float> _HopVarities;
@@ -38,6 +37,7 @@ namespace BrewingApp
             set
             {
                 this._SelectedItem = value;
+                HopItem.Name = value;
                 AlphaAcid = this._HopVarities[value];
                 NotifyPropertyChanged("AlphaAcid");
             }
@@ -45,27 +45,25 @@ namespace BrewingApp
 
         public int BoilTime
         {
-            get { return this._BoilTime; }
-            set { this._BoilTime = value; updateValues(); }
+            get { return HopItem.BoilTime; }
+            set { HopItem.BoilTime = value; updateValues(); }
         }
 
         public float AlphaAcid
         {
-            get { return this._AlphaAcid; }
-            set { this._AlphaAcid = value; updateValues(); }
+            get { return HopItem.AlphaAcid; }
+            set { HopItem.AlphaAcid = value; updateValues(); }
         }
 
         public float Amount
         {
-            get { return this._Amount; }
-            set { this._Amount = value; updateValues(); }
+            get { return HopItem.Amount; }
+            set { HopItem.Amount = value; updateValues(); }
         }
 
         #endregion
 
-
-
-        public HopListItem()
+        public HopListPopup()
         {
             InitializeComponent();
 

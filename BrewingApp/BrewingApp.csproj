@@ -90,6 +90,7 @@
     <Compile Include="Models\Hop.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Other\ExtensionMethods.cs" />
+    <Compile Include="Other\Messages.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
     <Compile Include="ViewModels\TemperatureVM.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -99,6 +100,9 @@
     <Compile Include="ViewModels\VolumeVM.cs" />
     <Compile Include="ViewModels\BitternessVM.cs" />
     <Compile Include="ViewModels\WeightVM.cs" />
+    <Compile Include="Views\EditHop.xaml.cs">
+      <DependentUpon>EditHop.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -115,9 +119,6 @@
       <DependentUpon>PivotHopsMalt.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomControls\HopListItem.xaml.cs">
-      <DependentUpon>HopListPopup.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -125,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditHop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,10 +150,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PivotHopsMalt.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CustomControls\HopListPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

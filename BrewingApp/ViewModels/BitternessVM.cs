@@ -6,6 +6,9 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using BrewingApp.Models;
 using System.Windows.Controls.Primitives;
+using System.Windows.Navigation;
+using BrewingApp.Other;
+
 
 namespace BrewingApp.ViewModels
 {
@@ -13,7 +16,9 @@ namespace BrewingApp.ViewModels
     {
         private ICommand _RemoveCommand;
         private ICommand _AddCommand;
-        private Popup _Popup;
+
+        private Hop _EditHop;
+        private int _EditHopIndex;
 
         private int _IBU;
         private float _BatchVolume;
@@ -64,20 +69,9 @@ namespace BrewingApp.ViewModels
             BatchVolume = 20;
             SpecificGravity = 1.010f;
 
-            initPopup();
-
         }
 
-        private void initPopup()
-        {
-            this._Popup = new Popup();
-            this._Popup.Height = 300;
-            this._Popup.Width = 400;
-            this._Popup.VerticalOffset = 100;
-            HopListPopup control = new HopListPopup();
-            this._Popup.Child = control;
-            this._Popup.IsOpen = false;
-        }
+
 
         public ICommand RemoveCommand
         {
@@ -98,22 +92,23 @@ namespace BrewingApp.ViewModels
         private void AddAction(Hop item)
         {
             Hop hop = new Hop();
-            displayPopUp(hop);
-
-            HopList.Add( hop );
+            hop.Name = "test";
+            editHop(hop);
         }
 
         private void ModifyAction(Hop item)
         {
-            displayPopUp(item);
+            editHop(item);
         }
 
-        private void displayPopUp(Hop item)
+        private void editHop(Hop item)
         {
-            var PopupChild = this._Popup.Child as HopListPopup;
-            PopupChild.HopItem = item;
+            this._EditHop = item;
+            this._EditHopIndex = HopList.IndexOf(item);
 
-            this._Popup.IsOpen = true;
+            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml"));
+            Messenger.Default.Send<EditHopMessage>(new EditHopMessage(item));
+
         }
 
         /// <summary>

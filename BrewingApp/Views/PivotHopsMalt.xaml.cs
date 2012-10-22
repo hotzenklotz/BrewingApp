@@ -11,6 +11,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using BrewingApp.ViewModels;
+using GalaSoft.MvvmLight.Messaging;
+using BrewingApp.Other;
 
 namespace BrewingApp.Pages
 {
@@ -22,6 +24,16 @@ namespace BrewingApp.Pages
 
             this.DataContext = new BitternessVM();
 
+            Messenger.Default.Register<NavigateMessage>
+            (
+                this,
+                (message) => NavigateToPage(message.PageName)
+            );
+        }
+
+        private void NavigateToPage(string pageName)
+        {
+            NavigationService.Navigate(new Uri(pageName,UriKind.RelativeOrAbsolute));
         }
             
     }

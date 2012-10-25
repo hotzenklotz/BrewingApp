@@ -9,24 +9,31 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using BrewingApp.Models;
+using System.Text.RegularExpressions;
 
 namespace BrewingApp.Other
 {
-    public class Messages
-    {
-
-    }
  
     public class NavigateMessage
     {
-        public NavigateMessage(string pageName, string sender)
+        public NavigateMessage(string pageName)
         {
             PageName = pageName;
-            Sender = sender;
         }
 
         public string PageName { get; set; }
-        public string Sender { get; set; }
     }
+
+    public class UpdateViewMessage
+    {
+        public UpdateViewMessage(string viewName)
+        {
+            ViewName = viewName;
+        }
+
+        public string ViewName { get; set; }
+    }
+
+        
     
 }

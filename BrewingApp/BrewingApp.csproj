@@ -91,6 +91,7 @@
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Other\ExtensionMethods.cs" />
     <Compile Include="Other\Messages.cs" />
+    <Compile Include="ViewModels\MaltHopBase.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
     <Compile Include="ViewModels\TemperatureVM.cs" />
     <Compile Include="MainPage.xaml.cs">

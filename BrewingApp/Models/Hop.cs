@@ -52,7 +52,7 @@ namespace BrewingApp.Models
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0,3:f2} {1} ({2:f2}%)  @ {3}min ", this.Amount, this.Name, this.AlphaAcid, this.BoilTime);
+            return string.Format("{0} ({1:f2}%) \n{2,3:f2} {3} @ {4}min ", this.Name, this.AlphaAcid, this.Amount, Settings.WeightUnit, this.BoilTime);
         }
     }
 }

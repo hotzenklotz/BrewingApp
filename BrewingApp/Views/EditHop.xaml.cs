@@ -5,6 +5,7 @@ using GalaSoft.MvvmLight.Messaging;
 using BrewingApp.Models;
 using System.ComponentModel;
 using Microsoft.Phone.Shell;
+using BrewingApp.Other;
 
 namespace BrewingApp.Views
 {
@@ -66,7 +67,7 @@ namespace BrewingApp.Views
 
             this.DataContext = this;
 
-            this._HopItem = PhoneApplicationService.Current.State["EditHop"] as Hop;
+            this._HopItem = PhoneApplicationService.Current.State["EditItem"] as Hop;
         }
 
         /// <summary>
@@ -74,9 +75,9 @@ namespace BrewingApp.Views
         /// </summary>
         public void updateValues()
         {
-            PhoneApplicationService.Current.State["EditHop"] = this._HopItem;
+            PhoneApplicationService.Current.State["EditItem"] = this._HopItem;
+            Messenger.Default.Send<UpdateViewMessage>(new UpdateViewMessage("BitternessVM"));
             NavigationService.GoBack();
-            Messenger.Default.Send<string>("HopListValuesChanged");
         }
 
 

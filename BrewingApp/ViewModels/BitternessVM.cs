@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 using BrewingApp.Models;
-using System.Windows.Controls.Primitives;
-using System.Windows.Navigation;
 using BrewingApp.Other;
-using Microsoft.Phone.Shell;
-
+using System;
 
 namespace BrewingApp.ViewModels
 {
-    public class BitternessVM : ViewModelBase 
+    public class BitternessVM : MaltHopBase<Hop> 
     {
-        private ICommand _RemoveCommand;
-        private ICommand _AddCommand;
-        private ICommand _EditCommand;
-
-        private Hop _EditHop;
-        private int _EditHopIndex;
-
+       
         private int _IBU;
         private float _BatchVolume;
         private float _SpecificGravity;
 
         #region public properties
-        public ObservableCollection<Hop> HopList { get; set; }
 
         public float SpecificGravity 
         {
@@ -49,77 +35,33 @@ namespace BrewingApp.ViewModels
 
         #endregion
 
-        public BitternessVM()
+        public BitternessVM() : base()
         {
             //add at least one item by default to fill the list
-            HopList = new ObservableCollection<Hop>();
-            HopList.Add(new Hop());
-
-            //use MVVM LightToolkit messaging for custom controls update notifications
-            Messenger.Default.Register<string>
-            (
-                this, 
-                (message) => 
-                    { if (message == "HopListValuesChanged") calculateIBU(); }
-            );
-
-            //MVVM LightToolkit commands for dropdown menu / applicationBar
-            this._RemoveCommand = new RelayCommand<Hop>(RemoveAction);
-            this._AddCommand = new RelayCommand<Hop>(AddAction);
-            this._EditCommand = new RelayCommand<Hop>(EditAction);
+            ItemList = new ObservableCollection<Hop>();
+            ItemList.Add(new Hop());
 
             //default Values
             BatchVolume = 20;
             SpecificGravity = 1.010f;
 
+            //use MVVM LightToolkit messaging for custom controls update notifications
+            Messenger.Default.Register<UpdateViewMessage>
+                       (
+                           this,
+                           (message) =>
+                           {
+                               if (message.ViewName == "BitternessVM")
+                                   updateView();
+                                   calculateIBU();
+                           }
+                       );
         }
 
-        #region Action Commands
-
-        public ICommand RemoveCommand
+        public override void editItem(Hop item) 
         {
-            get { return this._RemoveCommand;  }
-        }
-
-        private void RemoveAction(Hop item)
-        {
-            if ( item != null )
-                HopList.Remove(item);
-        }
-
-        public ICommand AddCommand
-        {
-            get { return this._AddCommand; }
-        }
-
-        private void AddAction(Hop item)
-        {
-            Hop hop = new Hop();
-            hop.Name = "test";
-            editHop(hop);
-        }
-
-        public ICommand EditCommand
-        {
-            get { return this._EditCommand; }
-        }
-
-        private void EditAction(Hop item)
-        {
-            if ( item != null)
-                editHop(item);
-        }
-
-        #endregion 
-
-        private void editHop(Hop item)
-        {
-            this._EditHop = item;
-            this._EditHopIndex = HopList.IndexOf(item);
-
-            PhoneApplicationService.Current.State["EditHop"] = item;
-            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml", "BitternesVM"));
-
+            base.editItem(item);
+            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml"));
         }
 
         /// <summary>
@@ -127,7 +69,7 @@ namespace BrewingApp.ViewModels
         /// Formulas based on the work of Rager / Tinseth
         /// http://www.rockhoppersbrewclub.com/wiki/calculating-ibus
         /// </summary>
-        public void calculateIBU()
+        private void calculateIBU()
         {
             string formula = Settings.HopFormula;
 
@@ -146,7 +88,7 @@ namespace BrewingApp.ViewModels
                         GravityAdjustment = 0.0f;
                     }
 
-                    foreach (Hop hop in HopList)
+                    foreach (Hop hop in ItemList)
                     {
                         float utilization = 0.1811f + 0.1386f * (float) Math.Tanh( hop.BoilTime - 31.32f) / 18.27f;
                         IBU += (int) ( hop.Amount * hop.AlphaAcid * utilization * 10 / BatchVolume * (1 + GravityAdjustment) );
@@ -162,12 +104,7 @@ namespace BrewingApp.ViewModels
                 default:
                     break;
             }
-
         }
-
-
-
-
     }
 
 }

@@ -9,7 +9,7 @@
     xmlns:phone7fx="clr-namespace:Phone7.Fx.Controls;assembly=Phone7.Fx"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -94,7 +94,7 @@
                         Grid.Row="1"
             			x:Name="HopList"
             			VerticalAlignment="Top" 
-            			ItemsSource="{Binding HopList}" 
+            			ItemsSource="{Binding ItemList}" 
                         FontSize="32">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>

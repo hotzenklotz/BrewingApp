@@ -9,7 +9,7 @@
     xmlns:phone7fx="clr-namespace:Phone7.Fx.Controls;assembly=Phone7.Fx"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -93,30 +93,30 @@
             		<ListBox
                         Grid.Row="1"
             			x:Name="HopList"
-            			VerticalAlignment="Top"
-            			ItemsSource="{Binding HopList}">
+            			VerticalAlignment="Top" 
+            			ItemsSource="{Binding HopList}" 
+                        FontSize="32">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock 
-                                            Text="{Binding Amount}"
-                                            Margin="0,0,5,0"/>
-                                        <TextBlock
-                                            Text="{Binding BrewingApp.Models.Settings.WeightUnit}"
-                                            Margin="0,0,5,0"/>
-                                        <TextBlock
-                                            Text="{Binding Name}"/>
+
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding}"/>
+                                        <toolkit:ContextMenuService.ContextMenu>
+                                            <toolkit:ContextMenu>
+                                                <toolkit:MenuItem                                                 
+                                                    Header="Edit"
+                                                    Command="{Binding ElementName=HopList, Path=DataContext.EditCommand}"
+                                                    CommandParameter="{Binding}"/>
+                                                <toolkit:MenuItem 
+                                                    Header="Remove"
+            						                Command="{Binding ElementName=HopList, Path=DataContext.RemoveCommand}"
+                                                    CommandParameter="{Binding}"/>
+                                            </toolkit:ContextMenu>
+                                        </toolkit:ContextMenuService.ContextMenu>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
-                            
-                            <toolkit:ContextMenuService.ContextMenu>
-            				    <toolkit:ContextMenu >
-            					    <toolkit:MenuItem Header="Remove"
-            						    Command="{Binding RemoveCommand}"/>
-            				    </toolkit:ContextMenu>
-            		        </toolkit:ContextMenuService.ContextMenu>
-                    </ListBox>
+                        </ListBox>
                     </Grid>
                     
                     <phone7fx:BindableApplicationBar 

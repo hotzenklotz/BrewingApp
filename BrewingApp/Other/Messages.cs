@@ -16,24 +16,17 @@ namespace BrewingApp.Other
     {
 
     }
-
-    public class EditHopMessage
-    {
-        public EditHopMessage(Hop item)
-        {
-            HopItem = item;
-        }
-        public Hop HopItem{ get; set; }
-    }
-
+ 
     public class NavigateMessage
     {
-        public NavigateMessage(string pageName)
+        public NavigateMessage(string pageName, string sender)
         {
             PageName = pageName;
+            Sender = sender;
         }
 
         public string PageName { get; set; }
+        public string Sender { get; set; }
     }
-
+    
 }

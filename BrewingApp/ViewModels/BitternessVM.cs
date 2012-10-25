@@ -8,6 +8,7 @@ using BrewingApp.Models;
 using System.Windows.Controls.Primitives;
 using System.Windows.Navigation;
 using BrewingApp.Other;
+using Microsoft.Phone.Shell;
 
 
 namespace BrewingApp.ViewModels
@@ -16,6 +17,7 @@ namespace BrewingApp.ViewModels
     {
         private ICommand _RemoveCommand;
         private ICommand _AddCommand;
+        private ICommand _EditCommand;
 
         private Hop _EditHop;
         private int _EditHopIndex;
@@ -64,6 +66,7 @@ namespace BrewingApp.ViewModels
             //MVVM LightToolkit commands for dropdown menu / applicationBar
             this._RemoveCommand = new RelayCommand<Hop>(RemoveAction);
             this._AddCommand = new RelayCommand<Hop>(AddAction);
+            this._EditCommand = new RelayCommand<Hop>(EditAction);
 
             //default Values
             BatchVolume = 20;
@@ -71,7 +74,7 @@ namespace BrewingApp.ViewModels
 
         }
 
-
+        #region Action Commands
 
         public ICommand RemoveCommand
         {
@@ -96,18 +99,26 @@ namespace BrewingApp.ViewModels
             editHop(hop);
         }
 
-        private void ModifyAction(Hop item)
+        public ICommand EditCommand
         {
-            editHop(item);
+            get { return this._EditCommand; }
         }
+
+        private void EditAction(Hop item)
+        {
+            if ( item != null)
+                editHop(item);
+        }
+
+        #endregion 
 
         private void editHop(Hop item)
         {
             this._EditHop = item;
             this._EditHopIndex = HopList.IndexOf(item);
 
-            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml"));
-            Messenger.Default.Send<EditHopMessage>(new EditHopMessage(item));
+            PhoneApplicationService.Current.State["EditHop"] = item;
+            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml", "BitternesVM"));
 
         }
 

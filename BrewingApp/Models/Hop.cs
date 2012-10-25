@@ -1,13 +1,6 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
+﻿using System.Collections.Generic;
+using System.Xml.Linq;
+using System.Linq;
 
 namespace BrewingApp.Models
 {
@@ -18,9 +11,17 @@ namespace BrewingApp.Models
         public float Amount { get; set; }
         public string Name { get; set; }
 
+        public static Dictionary<string, float> VarityCache{ get; set; }
+
         public Hop()
         {
- 
+            string firstHop = Hop.loadHopVarities().Keys.First();
+
+            this.Name = firstHop;
+            this.AlphaAcid = Hop.loadHopVarities()[firstHop];
+            this.BoilTime = 60;
+            this.Amount = 10;
+
         }
 
         public Hop Clone()
@@ -28,5 +29,30 @@ namespace BrewingApp.Models
             return this.Clone();
         }
 
+        static public Dictionary<string, float> loadHopVarities()
+        {
+            if (VarityCache != null)
+                return VarityCache;
+
+            XElement rootElement = XElement.Load("XML/HopVarities.xml");
+
+            Dictionary<string, float> dict = new Dictionary<string, float>();
+            foreach (var el in rootElement.Elements())
+            {
+                dict.Add((string)el.Attribute("name"), (float)el.Attribute("alpha"));
+            }
+            VarityCache = dict;
+
+            return VarityCache;
+        }
+
+        /// <summary>
+        /// Output a formated string, so one directly bind lists of Hops nicely
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return string.Format("{0,3:f2} {1} ({2:f2}%)  @ {3}min ", this.Amount, this.Name, this.AlphaAcid, this.BoilTime);
+        }
     }
 }

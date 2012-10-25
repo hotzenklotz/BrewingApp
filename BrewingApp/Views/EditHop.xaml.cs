@@ -1,47 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using GalaSoft.MvvmLight.Messaging;
-using BrewingApp.Other;
 using BrewingApp.Models;
-using System.Xml.Linq;
 using System.ComponentModel;
+using Microsoft.Phone.Shell;
 
 namespace BrewingApp.Views
 {
     public partial class EditHop : PhoneApplicationPage, INotifyPropertyChanged
-    {
-        public EditHop()
-        {
-            InitializeComponent();
-
-            Messenger.Default.Register<EditHopMessage>
-            (
-                this,
-                (message) => { this._HopItem = message.HopItem; }
-            );
-
-
-            //load the hops varities for the dropdown and set them
-            this._HopVarities = loadHopXML();
-            this._SelectedItem = this._HopVarities.Keys.First();
-            hopVarityPicker.ItemsSource = this._HopVarities.Keys;
-
-            this.DataContext = this;
-
-        }
-
+    {      
+        
         private string _SelectedItem;
-        private Hop _HopItem { get; set; }
+        private Hop _HopItem = new Hop();
 
         #region public properties
         public Dictionary<string, float> _HopVarities;
@@ -67,50 +38,55 @@ namespace BrewingApp.Views
         public int BoilTime
         {
             get { return _HopItem.BoilTime; }
-            set { _HopItem.BoilTime = value; updateValues(); }
+            set { _HopItem.BoilTime = value; }
         }
 
         public float AlphaAcid
         {
             get { return _HopItem.AlphaAcid; }
-            set { _HopItem.AlphaAcid = value; updateValues(); }
+            set { _HopItem.AlphaAcid = value;; }
         }
 
         public float Amount
         {
             get { return _HopItem.Amount; }
-            set { _HopItem.Amount = value; updateValues(); }
+            set { _HopItem.Amount = value; }
         }
 
-        #endregion
+        #endregion  
 
-
-
-        private Dictionary<string, float> loadHopXML()
+        public EditHop()
         {
+            InitializeComponent();
 
-            XElement rootElement = XElement.Load("XML/HopVarities.xml");
+            //load the hops varities for the dropdown and set them
+            this._HopVarities = Hop.loadHopVarities();
+            this._SelectedItem = this._HopVarities.Keys.First();
+            hopVarityPicker.ItemsSource = this._HopVarities.Keys;
 
-            Dictionary<string, float> dict = new Dictionary<string, float>();
-            foreach (var el in rootElement.Elements())
-            {
-                dict.Add((string)el.Attribute("name"), (float)el.Attribute("alpha"));
-            }
+            this.DataContext = this;
 
-            return dict;
+            this._HopItem = PhoneApplicationService.Current.State["EditHop"] as Hop;
         }
 
-        
         /// <summary>
-        /// Raise an event to inform the pivot containing the list to calculate the IBU
+        /// Raise an event to inform the bitterness pivot to calculate the IBU
         /// </summary>
-        private void updateValues()
+        public void updateValues()
         {
-            //Messenger.Default.Send<string>("HopListValuesChanged");
+            PhoneApplicationService.Current.State["EditHop"] = this._HopItem;
+            NavigationService.GoBack();
+            Messenger.Default.Send<string>("HopListValuesChanged");
+        }
+
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            updateValues();
         }
 
         //INotifyPropertyChanged Implementation
-
+        #region
         // Declare the PropertyChanged event.
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -123,6 +99,13 @@ namespace BrewingApp.Views
                 PropertyChanged(this,
                     new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        #endregion
+
+        private void btnOK_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            updateValues();
         }
     }
 }

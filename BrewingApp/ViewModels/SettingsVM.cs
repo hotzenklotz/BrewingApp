@@ -91,7 +91,7 @@ namespace BrewingApp.ViewModels
             Settings.VolumeUnit = this._VolumeSelection;
             Settings.TemperatureUnit = this._TemperatureSelection;
             Settings.HopFormula = this._HopFormulaSelection;
-            Settings.TemperatureUnit = this._TemperatureSelection;
+            Settings.WeightUnit = this._WeightSelection;
 
             Settings.Save();
 

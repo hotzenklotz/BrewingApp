@@ -98,6 +98,12 @@ namespace BrewingApp.Models
 
         public static void Save()
         {
+
+            UserSettings["TemperatureUnit"] = TemperatureUnit;
+            UserSettings["WeightUnit"] = WeightUnit;
+            UserSettings["VolumeUnit"] = VolumeUnit;
+            UserSettings["HopFormula"] = HopFormula;
+
             UserSettings.Save();
         }
 

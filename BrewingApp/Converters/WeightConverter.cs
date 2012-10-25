@@ -7,9 +7,9 @@ namespace BrewingApp.Converters
     public class WeightConverter : IValueConverter
     {
         /// <summary>
-        /// Converts any weight to "grams", the only internally used measurement unit for weghts
+        /// Converts any weight to "grams", the only internally used measurement unit for weights
         /// </summary>
-        public float Convert(float value, string parameter)
+        public float Convert(float value, string parameter = null)
         {
             //if no measurement unit is provided use the default unit form the setting
             string measurementUnit;
@@ -42,7 +42,7 @@ namespace BrewingApp.Converters
             return value * factor;
         }
 
-        public float ConvertBack(float value, string parameter)
+        public float ConvertBack(float value, string parameter = null)
         {
             //if no measurement unit is provided use the default unit form the setting
             string measurementUnit;

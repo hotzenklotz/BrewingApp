@@ -1,44 +1,45 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Linq;
 using BrewingApp.Converters;
 
 namespace BrewingApp.Models
 {
-    public class Hop
+    public class Malt
     {
         private WeightConverter _Converter;
 
-        public int BoilTime { get; set; }
-        public float AlphaAcid { get; set; }
         public string Name { get; set; }
+        public float PPG { get; set; }
+        public float Lovibond { get; set; } // present in the XML not loaded, though
         public float Amount{ get; set; }
+        public bool isMashable { get; set; }
 
         public static Dictionary<string, float> VarityCache{ get; set; }
 
-        public Hop()
+        public Malt()
         {
             this._Converter = new WeightConverter();
 
-            string firstHop = Hop.loadHopVarities().Keys.First();
+            string firstHop = Malt.loadMaltVarities().Keys.First();
 
             this.Name = firstHop;
-            this.AlphaAcid = Hop.loadHopVarities()[firstHop];
-            this.BoilTime = 60;
+            this.PPG = Malt.loadMaltVarities()[firstHop];
             this.Amount = 10;
         }
 
-        static public Dictionary<string, float> loadHopVarities()
+        static public Dictionary<string, float> loadMaltVarities()
         {
             if (VarityCache != null)
                 return VarityCache;
 
-            XElement rootElement = XElement.Load("XML/HopVarities.xml");
+            XElement rootElement = XElement.Load("XML/MaltVarities.xml");
 
             Dictionary<string, float> dict = new Dictionary<string, float>();
             foreach (var el in rootElement.Elements())
             {
-                dict.Add((string)el.Attribute("name"), (float)el.Attribute("alpha"));
+                dict.Add((string)el.Attribute("name"), (float)el.Attribute("ppg"));
             }
             VarityCache = dict;
 
@@ -46,12 +47,12 @@ namespace BrewingApp.Models
         }
 
         /// <summary>
-        /// Output a formated string, so one directly bind lists of Hops nicely
+        /// Output a formated string, so one directly bind lists of Malt nicely
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0} ({1:f2}%) \n{2,3:f2} {3} @ {4}min ", this.Name, this.AlphaAcid, this._Converter.Convert(this.Amount), Settings.WeightUnit, this.BoilTime);
+            return string.Format("{0}\n{1,3:f2} {2}", this.Name, this._Converter.Convert(this.Amount), Settings.WeightUnit);
         }
     }
 }

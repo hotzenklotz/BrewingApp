@@ -39,10 +39,10 @@ namespace BrewingApp.ViewModels
 
 
             //selected items
-            WeightSelection = WeightUnitList[0];
-            VolumeSelection = VolumeUnitList[0];
-            TemperatureSelection = TemperatureUnitList[0];
-            HopFormulaSelection = HopFormulaList[0];
+            WeightSelection = Settings.WeightUnit;
+            VolumeSelection = Settings.VolumeUnit;
+            TemperatureSelection = Settings.TemperatureUnit;
+            HopFormulaSelection = Settings.HopFormula;
 
         }
 

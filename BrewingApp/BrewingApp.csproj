@@ -88,9 +88,11 @@
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Converters\VolumeConverter.cs" />
     <Compile Include="Models\Hop.cs" />
+    <Compile Include="Models\Malt.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Other\ExtensionMethods.cs" />
     <Compile Include="Other\Messages.cs" />
+    <Compile Include="ViewModels\GravityVM.cs" />
     <Compile Include="ViewModels\MaltHopBase.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
     <Compile Include="ViewModels\TemperatureVM.cs" />
@@ -103,6 +105,9 @@
     <Compile Include="ViewModels\WeightVM.cs" />
     <Compile Include="Views\EditHop.xaml.cs">
       <DependentUpon>EditHop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditMalt.xaml.cs">
+      <DependentUpon>EditMalt.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -133,6 +138,10 @@
     <Page Include="Views\EditHop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditMalt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Settings.xaml">
       <SubType>Designer</SubType>

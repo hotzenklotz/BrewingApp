@@ -92,7 +92,7 @@
                         Header="Hop Formula"
                         ItemsSource="{Binding HopFormulaList}"
                         SelectedItem="{Binding HopFormulaSelection, Mode=TwoWay}"
-                        HorizontalAlignment="Stretch"/>
+                        HorizontalAlignment="Stretch" OpacityMask="Blue" />
                     
                 </StackPanel>
 

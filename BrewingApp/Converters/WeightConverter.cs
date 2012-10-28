@@ -9,7 +9,7 @@ namespace BrewingApp.Converters
         /// <summary>
         /// Converts any weight to "grams", the only internally used measurement unit for weights
         /// </summary>
-        public float Convert(float value, string parameter = null)
+        public static float Convert(float value, string parameter = null)
         {
             //if no measurement unit is provided use the default unit form the setting
             string measurementUnit;
@@ -42,7 +42,7 @@ namespace BrewingApp.Converters
             return value * factor;
         }
 
-        public float ConvertBack(float value, string parameter = null)
+        public static float ConvertBack(float value, string parameter = null)
         {
             //if no measurement unit is provided use the default unit form the setting
             string measurementUnit;
@@ -83,8 +83,10 @@ namespace BrewingApp.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            float floatValue;
+            float.TryParse((string)value, out floatValue);
 
-            return ConvertBack((float)value, (string)parameter);
+            return ConvertBack(floatValue, (string)parameter);
         }
     }
 

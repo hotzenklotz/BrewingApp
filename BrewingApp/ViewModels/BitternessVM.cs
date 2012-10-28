@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Messaging;
 using BrewingApp.Models;
 using BrewingApp.Other;
+using System.Linq;
 using System;
 
 namespace BrewingApp.ViewModels
@@ -39,7 +40,11 @@ namespace BrewingApp.ViewModels
         {
             //add at least one item by default to fill the list
             ItemList = new ObservableCollection<Hop>();
-            ItemList.Add(new Hop());
+
+            Hop firstItem = new Hop();
+            setDefaultValues(firstItem);
+
+            ItemList.Add(firstItem);
 
             //default Values
             BatchVolume = 20;
@@ -53,7 +58,7 @@ namespace BrewingApp.ViewModels
                            {
                                if (message.ViewName == "BitternessVM")
                                    updateView();
-                                   calculateIBU();
+                               calculateIBU();
                            }
                        );
         }
@@ -62,6 +67,14 @@ namespace BrewingApp.ViewModels
         {
             base.editItem(item);
             Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml"));
+        }
+
+        public override void setDefaultValues(Hop item)
+        {
+            item.Name = Hop.loadHopVarities().Values.First().Name;
+            item.AlphaAcid = Hop.loadHopVarities().Values.First().AlphaAcid;
+            item.BoilTime = 60;
+            item.Amount = 10;
         }
 
         /// <summary>

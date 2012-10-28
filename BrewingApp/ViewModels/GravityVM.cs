@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using BrewingApp.Models;
 using BrewingApp.Other;
 using System;
+using System.Linq;
 using BrewingApp.Converters;
 
 namespace BrewingApp.ViewModels
@@ -10,10 +11,9 @@ namespace BrewingApp.ViewModels
     public class GravityVM : MaltHopBase<Malt> 
     {
        
-        private int _Gravity;
+        private float _Gravity;
         private float _BatchVolume;
-
-        private WeightConverter _Converter;
+        private float _Efficiency;
 
         #region public properties
 
@@ -23,7 +23,14 @@ namespace BrewingApp.ViewModels
             set { this._BatchVolume = value; calculateGravity(); }
         }
 
-        public int Gravity 
+        public float Efficiency
+        {
+            get { return this._Efficiency; }
+            set { this._Efficiency = value; calculateGravity(); }
+        }
+
+
+        public float Gravity 
         {
             get { return this._Gravity; }
             set { this._Gravity = value; RaisePropertyChanged("Gravity"); }
@@ -33,14 +40,18 @@ namespace BrewingApp.ViewModels
 
         public GravityVM() : base()
         {
-            this._Converter = new WeightConverter();
 
             //add at least one item by default to fill the list
             ItemList = new ObservableCollection<Malt>();
-            ItemList.Add(new Malt());
+
+            Malt firstItem = new Malt();
+            setDefaultValues(firstItem);
+
+            ItemList.Add(firstItem);
 
             //default Values
             BatchVolume = 20;
+            Efficiency = 70;
 
             //use MVVM LightToolkit messaging for custom controls update notifications
             Messenger.Default.Register<UpdateViewMessage>
@@ -58,7 +69,16 @@ namespace BrewingApp.ViewModels
         public override void editItem(Malt item) 
         {
             base.editItem(item);
-            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditHop.xaml"));
+            Messenger.Default.Send<NavigateMessage>(new NavigateMessage("/Views/EditMalt.xaml"));
+        }
+
+        public override void setDefaultValues(Malt item)
+        {
+            item.Name = Malt.loadMaltVarities().Values.First().Name;
+            item.PPG = Malt.loadMaltVarities().Values.First().PPG;
+            item.isMashable = Malt.loadMaltVarities().Values.First().isMashable;
+            item.Lovibond = Malt.loadMaltVarities().Values.First().Lovibond;
+            item.Amount = 1000;
         }
 
         /// <summary>
@@ -66,8 +86,9 @@ namespace BrewingApp.ViewModels
         /// Formula : http://www.brewersfriend.com
         /// </summary>
         /// <returns></returns>
-        private int calculateGravity() 
+        private void calculateGravity() 
         {
+
             float gravity = 0.0f;
             float maltGravity = 0.0f;
             float adjunctGravity = 0.0f;//not affeted by boilding efficiency (usually added later)
@@ -75,17 +96,17 @@ namespace BrewingApp.ViewModels
             foreach (Malt item in ItemList)
             {
                 if (item.isMashable)
-                    maltGravity += item.PPG * this._Converter.Convert(item.Amount, "Pound");
+                    maltGravity += item.PPG * WeightConverter.Convert(item.Amount, "Pound");
                 else
-                    adjunctGravity += item.PPG * this._Converter.Convert(item.Amount, "Pound");
+                    adjunctGravity += item.PPG * WeightConverter.Convert(item.Amount, "Pound");
             }
 
-            maltGravity *= (efficiency / 100);
+            maltGravity *= (this._Efficiency / 100);
             gravity = maltGravity + adjunctGravity; 
-            gravity /= this._Converter.Convert(this._BatchVolume, "US Gallons");
+            gravity /= VolumeConverter.Convert(this._BatchVolume, "US Gallon");
 
             //output range 1.000 - 1.1XX
-            return (int) (gravity * 0.001 + 1);
+            Gravity = (float) (gravity * 0.001 + 1);
 
         }
     }

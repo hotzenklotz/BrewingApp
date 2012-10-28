@@ -38,7 +38,7 @@
             HorizontalContentAlignment="Stretch"
             VerticalAlignment="Top" 
             Header="" 
-            Margin="10,0" 
+            Margin="10,0,10,0" 
             Name="maltVarityPicker"
             SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
             FullModeHeader="Choose a malt varity!">
@@ -82,11 +82,11 @@
                     />
                     <toolkit:PhoneTextBox  
                         Name="txtAlphaAcid" 
-                        Hint="AA %"
+                        Hint="PPG"
                         HorizontalAlignment="Stretch" 
                         Margin="0" 
                         Grid.RowSpan="2"
-                        Text="{Binding AlphaAcid, Mode=TwoWay}"
+                        Text="{Binding PPG, Mode=TwoWay}"
                         InputScope="NumberFullWidth">
                     </toolkit:PhoneTextBox>
                 </StackPanel>

@@ -16,14 +16,14 @@ namespace BrewingApp.Views
         private Hop _HopItem = new Hop();
 
         #region public properties
-        public Dictionary<string, float> _HopVarities;
+        public Dictionary<string, Hop> _HopVarities;
 
         public string SelectedItem
         {
             //update the AlphaAcid textbox both on setter / getter to account for
             //inital setting of the selected item and user inputs
             get { 
-                AlphaAcid = this._HopVarities[this._SelectedItem];
+                AlphaAcid = this._HopVarities[this._SelectedItem].AlphaAcid;
                 NotifyPropertyChanged("AlphaAcid");
                 return this._SelectedItem;
             }
@@ -31,7 +31,7 @@ namespace BrewingApp.Views
             {
                 this._SelectedItem = value;
                 _HopItem.Name = value;
-                AlphaAcid = this._HopVarities[value];
+                AlphaAcid = this._HopVarities[value].AlphaAcid;
                 NotifyPropertyChanged("AlphaAcid");
             }
         }
@@ -68,6 +68,11 @@ namespace BrewingApp.Views
             this.DataContext = this;
 
             this._HopItem = PhoneApplicationService.Current.State["EditItem"] as Hop;
+            this._SelectedItem = this._HopItem.Name;
+            NotifyPropertyChanged("SelectedItem");
+            NotifyPropertyChanged("AlphaAcid");
+            NotifyPropertyChanged("Amount");
+            NotifyPropertyChanged("BoilTime");
         }
 
         /// <summary>

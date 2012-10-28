@@ -13,7 +13,7 @@ using System.Collections.ObjectModel;
 
 namespace BrewingApp.Models
 {
-    public static class Settings
+    public class Settings
     {
 
         public static string VolumeUnit;
@@ -23,7 +23,7 @@ namespace BrewingApp.Models
 
         public static IsolatedStorageSettings UserSettings;
 
-        public static ObservableCollection<string> TemperatureUnits = new ObservableCollection<string>
+        public static ObservableCollection<string> TemperatureUnits = new ObservableCollection<string>()
         {
             "Celsius",
             "Fahrenheit"

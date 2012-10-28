@@ -19,11 +19,9 @@ namespace BrewingApp.ViewModels
 
         private float _Gram;
 
-        private WeightConverter _Converter;
 
         public WeightVM()
         {
-            this._Converter = new WeightConverter();
 
             MetricUnitList = Settings.MetricWeightUnits;
             USUnitList = Settings.USWeightUnits;
@@ -47,20 +45,20 @@ namespace BrewingApp.ViewModels
 
         public float Unit1
         {
-            get { return this._Converter.ConvertBack(this._Gram, Unit1Selection); }
+            get { return WeightConverter.ConvertBack(this._Gram, Unit1Selection); }
             set
             {
-                this._Gram = this._Converter.Convert(value, Unit1Selection);
+                this._Gram = WeightConverter.Convert(value, Unit1Selection);
                 WeightPropertiesChanged();
             }
         }
 
         public float Unit2
         {
-            get { return this._Converter.Convert(this._Gram, this.Unit2Selection); }
+            get { return WeightConverter.Convert(this._Gram, this.Unit2Selection); }
             set
             {
-                this._Gram = this._Converter.ConvertBack(value, this.Unit2Selection);
+                this._Gram = WeightConverter.ConvertBack(value, this.Unit2Selection);
                 WeightPropertiesChanged();
             }
         }

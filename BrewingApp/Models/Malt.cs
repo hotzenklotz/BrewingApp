@@ -16,43 +16,42 @@ namespace BrewingApp.Models
         public float Amount{ get; set; }
         public bool isMashable { get; set; }
 
-        public static Dictionary<string, float> VarityCache{ get; set; }
+        private static Dictionary<string, Malt> _VarityCache{ get; set; }
 
         public Malt()
         {
             this._Converter = new WeightConverter();
-
-            string firstHop = Malt.loadMaltVarities().Keys.First();
-
-            this.Name = firstHop;
-            this.PPG = Malt.loadMaltVarities()[firstHop];
-            this.Amount = 10;
-        }
-
-        static public Dictionary<string, float> loadMaltVarities()
-        {
-            if (VarityCache != null)
-                return VarityCache;
-
-            XElement rootElement = XElement.Load("XML/MaltVarities.xml");
-
-            Dictionary<string, float> dict = new Dictionary<string, float>();
-            foreach (var el in rootElement.Elements())
-            {
-                dict.Add((string)el.Attribute("name"), (float)el.Attribute("ppg"));
-            }
-            VarityCache = dict;
-
-            return VarityCache;
         }
 
         /// <summary>
-        /// Output a formated string, so one directly bind lists of Malt nicely
+        /// Parse an XML file full of Malt varities and their properties
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        static public Dictionary<string, Malt> loadMaltVarities()
         {
-            return string.Format("{0}\n{1,3:f2} {2}", this.Name, this._Converter.Convert(this.Amount), Settings.WeightUnit);
+            if (_VarityCache != null)
+                return _VarityCache;
+
+            XElement rootElement = XElement.Load("XML/MaltVarities.xml");
+
+            Dictionary<string, Malt> dict = new Dictionary<string, Malt>();
+            foreach (var el in rootElement.Elements())
+            {
+                //TODO profile Memory cost !?!?
+                Malt tmp = new Malt();
+
+                tmp.Name = (string)el.Attribute("name");
+                tmp.Lovibond = (float)el.Attribute("lovibond");
+                tmp.PPG = (float)el.Attribute("ppg");
+                tmp.isMashable = (bool)el.Attribute("mashable");
+
+                dict.Add(tmp.Name, tmp);
+            }
+            _VarityCache = dict;
+
+            return _VarityCache;
         }
+
+
     }
 }

@@ -10,7 +10,7 @@ namespace BrewingApp.Converters
     public class TemperatureConverter : IValueConverter
     {
 
-        public float Convert(float value, string parameter = null)
+        public static float Convert(float value, string parameter = null)
         {
             string measurementUnit;
 
@@ -36,7 +36,7 @@ namespace BrewingApp.Converters
  
         }
 
-        public float ConvertBack(float value, string parameter = null)
+        public static float ConvertBack(float value, string parameter = null)
         {
             string measurementUnit;
 

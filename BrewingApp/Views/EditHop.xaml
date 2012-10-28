@@ -38,7 +38,7 @@
             HorizontalContentAlignment="Stretch"
             VerticalAlignment="Top" 
             Header="" 
-            Margin="10,0" 
+            Margin="10,0,10,0" 
             Name="hopVarityPicker"
             SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
             FullModeHeader="Choose a hop varity!">
@@ -56,21 +56,21 @@
                 <StackPanel
                     Grid.Row="1"
                     Grid.Column="0">
-                     
+
                     <TextBlock 
-                        Text="Boil Time"
+                        Text="Amount"
                         Padding="10,10,0,0"
                     />
-                
-                    <toolkit:PhoneTextBox  
-                    Name="txtBoilTime" 
-                    Hint="Boil Time"
-                    Text="{Binding BoilTime, Mode=TwoWay}"
-                    HorizontalAlignment="Stretch" 
-                    Margin="0" Grid.RowSpan="2" 
-                    Padding="0" 
-                    InputScope="NumberFullWidth">
-                    </toolkit:PhoneTextBox >                   
+                    <toolkit:PhoneTextBox 
+                        Hint="Amount"
+                        Name="txtAmount" 
+                        HorizontalAlignment="Stretch" 
+                        Margin="0" 
+                        Grid.RowSpan="2" 
+                        ActualHintVisibility="Visible"
+                        Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource WeigthConverter}}"
+                        InputScope="NumberFullWidth">
+                    </toolkit:PhoneTextBox>
                 </StackPanel>
 
                 <StackPanel
@@ -97,20 +97,21 @@
                     Grid.Column="2">
 
                     <TextBlock 
-                        Text="Amount"
+                        Text="Boil Time"
                         Padding="10,10,0,0"
                     />
-                    <toolkit:PhoneTextBox 
-                        Hint="Amount"
-                        Name="txtAmount" 
-                        HorizontalAlignment="Stretch" 
-                        Margin="0" 
-                        Grid.RowSpan="2" 
-                        ActualHintVisibility="Visible"
-                        Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource WeigthConverter}}"
-                        InputScope="NumberFullWidth">
-                    </toolkit:PhoneTextBox>
+
+                    <toolkit:PhoneTextBox  
+                    Name="txtBoilTime" 
+                    Hint="Boil Time"
+                    Text="{Binding BoilTime, Mode=TwoWay}"
+                    HorizontalAlignment="Stretch" 
+                    Margin="0" Grid.RowSpan="2" 
+                    Padding="0" 
+                    InputScope="NumberFullWidth">
+                    </toolkit:PhoneTextBox >
                 </StackPanel>
+                
             </Grid>
             
             <Button

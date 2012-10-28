@@ -13,7 +13,6 @@
 	<malt name="German - CaraHell"                              lovibond="11"        ppg="34"    mashable="1"   category="Grain"/>
 	<malt name="German - Caramel Pils"                          lovibond="2.4"       ppg="35"    mashable="1"   category="Grain"/>
 	<malt name="German - CaraMunich II"                         lovibond="46"        ppg="34"    mashable="1"   category="Grain"/>
-	<malt name="German - Carapils"                              lovibond="1.3"       ppg="35"    mashable="1"   category="Grain"/>
 	<malt name="German - Caramel Wheat"                         lovibond="46"        ppg="34"    mashable="1"   category="Grain"/>
 	<malt name="German - Abbey Malt "                           lovibond="17"        ppg="33"    mashable="1"   category="Grain"/>
 	<malt name="German - CaraMunich I"                          lovibond="39"        ppg="34"    mashable="1"   category="Grain"/>
@@ -100,8 +99,8 @@
 	<malt name="United Kingdom - Crystal Rye"                   lovibond="90"        ppg="33"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Dextrine Malt"                 lovibond="1.8"       ppg="33"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Dark Crystal 80L"              lovibond="80"        ppg="33"    mashable="1"   category="Grain"/>
-	<malt name="United Kingdom - Extra Dark Crystal 120L"       lovibond="120"       ppg="33"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Extra Dark Crystal 160L"       lovibond="160"       ppg="33"    mashable="1"   category= "Grain"/>
+	<malt name="United Kingdom - Extra Dark Crystal 120L"       lovibond="120"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Extra Dark Crystal 160L"       lovibond="160"       ppg="33"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Golden Naked Oats"             lovibond="10"        ppg="33"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Golden Promise"                lovibond="3"         ppg="37"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Halcyon"                       lovibond="2"         ppg="36"    mashable="1"   category="Grain"/>
@@ -111,36 +110,35 @@
 	<malt name="United Kingdom - Mild"                          lovibond="3"         ppg="37"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Munich"                        lovibond="6"         ppg="37"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Oat Malt"                      lovibond="2"         ppg="28"    mashable="1"   category="Grain"/>
-	<malt name="United Kingdom - Optic"                         lovibond="2.1"       ppg="38"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Pale 2-Row"                    lovibond="2.5"       ppg="38"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Pale Chocolate"                lovibond="207"       ppg="33"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Pearl"                         lovibond="2.1"       ppg="37"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Peated Malt"                   lovibond="2.5"       ppg="38"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Pilsen"                        lovibond="1.8"       ppg="36"    mashable="1"   category= "Grain"/>
-	<malt name="United Kingdom - Roasted Barley"                lovibond="550"       ppg="29"    mashable="1"   category= "Grain"/>
+	<malt name="United Kingdom - Optic"                         lovibond="2.1"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Pale 2-Row"                    lovibond="2.5"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Pale Chocolate"                lovibond="207"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Pearl"                         lovibond="2.1"       ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Peated Malt"                   lovibond="2.5"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Pilsen"                        lovibond="1.8"       ppg="36"    mashable="1"   category="Grain"/>
+	<malt name="United Kingdom - Roasted Barley"                lovibond="550"       ppg="29"    mashable="1"   category="Grain"/>
 	<malt name="United Kingdom - Wheat"                         lovibond="2"         ppg="37"    mashable="1"   category="Grain"/>
 	<malt name="Dry Malt Extract - Amber"           		        lovibond="10"        ppg="42"    mashable="0"   category="Dry Extract"/>
 	<malt name="Dry Malt Extract - Dark"                        lovibond="30"        ppg="44"    mashable="0"   category="Dry Extract"/>
 	<malt name="Dry Malt Extract - Extra Light"                 lovibond="2.5"       ppg="42"    mashable="0"   category="Dry Extract"/>
 	<malt name="Dry Malt Extract - Light"                       lovibond="4"         ppg="42"    mashable="0"   category="Dry Extract"/>
-	<malt name="Liquid Malt Extract - Amber"                    lovibond="10"        ppg="35"    mashable="0"   category= "Liquid Extract"/>
-	<malt name="Liquid Malt Extract - Dark"                     lovibond="30"        ppg="35"    mashable="0"   category= "Liquid Extract"/>
-	<malt name="Liquid Malt Extract - Extra Light"              lovibond="2.5"       ppg="37"    mashable="0"   category= "Liquid Extract"/>
+	<malt name="Liquid Malt Extract - Amber"                    lovibond="10"        ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract - Dark"                     lovibond="30"        ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract - Extra Light"              lovibond="2.5"       ppg="37"    mashable="0"   category="Liquid Extract"/>
 	<malt name="Liquid Malt Extract - Light"                    lovibond="4"         ppg="35"    mashable="0"   category="Liquid Extract"/>
 	<malt name="Liquid Malt Extract - Munich"                   lovibond="8"         ppg="35"    mashable="0"   category="Liquid Extract"/>
 	<malt name="Liquid Malt Extract - Pilsen"                   lovibond="2"         ppg="35"    mashable="0"   category="Liquid Extract"/>
 	<malt name="Liquid Malt Extract - Wheat"                    lovibond="3"         ppg="35"    mashable="0"   category="Liquid Extract"/>
-	<malt name="Belgian Candi Sugar - Amber/Brown"              lovibond="60"        ppg="38"    mashable="0"   category= "Sugar"/>
+	<malt name="Belgian Candi Sugar - Amber/Brown"              lovibond="60"        ppg="38"    mashable="0"   category="Sugar"/>
 	<malt name="Belgian Candi Sugar - Clear/Blond"              lovibond="0"         ppg="38"    mashable="0"   category="Sugar"/>
-	<malt name="Belgian Candi Sugar - Dark"                     lovibond="275"       ppg="38"    mashable="0"   category= "Sugar"/>
-	<malt name="Belgian Candi Syrup - Amber"                    lovibond="40"        ppg="32"    mashable="0"   category= "Sugar"/>
+	<malt name="Belgian Candi Sugar - Dark"                     lovibond="275"       ppg="38"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup - Amber"                    lovibond="40"        ppg="32"    mashable="0"   category="Sugar"/>
 	<malt name="Belgian Candi Syrup - Clear"                    lovibond="0"         ppg="32"    mashable="0"   category="Sugar"/>
-	<malt name="Belgian Candi Syrup - D2"                       lovibond="160"       ppg="32"    mashable="0"   category= "Sugar"/>
-	<malt name="Belgian Candi Syrup - Dark"                     lovibond="80"        ppg="32"    mashable="0"   category= "Sugar"/>
-	<malt name="Brown Rice Syrup - Gluten Free"                 lovibond="2"         ppg="44"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup - D2"                       lovibond="160"       ppg="32"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup - Dark"                     lovibond="80"        ppg="32"    mashable="0"   category="Sugar"/>
 	<malt name="Brown Sugar"                                    lovibond="15"        ppg="45"    mashable="0"   category="Sugar"/>
 	<malt name="Cane Sugar"                                     lovibond="0"         ppg="46"    mashable="0"   category="Sugar"/>
-	<malt name="Corn Sugar - Dextrose"                          lovibond="0.5"       ppg="46"    mashable="0"   category= "Sugar"/>
+	<malt name="Corn Sugar - Dextrose"                          lovibond="0.5"       ppg="46"    mashable="0"   category="Sugar"/>
 	<malt name="Corn Syrup"                                     lovibond="0.5"       ppg="37"    mashable="0"   category="Sugar"/>
 	<malt name="Honey "                                         lovibond="2"         ppg="42"    mashable="0"   category="Sugar"/>
 	<malt name="Invert Sugar"                                   lovibond="1"         ppg="46"    mashable="0"   category="Sugar"/>
@@ -149,5 +147,4 @@
 	<malt name="Molasses "                                      lovibond="80"        ppg="36"    mashable="0"   category="Sugar"/>
 	<malt name="Soft Candi Sugar - Blond"                       lovibond="5"         ppg="38"    mashable="0"   category="Sugar"/>
 	<malt name="Soft Candi Sugar - Brown"                       lovibond="60"        ppg="38"    mashable="0"   category="Sugar"/>
-	<malt name="White Sorghum Syrup  - Gluten Free"             lovibond="1.5"       ppg="44"    mashable="0"   category= "Sugar"/>
 </root>

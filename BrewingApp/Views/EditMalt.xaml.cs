@@ -16,14 +16,14 @@ namespace BrewingApp.Views
         private Malt _MaltItem = new Malt();
 
         #region public properties
-        public Dictionary<string, float> _MaltVarities;
+        public Dictionary<string, Malt> _MaltVarities;
 
         public string SelectedItem
         {
             //update the PPG textbox both on setter / getter to account for
             //inital setting of the selected item and user inputs
             get { 
-                PPG = this._MaltVarities[this._SelectedItem];
+                PPG = this._MaltVarities[this._SelectedItem].PPG;
                 NotifyPropertyChanged("PPG");
                 return this._SelectedItem;
             }
@@ -31,7 +31,7 @@ namespace BrewingApp.Views
             {
                 this._SelectedItem = value;
                 _MaltItem.Name = value;
-                PPG = this._MaltVarities[value];
+                PPG = this._MaltVarities[value].PPG;
                 NotifyPropertyChanged("PPG");
             }
         }
@@ -62,6 +62,10 @@ namespace BrewingApp.Views
             this.DataContext = this;
 
             this._MaltItem = PhoneApplicationService.Current.State["EditItem"] as Malt;
+            this._SelectedItem = this._MaltItem.Name;
+            NotifyPropertyChanged("SelectedItem");
+            NotifyPropertyChanged("Amount");
+            NotifyPropertyChanged("PPG");
         }
 
         /// <summary>

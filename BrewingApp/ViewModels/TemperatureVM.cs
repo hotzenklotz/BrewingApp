@@ -11,13 +11,11 @@ namespace BrewingApp.ViewModels
         private string _Temp1Selection;
         private string _Temp2Selection;
 
-        private TemperatureConverter _Converter;
 
         public ObservableCollection<string> TemperatureUnits{ get; set; }
 
         public TemperatureVM()
         {
-            this._Converter = new TemperatureConverter();
             this.TemperatureUnits = Settings.TemperatureUnits;
 
             Temp1Selection = TemperatureUnits[0];
@@ -42,10 +40,10 @@ namespace BrewingApp.ViewModels
         /// </summary>
         public float Temp1
         {
-            get { return this._Converter.ConvertBack(this._Celsius, Temp1Selection); }
+            get { return TemperatureConverter.ConvertBack(this._Celsius, Temp1Selection); }
             set
             {
-                this._Celsius = this._Converter.Convert(value, Temp1Selection);
+                this._Celsius = TemperatureConverter.Convert(value, Temp1Selection);
                 TemperaturePropertiesChanged();               
             }
         }
@@ -55,10 +53,10 @@ namespace BrewingApp.ViewModels
         /// </summary>
         public float Temp2
         {
-            get { return this._Converter.ConvertBack(this._Celsius, Temp2Selection); }
+            get { return TemperatureConverter.ConvertBack(this._Celsius, Temp2Selection); }
             set
             {
-                 this._Celsius= this._Converter.Convert(value, Temp2Selection);
+                this._Celsius = TemperatureConverter.Convert(value, Temp2Selection);
                  TemperaturePropertiesChanged();
             }
         }

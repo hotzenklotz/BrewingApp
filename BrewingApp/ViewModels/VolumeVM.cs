@@ -16,11 +16,8 @@ namespace BrewingApp.ViewModels
 
         private float _liter;
 
-        private VolumeConverter _Converter;
-
         public VolumeVM()
         {
-            this._Converter = new VolumeConverter();
 
             MetricUnitList = Settings.MetricVolumeUnits;
             USUnitList = Settings.USVolumeUnits;
@@ -44,20 +41,20 @@ namespace BrewingApp.ViewModels
 
         public float Unit1
         {
-            get { return this._Converter.ConvertBack(this._liter, Unit1Selection); }
+            get { return VolumeConverter.ConvertBack(this._liter, Unit1Selection); }
             set
             {
-                this._liter = this._Converter.Convert(value, Unit1Selection);
+                this._liter = VolumeConverter.Convert(value, Unit1Selection);
                 VolumePropertiesChanged();
             }
         }
 
         public float Unit2
         {
-            get { return this._Converter.Convert(this._liter, Unit2Selection); }
+            get { return VolumeConverter.Convert(this._liter, Unit2Selection); }
             set
             {
-                this._liter = this._Converter.ConvertBack(value, Unit2Selection);
+                this._liter = VolumeConverter.ConvertBack(value, Unit2Selection);
                 VolumePropertiesChanged();
             }
         }

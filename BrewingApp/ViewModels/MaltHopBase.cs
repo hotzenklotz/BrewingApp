@@ -49,6 +49,8 @@ namespace BrewingApp.ViewModels
         private void AddAction()
         {
             T item = new T();
+            setDefaultValues(item);
+
             ItemList.Add(item);
             editItem(item);
         }
@@ -75,6 +77,14 @@ namespace BrewingApp.ViewModels
         {
             this._EditItemIndex = ItemList.IndexOf(item);
             PhoneApplicationService.Current.State["EditItem"] = item;
+        }
+
+        /// <summary>
+        /// loads the deafault Values for a class - has to be implemented/overridden by every class
+        /// </summary>
+        public virtual void setDefaultValues(T item)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

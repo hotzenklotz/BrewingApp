@@ -21,6 +21,19 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Grid.Resources>
+            <SolidColorBrush x:Key="PhoneTextBoxBrush" Color="#BEBEBE"/>
+            <Style TargetType="toolkit:ListPicker">
+                <Setter Property="Background" Value="{StaticResource PhoneTextBoxBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource PhoneTextBoxBrush}" />
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Background" Value="{StaticResource PhoneTextBoxBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource PhoneTextBoxBrush}" />
+            </Style>
+            
+        </Grid.Resources>
+
         <!--TitlePanel enthält den Namen der Anwendung und den Seitentitel-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="PageTitle" Text="Settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>

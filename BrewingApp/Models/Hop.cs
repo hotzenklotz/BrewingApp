@@ -7,51 +7,35 @@ namespace BrewingApp.Models
 {
     public class Hop
     {
-        private WeightConverter _Converter;
 
         public int BoilTime { get; set; }
         public float AlphaAcid { get; set; }
         public string Name { get; set; }
         public float Amount{ get; set; }
 
-        public static Dictionary<string, float> VarityCache{ get; set; }
+        public static Dictionary<string, Hop> _VarityCache{ get; set; }
 
-        public Hop()
+        static public Dictionary<string, Hop> loadHopVarities()
         {
-            this._Converter = new WeightConverter();
-
-            string firstHop = Hop.loadHopVarities().Keys.First();
-
-            this.Name = firstHop;
-            this.AlphaAcid = Hop.loadHopVarities()[firstHop];
-            this.BoilTime = 60;
-            this.Amount = 10;
-        }
-
-        static public Dictionary<string, float> loadHopVarities()
-        {
-            if (VarityCache != null)
-                return VarityCache;
+            if (_VarityCache != null)
+                return _VarityCache;
 
             XElement rootElement = XElement.Load("XML/HopVarities.xml");
 
-            Dictionary<string, float> dict = new Dictionary<string, float>();
+            Dictionary<string, Hop> dict = new Dictionary<string, Hop>();
             foreach (var el in rootElement.Elements())
             {
-                dict.Add((string)el.Attribute("name"), (float)el.Attribute("alpha"));
+                //TODO profile Memory cost
+                Hop tmp = new Hop();
+
+                tmp.Name = (string)el.Attribute("name");
+                tmp.AlphaAcid = (float)el.Attribute("alpha");
+
+                dict.Add(tmp.Name, tmp);
             }
-            VarityCache = dict;
+            _VarityCache = dict;
 
-            return VarityCache;
-        }
-
-        /// <summary>
-        /// Output a formated string, so one directly bind lists of Hops nicely
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return string.Format("{0} ({1:f2}%) \n{2,3:f2} {3} @ {4}min ", this.Name, this.AlphaAcid, this._Converter.Convert(this.Amount), Settings.WeightUnit, this.BoilTime);
+            return _VarityCache;
         }
     }
 }

@@ -83,9 +83,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Images\Converters\WeightConverter.cs" />
-    <Compile Include="Images\Converters\TemperatureConverter.cs" />
-    <Compile Include="Images\Converters\VolumeConverter.cs" />
+    <Compile Include="Converters\WeightConverter.cs" />
+    <Compile Include="Converters\TemperatureConverter.cs" />
+    <Compile Include="Converters\VolumeConverter.cs" />
     <Compile Include="Models\Hop.cs" />
     <Compile Include="Models\Malt.cs" />
     <Compile Include="Models\Settings.cs" />
@@ -179,6 +179,8 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Resource Include="Images\icon_grains_big.png" />
+    <Content Include="Images\svg\icon_grains.svg" />
     <Content Include="README_FIRST.txt" />
     <Content Include="XML\MaltVarities.xml" />
     <Resource Include="Images\plusButton.png" />

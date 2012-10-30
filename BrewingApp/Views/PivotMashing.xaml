@@ -19,8 +19,10 @@
         <!--Pivot Control-->
         <controls:Pivot Title="Mashing">
             <!--Pivot item one-->
-            <controls:PivotItem Header="item1">
-                <Grid/>
+            <controls:PivotItem Header="Strike Temperature">
+                <Grid>
+                    
+                </Grid>
             </controls:PivotItem>
 
             <!--Pivot item two-->

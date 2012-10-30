@@ -6,7 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    xmlns:phone7fx="clr-namespace:Phone7.Fx.Controls;assembly=Phone7.Fx"
+    xmlns:sh="clr-namespace:WPExtensions;assembly=WPExtensions"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:local="clr-namespace:BrewingApp.Models"
@@ -172,17 +172,10 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
-
-                <phone7fx:BindableApplicationBar 
-            		x:Name="AppBar" 
-            		IsVisible="True" 
-                    Mode="Minimized">
-                    <phone7fx:BindableApplicationBarIconButton 
-            			Command="{Binding AddCommand}" 
-            			Text="Add" 
-            			IconUri="BrewingApp;content/Images/plusButton.png" />
-                </phone7fx:BindableApplicationBar>
-
+                <sh:AdvancedApplicationBarIconButton 
+            		Command="{Binding ElementName=BitternessPivot, Path=DataContext.AddCommand}"
+            		Text="Add" 
+            		IconUri="BrewingApp;content/Images/plusButton.png" />
             </Grid>
         </controls:PivotItem>
 
@@ -275,8 +268,7 @@
                     <ListBox
                     Grid.Row="1"
             		x:Name="MaltList"
-            		VerticalAlignment="Top" 
-                        
+            		VerticalAlignment="Stretch"         
             		ItemsSource="{Binding ItemList}" 
                     Padding="10,10,0,10"
                     ItemContainerStyle="{StaticResource ListBoxItemStyle}">
@@ -334,20 +326,19 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </Grid>
+                <sh:AdvancedApplicationBarIconButton 
+                        Command="{Binding ElementName=GravityPivot, Path=DataContext.AddCommand}" 
+                        Text="Add" 
+                        IconUri="BrewingApp;content/Images/plusButton.png" />
+
             </Grid>
         </controls:PivotItem>
+        <!-- Note: the actionbar buttons are declared in their respective pivots -->   
     </controls:Pivot>
-        
-    <phone7fx:BindableApplicationBar 
-        x:Name="AppBarGravity" 
+    <sh:AdvancedApplicationBar 
         IsVisible="True" 
         Mode="Minimized">
-        <phone7fx:BindableApplicationBarIconButton 
-            Command="{Binding AddCommand}" 
-            Text="Add" 
-            IconUri="BrewingApp;content/Images/plusButton.png" />
-    </phone7fx:BindableApplicationBar>
-
+    </sh:AdvancedApplicationBar>
     </Grid>
     
 </phone:PhoneApplicationPage>

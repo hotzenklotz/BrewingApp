@@ -58,8 +58,8 @@
     </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Controls.Toolkit">
-      <HintPath>..\packages\SilverlightToolkitWP.4.2012.6.25\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -83,9 +83,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\WeightConverter.cs" />
-    <Compile Include="Converters\TemperatureConverter.cs" />
-    <Compile Include="Converters\VolumeConverter.cs" />
+    <Compile Include="Images\Converters\WeightConverter.cs" />
+    <Compile Include="Images\Converters\TemperatureConverter.cs" />
+    <Compile Include="Images\Converters\VolumeConverter.cs" />
     <Compile Include="Models\Hop.cs" />
     <Compile Include="Models\Malt.cs" />
     <Compile Include="Models\Settings.cs" />
@@ -117,11 +117,11 @@
     <Compile Include="Views\PivotConverters.xaml.cs">
       <DependentUpon>PivotConverters.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PivotMashing.xaml.cs">
-      <DependentUpon>PivotMashing.xaml</DependentUpon>
+    <Compile Include="Views\PivotMalts.xaml.cs">
+      <DependentUpon>PivotMalts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PivotHopsMalt.xaml.cs">
-      <DependentUpon>PivotHopsMalt.xaml</DependentUpon>
+    <Compile Include="Views\PivotHops.xaml.cs">
+      <DependentUpon>PivotHops.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -154,11 +154,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PivotMashing.xaml">
+    <Page Include="Views\PivotMalts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PivotHopsMalt.xaml">
+    <Page Include="Views\PivotHops.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,19 +175,20 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="README_FIRST.txt" />
     <Content Include="XML\MaltVarities.xml" />
     <Resource Include="Images\plusButton.png" />
     <Resource Include="Images\icon_scales_big.png" />
-    <Resource Include="Images\icon_scales_small.png" />
     <Resource Include="Images\icon_gears_big.png" />
     <Content Include="Images\svg\icon_gears.svg" />
     <Content Include="Images\svg\icon_scales.svg" />
     <Content Include="XML\HopVarities.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Resource Include="Images\scales.jpg" />
-    <Resource Include="Images\calculator.jpg" />
-    <Resource Include="Images\grains.jpg" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup />

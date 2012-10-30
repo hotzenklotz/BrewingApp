@@ -36,14 +36,14 @@ namespace BrewingApp
                 case "BrewHouseTile":
                     page = new Uri("/Views/PivotBrewHouse.xaml", UriKind.RelativeOrAbsolute);
                     break;
-                case "HopsMaltTile":
-                    page = new Uri("/Views/PivotHopsMalt.xaml", UriKind.RelativeOrAbsolute);
+                case "HopsTile":
+                    page = new Uri("/Views/PivotHops.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "ConvertersTile":
                     page = new Uri("/Views/PivotConverters.xaml", UriKind.RelativeOrAbsolute);
                     break;
-                case "MashingTile":
-                    page = new Uri("/Views/PivotMashing.xaml", UriKind.RelativeOrAbsolute);
+                case "MaltsTile":
+                    page = new Uri("/Views/PivotMalts.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "SettingsTile":
                     page = new Uri("/Views/Settings.xaml", UriKind.RelativeOrAbsolute);

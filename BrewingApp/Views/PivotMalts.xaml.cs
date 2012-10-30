@@ -1,28 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
+using BrewingApp.Other;
 using BrewingApp.ViewModels;
 using GalaSoft.MvvmLight.Messaging;
-using BrewingApp.Other;
+using Microsoft.Phone.Controls;
 
 namespace BrewingApp.Pages
 {
-    public partial class PivotHopsMalt : PhoneApplicationPage
+    public partial class PivotMalts : PhoneApplicationPage
     {
-        public PivotHopsMalt()
+        public PivotMalts()
         {
             InitializeComponent();
 
-            this.BitternessPivot.DataContext = new BitternessVM();
             this.GravityPivot.DataContext = new GravityVM();
 
             Messenger.Default.Register<NavigateMessage>
@@ -35,7 +24,6 @@ namespace BrewingApp.Pages
         private void NavigateToPage(string pageName)
         {
             NavigationService.Navigate(new Uri(pageName,UriKind.RelativeOrAbsolute));
-        }
-            
+        }       
     }
 }

@@ -84,7 +84,12 @@ namespace BrewingApp.ViewModels
         /// </summary>
         private void calculateIBU()
         {
+
+            //TODO use boild gravity instead of original gravity???
+            //TODO support pelets? efficiency * 1.1
             string formula = Settings.HopFormula;
+            float utilization = 0.0f;
+            float ibu = 0.0f;
 
             IBU = 0;
        
@@ -92,31 +97,49 @@ namespace BrewingApp.ViewModels
             {
                 case "Rager" :
 
-                    float GravityAdjustment;
+                    float gravityAdjustment;
+
                     if (SpecificGravity > 1.050)
                     {
-                        GravityAdjustment = (SpecificGravity - 1.050f) / 0.2f;
+                        gravityAdjustment = (SpecificGravity - 1.050f) / 0.2f;
                     }
                     else {
-                        GravityAdjustment = 0.0f;
+                        gravityAdjustment = 0.0f;
                     }
 
                     foreach (Hop hop in ItemList)
                     {
-                        float utilization = 0.1811f + 0.1386f * (float) Math.Tanh( hop.BoilTime - 31.32f) / 18.27f;
-                        IBU += (int) ( hop.Amount * hop.AlphaAcid * utilization * 10 / BatchVolume * (1 + GravityAdjustment) );
-                    }
-                    
+                        utilization = 0.1811f + 0.1386f * (float) Math.Tanh(( hop.BoilTime - 31.32f) / 18.27f);
+                        ibu += hop.Amount * hop.AlphaAcid * utilization * 10 / BatchVolume * (1 + gravityAdjustment);
+                    }                 
+
                     break;
 
                 case "Tinseth" :
 
-                    throw new NotImplementedException();
+                    float alphaAcids;
+                    float bignessFactor;
+                    float boilTimeFactor;
+
+
+                    foreach (Hop hop in ItemList)
+                    {
+                        alphaAcids = (hop.AlphaAcid * 0.01f * hop.Amount * 1000.0f) / BatchVolume;
+
+                        bignessFactor = 1.65f * (float) Math.Pow( 0.000125f, (SpecificGravity - 1.0f));
+                        boilTimeFactor = ( 1.0f - (float) Math.Pow( Math.E, (-0.04f * hop.BoilTime))) / 4.15f;
+
+                        utilization = bignessFactor * boilTimeFactor;
+                        ibu += alphaAcids * utilization;
+                    }
                     break;
 
                 default:
                     break;
+
             }
+
+            IBU = (int) Math.Round(ibu);
         }
     }
 

@@ -75,7 +75,7 @@
                             <TextBox 
             					HorizontalAlignment="Stretch" 
             					x:Name="txtBitternessGravity" 
-            					Text="{Binding SpecificGravity, Mode=TwoWay}" 
+            					Text="{Binding SpecificGravity, Mode=TwoWay, StringFormat=' {0:f3}'}" 
             					InputScope="NumberFullWidth" Margin="0,6,0,2"/>
                             </StackPanel>
 

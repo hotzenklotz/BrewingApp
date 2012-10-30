@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using BrewingApp.Models;
 using GalaSoft.MvvmLight;
-using Microsoft.Phone.Shell;
 using BrewingApp.Other;
 
 namespace BrewingApp.ViewModels
@@ -12,8 +11,6 @@ namespace BrewingApp.ViewModels
         private string _VolumeSelection;
         private string _TemperatureSelection;
         private string _HopFormulaSelection;
-
-        private ShellToast _Toast = new ShellToast();
 
         public ObservableCollection<string> HopFormulaList { get; set; }
 
@@ -39,10 +36,15 @@ namespace BrewingApp.ViewModels
 
 
             //selected items
-            WeightSelection = Settings.WeightUnit;
-            VolumeSelection = Settings.VolumeUnit;
-            TemperatureSelection = Settings.TemperatureUnit;
-            HopFormulaSelection = Settings.HopFormula;
+            this._WeightSelection = Settings.WeightUnit;
+            this._VolumeSelection = Settings.VolumeUnit;
+            this._TemperatureSelection = Settings.TemperatureUnit;
+            this._HopFormulaSelection = Settings.HopFormula;
+
+            RaisePropertyChanged("WeightSelection");
+            RaisePropertyChanged("TemperatureSelection");
+            RaisePropertyChanged("VolumeSelection");
+            RaisePropertyChanged("HopFormula");
 
         }
 
@@ -94,10 +96,6 @@ namespace BrewingApp.ViewModels
             Settings.WeightUnit = this._WeightSelection;
 
             Settings.Save();
-
-            this._Toast.Title = "BrewingApp";
-            this._Toast.Content = "Please restart the app for the changes to take effect!";
-            this._Toast.Show();
         }
     }
 }

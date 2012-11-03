@@ -94,6 +94,7 @@
     <Compile Include="ViewModels\GravityVM.cs" />
     <Compile Include="ViewModels\MaltHopBase.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
+    <Compile Include="ViewModels\SubstitutionVM.cs" />
     <Compile Include="ViewModels\TemperatureVM.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

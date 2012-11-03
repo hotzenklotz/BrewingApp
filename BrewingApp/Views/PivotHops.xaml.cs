@@ -23,6 +23,7 @@ namespace BrewingApp.Pages
             InitializeComponent();
 
             this.BitternessPivot.DataContext = new BitternessVM();
+            this.SubstitutionPivot.DataContext = new SubstitutionVM();
 
             Messenger.Default.Register<NavigateMessage>
             (

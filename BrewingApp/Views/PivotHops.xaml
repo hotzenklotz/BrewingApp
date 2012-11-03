@@ -9,20 +9,17 @@
     xmlns:sh="clr-namespace:WPExtensions;assembly=WPExtensions"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:local="clr-namespace:BrewingApp.Models"
+    xmlns:local="clr-namespace:BrewingApp.Converters"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
-
-    
-    
+ 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">     
         <Grid.Resources>
-            <local:Settings x:Key="Settings" />
             <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -30,7 +27,7 @@
         </Grid.Resources>
         
         <!--Pivot Control-->
-        <controls:Pivot Title="Hops &amp; Malt">
+        <controls:Pivot Title="Hops">
 
             <!--Pivot item one-->
             <!--BITTERNESS-->
@@ -180,12 +177,115 @@
         </controls:PivotItem>
 
 <!-- ########### Pivot item two #######################################-->
-        
-  
-            <controls:PivotItem>
+        <controls:PivotItem Name="SubstitutionPivot" Header="Substitution">
+            <StackPanel>
+                    <StackPanel.Resources>  
+                        <local:WeightConverter x:Key="WeightConverter"/>
+                    </StackPanel.Resources>
+                        <!-- UPPER HALF -->
+                <StackPanel>
+                    <TextBlock Text="Hop according to recipe"/>
+                    <Rectangle
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Height="1" 
+                        Stroke="Red" 
+                        StrokeThickness="1" />
+
+                    <toolkit:ListPicker
+                        Header="Hop varity" 
+                        ItemsSource="{Binding HopVarities.Keys}"
+                        SelectedItem="{Binding HopSelection1, Mode=TwoWay}"
+                        HorizontalAlignment="Stretch"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel
+                            Grid.Column="0">
+                                <TextBlock 
+                                    Text="Alpha Acid (%)"
+                                    Padding="0,10,0,0" 
+                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <toolkit:PhoneTextBox
+                                    HorizontalAlignment="Stretch" 
+                                    Margin="0" 
+                                    Text="{Binding AlphaAcid1, Mode=TwoWay}"
+                                    InputScope="NumberFullWidth"/>
+                            </StackPanel>
+
+                            <StackPanel
+                            Grid.Column="1">
+                                <TextBlock 
+                                    Text="Amount"
+                                    Padding="0,10,0,0" 
+                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <toolkit:PhoneTextBox
+                                    HorizontalAlignment="Stretch" 
+                                    Margin="0" 
+                                    Text="{Binding Amount1, Mode=TwoWay, Converter={StaticResource WeightConverter} }"
+                                    InputScope="NumberFullWidth"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+
+                <!-- LOWER HALF-->
+                    <StackPanel
+                        Margin="0,10,0,0">
+                        <TextBlock Text="Substitution"/>
+                        <Rectangle
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Height="1" 
+                            Stroke="Red" 
+                            StrokeThickness="1" />
+
+                        <toolkit:ListPicker
+                            Header="Hop varity" 
+                            ItemsSource="{Binding HopVarities.Keys}"
+                            SelectedItem="{Binding HopSelection2, Mode=TwoWay}"
+                            HorizontalAlignment="Stretch"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            
+                            <StackPanel
+                                Grid.Column="0">
+                                <TextBlock 
+                                    Text="Alpha Acid (%)"
+                                    Padding="0,10,0,0" 
+                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <toolkit:PhoneTextBox
+                                    HorizontalAlignment="Stretch" 
+                                    Margin="0" 
+                                    Text="{Binding AlphaAcid2, Mode=TwoWay}"
+                                    InputScope="NumberFullWidth"/>
+                            </StackPanel>
+ 
+                            <TextBlock
+                                Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Padding="0,0,10,0"
+                                Text="{Binding Amount2, Mode=TwoWay, Converter={StaticResource WeightConverter} }" 
+                                FontSize="84" />
+                        </Grid>
+                    </StackPanel>
                 
-            </controls:PivotItem>
-        </controls:Pivot>      
+            </StackPanel>  
+        </controls:PivotItem>        
+    </controls:Pivot>      
     <!-- Note: the actionbar buttons are declared in their respective pivots -->
     <sh:AdvancedApplicationBar 
         IsVisible="True" 

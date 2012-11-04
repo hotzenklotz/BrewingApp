@@ -186,7 +186,7 @@
     <Content Include="Images\svg\icon_grains.svg" />
     <Content Include="README_FIRST.txt" />
     <Content Include="XML\MaltVarities.xml" />
-    <Resource Include="Images\plusButton.png" />
+    <Content Include="Images\plusButton.png" />
     <Resource Include="Images\icon_scales_big.png" />
     <Resource Include="Images\icon_gears_big.png" />
     <Content Include="Images\svg\icon_gears.svg" />

@@ -185,7 +185,7 @@
                     <sh:AdvancedApplicationBarIconButton 
                         Command="{Binding ElementName=GravityPivot, Path=DataContext.AddCommand}" 
                         Text="Add" 
-                        IconUri="BrewingApp;content/Images/plusButton.png" />
+                        IconUri="/Images/plusButton.png" />
 
                 </Grid>
             </controls:PivotItem>
@@ -198,8 +198,9 @@
 
         <!-- Note: the actionbar buttons are declared in their respective pivots -->
         <sh:AdvancedApplicationBar 
-        IsVisible="True" 
-        Mode="Minimized">
+            IsVisible="True" 
+            Mode="Minimized"
+            Opacity="0.99">
         </sh:AdvancedApplicationBar>
 
     </Grid>    

@@ -1,1 +1,9 @@
-﻿
+﻿All credits to the following images go to the Noun Project (http://thenounproject.com) and their respective artist:
+
+- icon_scales
+- icon_grains
+- icon_gears
+
+All credits to the following images go to Christoph Sterz
+
+- icon_hops

@@ -24,8 +24,6 @@ namespace BrewingApp
            
         }
 
-        // FIX ME background of tile visible
-        // http://blog.humann.info/post/2011/11/06/Silverlight-Toolkit-bug-on-HubTile-control-the-solution.aspx
         private void HubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Uri page;

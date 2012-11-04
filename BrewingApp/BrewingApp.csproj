@@ -181,6 +181,8 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Resource Include="Images\icon_grains_big.png" />
+    <Resource Include="Images\icon_hops_big.png" />
+    <Content Include="Images\Credits.txt" />
     <Content Include="Images\svg\icon_grains.svg" />
     <Content Include="README_FIRST.txt" />
     <Content Include="XML\MaltVarities.xml" />

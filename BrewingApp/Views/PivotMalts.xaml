@@ -8,6 +8,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:sh="clr-namespace:WPExtensions;assembly=WPExtensions"
+    xmlns:local="clr-namespace:BrewingApp.Converters"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -32,6 +33,8 @@
                 <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
             </Style>
+            <local:WeightConverter x:Key="WeightConverter"/>
+            <local:VolumeConverter x:Key="VolumeConverter"/>
         </Grid.Resources>
 
         <!--Pivot Control-->
@@ -189,10 +192,137 @@
 
                 </Grid>
             </controls:PivotItem>
-
+            
+ <!--################### INFUSION MASH ############################################-->
             <!--Pivot item two-->
-            <controls:PivotItem Header="item2">
-                <Grid/>
+            <controls:PivotItem Header="Infusion Mash" Name="InfusionPivot">
+                <Grid>
+                    <!-- UPPER HALF -->
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel
+                            Margin="0,10,0,0">
+                            <TextBlock Text="Infusion water"/>
+                            <Rectangle
+                                Grid.Row="1"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Top"
+                                Height="1" 
+                                Stroke="Red" 
+                                StrokeThickness="1" />
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel
+                                    Grid.Column="0">
+                                    <TextBlock 
+                                        Text="Target Mash Temperature"
+                                        Padding="0,10,0,0" 
+                                        Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                    <toolkit:PhoneTextBox
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="0" 
+                                        Text="{Binding TargetTemp, Mode=TwoWay}"
+                                        InputScope="NumberFullWidth"/>
+                                </StackPanel>
+                                
+                                <StackPanel 
+                                    Grid.Column="1"
+                                    Orientation="Vertical">
+                                    <TextBlock
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Margin="0,-15,0,-15"
+
+                                        Text="{Binding InfusionAmount, Mode=TwoWay, Converter={StaticResource VolumeConverter}, StringFormat=' {0:f2}'}" 
+                                        FontSize="84"/>
+                                    <TextBlock
+                                        Text="@ boiling"
+                                        Style="{StaticResource PhoneTextSmallStyle}"
+                                        HorizontalAlignment="Right"
+                                        FontSize="16"
+                                        />
+
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    
+                        <!-- lower HALF -->
+
+                        <StackPanel
+                            Margin="0,10,0,0">
+                            <TextBlock Text="Brew Kettle"/>
+                            <Rectangle
+                                Grid.Row="1"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Top"
+                                Height="1" 
+                                Stroke="Red" 
+                                StrokeThickness="1" />
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel
+                                    Grid.Column="0"
+                                    Grid.Row="0">
+                                    <TextBlock 
+                                        Text="Amount of Water"
+                                        Padding="0,10,0,0" 
+                                        Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                    <toolkit:PhoneTextBox
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="0" 
+                                        Text="{Binding WaterAmount, Mode=TwoWay, Converter={StaticResource VolumeConverter}}"
+                                        InputScope="NumberFullWidth"/>
+                                </StackPanel>
+                                
+                                <StackPanel
+                                    Grid.Column="1"
+                                    Grid.Row="0">
+                                    <TextBlock 
+                                        Text="Water Temperature"
+                                        Padding="0,10,0,0" 
+                                        Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                    <toolkit:PhoneTextBox
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="0" 
+                                        Text="{Binding WaterTemp, Mode=TwoWay}"
+                                        InputScope="NumberFullWidth"/>
+                                </StackPanel>
+                                
+                                <StackPanel
+                                    Grid.Column="0"
+                                    Grid.Row="1">
+                                    <TextBlock 
+                                        Text="Amount of Grain"
+                                        Padding="0,10,0,0" 
+                                        Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                    <toolkit:PhoneTextBox
+                                        HorizontalAlignment="Stretch" 
+                                        Margin="0" 
+                                        Text="{Binding GrainAmount, Mode=TwoWay, Converter={StaticResource WeightConverter}}"
+                                        InputScope="NumberFullWidth"/>
+                                </StackPanel>
+
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
             </controls:PivotItem>
         </controls:Pivot>
 

@@ -32,7 +32,8 @@ namespace BrewingApp.Models
         public static ObservableCollection<string> USVolumeUnits = new ObservableCollection<string>() 
         {
             "US Gallon",
-            "US Ounce"
+            "US Ounce",
+            "US Quart"
 
         };
 

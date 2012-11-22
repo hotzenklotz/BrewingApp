@@ -92,6 +92,7 @@
     <Compile Include="Other\ExtensionMethods.cs" />
     <Compile Include="Other\Messages.cs" />
     <Compile Include="ViewModels\GravityVM.cs" />
+    <Compile Include="ViewModels\InfusionVM.cs" />
     <Compile Include="ViewModels\MaltHopBase.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />
     <Compile Include="ViewModels\SubstitutionVM.cs" />
@@ -184,7 +185,6 @@
     <Resource Include="Images\icon_hops_big.png" />
     <Content Include="Images\Credits.txt" />
     <Content Include="Images\svg\icon_grains.svg" />
-    <Content Include="README_FIRST.txt" />
     <Content Include="XML\MaltVarities.xml" />
     <Content Include="Images\plusButton.png" />
     <Resource Include="Images\icon_scales_big.png" />

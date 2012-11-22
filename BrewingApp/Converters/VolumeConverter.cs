@@ -37,6 +37,9 @@ namespace BrewingApp.Converters
                 case "US Ounce":
                     factor = 33.8140227f;
                     break;
+                case "US Quart":
+                    factor = 1.056688209432594f;
+                    break;
                 default:
                     factor = 1.0f;
                     break;
@@ -69,6 +72,9 @@ namespace BrewingApp.Converters
                 case "US Ounce":
                     factor = 0.0295735296f;
                     break;
+                case "US Quart":
+                    factor = 0.946352946f;
+                    break;
                 default:
                     factor = 1.0f;
                     break;
@@ -84,8 +90,10 @@ namespace BrewingApp.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            float floatValue;
+            float.TryParse((string)value, out floatValue);
 
-            return ConvertBack((float)value, (string)parameter);
+            return ConvertBack( floatValue, (string)parameter);
         }
     }
 

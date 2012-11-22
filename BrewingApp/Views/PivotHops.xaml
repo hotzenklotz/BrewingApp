@@ -313,7 +313,8 @@
     <!-- Note: the actionbar buttons are declared in their respective pivots -->
     <sh:AdvancedApplicationBar 
         IsVisible="True" 
-        Mode="Minimized">
+        Mode="Minimized"
+        Opacity="0.99">
     </sh:AdvancedApplicationBar>
     </Grid>
     

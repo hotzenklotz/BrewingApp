@@ -13,6 +13,7 @@ namespace BrewingApp.Pages
             InitializeComponent();
 
             this.GravityPivot.DataContext = new GravityVM();
+            this.InfusionPivot.DataContext = new InfusionVM();
 
             Messenger.Default.Register<NavigateMessage>
             (

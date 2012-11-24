@@ -92,6 +92,7 @@
     <Compile Include="Other\ExtensionMethods.cs" />
     <Compile Include="Other\Messages.cs" />
     <Compile Include="ViewModels\GravityVM.cs" />
+    <Compile Include="ViewModels\HydrometerVM.cs" />
     <Compile Include="ViewModels\InfusionVM.cs" />
     <Compile Include="ViewModels\MaltHopBase.cs" />
     <Compile Include="ViewModels\SettingsVM.cs" />

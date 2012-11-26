@@ -27,7 +27,7 @@ namespace BrewingApp.Converters
                         extension = "gal";
                         break;
                     case "US Ounce":
-                        extension = "fl oz";
+                        extension = "floz";
                         break;
                     case "US Quart":
                         extension ="qt";

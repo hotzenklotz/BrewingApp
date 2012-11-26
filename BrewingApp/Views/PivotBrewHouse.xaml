@@ -25,6 +25,7 @@
                 <StackPanel>
                     <StackPanel.Resources>
                         <local:WeightConverter x:Key="WeightConverter"/>
+                        <local:UnitExtensionConverter x:Key="UnitExtension"/>
                     </StackPanel.Resources>
                     <!-- UPPER HALF -->
 
@@ -52,7 +53,7 @@
                             <StackPanel
                                 Grid.Row="0">
                                 <TextBlock 
-                                    Text="Temperature"
+                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Temperature', StringFormat='Temperature ({0})'}" 
                                     Padding="0,10,0,0" 
                                     Style="{StaticResource PhoneTextSubtleStyle}" />
 
@@ -108,7 +109,7 @@
                             <StackPanel
                             Grid.Column="0">
                                 <TextBlock 
-                                    Text="Calibration Temperature"
+                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Temperature', StringFormat='Calibration Temperature ({0})'}" 
                                     Padding="0,10,0,0" 
                                     Style="{StaticResource PhoneTextSubtleStyle}" />
 

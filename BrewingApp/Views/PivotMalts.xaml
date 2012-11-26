@@ -218,7 +218,7 @@
                                 <StackPanel
                                     Grid.Column="0">
                                     <TextBlock 
-                                        Text="Target Mash Temperature"
+                                        Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Temperature', StringFormat='Target Mash Temperature ({0})'}" 
                                         Padding="0,10,0,0" 
                                         Style="{StaticResource PhoneTextSubtleStyle}" />
 
@@ -237,7 +237,7 @@
                                         VerticalAlignment="Top"
                                         Margin="0,-15,0,-15"
 
-                                        Text="{Binding InfusionAmount, Mode=TwoWay, Converter={StaticResource VolumeConverter}, StringFormat=' {0:f2}'}" 
+                                        Text="{Binding InfusionAmount, Mode=TwoWay, Converter={StaticResource VolumeConverter}, StringFormat=' {0:f1}'}" 
                                         FontSize="84"/>
                                     <TextBlock
                                         Text="@ boiling"
@@ -277,7 +277,7 @@
                                     Grid.Column="0"
                                     Grid.Row="0">
                                     <TextBlock 
-                                        Text="Amount of Water"
+                                        Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Volume', StringFormat='Amount of Water ({0})'}" 
                                         Padding="0,10,0,0" 
                                         Style="{StaticResource PhoneTextSubtleStyle}" />
 
@@ -292,7 +292,7 @@
                                     Grid.Column="1"
                                     Grid.Row="0">
                                     <TextBlock 
-                                        Text="Water Temperature"
+                                        Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Temperature', StringFormat='Water Temperature ({0})'}" 
                                         Padding="0,10,0,0" 
                                         Style="{StaticResource PhoneTextSubtleStyle}" />
 
@@ -307,7 +307,7 @@
                                     Grid.Column="0"
                                     Grid.Row="1">
                                     <TextBlock 
-                                        Text="Amount of Grain"
+                                        Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight', StringFormat='Amount of Grain ({0})'}" 
                                         Padding="0,10,0,0" 
                                         Style="{StaticResource PhoneTextSubtleStyle}" />
 

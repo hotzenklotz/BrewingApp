@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>	
+	<malt name="Caramel / Crystal 50L"               lovibond="50"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 60L"               lovibond="60"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 70L"               lovibond="70"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 75L"               lovibond="75"        ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 80L"               lovibond="80"        ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 90L"               lovibond="90"        ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 120L"              lovibond="120"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 140L"              lovibond="140"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal 150L"              lovibond="150"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Caramel / Crystal Rye"               lovibond="90"        ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Munich Light"                        lovibond="6"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Munich Dark"                         lovibond="15.5"      ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Pale 2-Row"                          lovibond="1.8"       ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Pale 6-Row"                          lovibond="1.8"       ppg="35"    mashable="1"   category="Grain"/>
+	<malt name="Pale Ale"                            lovibond="2.3"       ppg="39"    mashable="1"   category="Grain"/>
+	<malt name="Pilsner"                             lovibond="1.6"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Vienna"                              lovibond="4"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Wheat Malt"                          lovibond="2"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Acidulated Malt"                     lovibond="3.4"       ppg="27"    mashable="1"   category="Grain"/>
+	<malt name="Amber"                         		 lovibond="27"        ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="Abbey Malt "                         lovibond="17"        ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Biscuit"                             lovibond="23"        ppg="35"    mashable="1"   category="Grain"/>
+	<malt name="Black Patent"                  		 lovibond="525"       ppg="27"    mashable="1"   category="Grain"/>
+	<malt name="Bohemian Pilsner"                    lovibond="1.9"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Brown"                         		 lovibond="65"        ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="CaraAmber"                           lovibond="23"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="CaraAroma"                           lovibond="130"       ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Carafa I"                            lovibond="340"       ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="Carafa II"                           lovibond="425"       ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="Carafa III"                          lovibond="535"       ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="CaraHell"                            lovibond="11"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Cara Malt"                     		 lovibond="17.5"      ppg="35"    mashable="1"   category="Grain"/>
+	<malt name="CaraMunich I"                        lovibond="39"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="CaraMunich II"                       lovibond="46"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="CaraMunich III"                      lovibond="57"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Carapils"                            lovibond="1.3"       ppg="35"    mashable="1"   category="Grain"/>
+	<malt name="CaraRed"                             lovibond="20"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Caramel Wheat"                       lovibond="46"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="CaraVienne"                          lovibond="20"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Coffee Malt"                   		 lovibond="150"       ppg="36"    mashable="1"   category="Grain"/>
+	<malt name="Chocolate"                           lovibond="350"       ppg="29"    mashable="1"   category="Grain"/>
+	<malt name="Chocolate Rye"                       lovibond="240"       ppg="31"    mashable="1"   category="Grain"/>
+	<malt name="Chocolate Wheat"                     lovibond="413"       ppg="31"    mashable="1"   category="Grain"/>
+	<malt name="Dark Chocolate"                      lovibond="420"       ppg="29"    mashable="1"   category="Grain"/>
+	<malt name="Dark Munich"                         lovibond="10"        ppg="36"    mashable="1"   category="Grain"/>
+	<malt name="Dark Wheat"                          lovibond="6.5"       ppg="39"    mashable="1"   category="Grain"/>
+	<malt name="De-Husked Caraf I"                   lovibond="340"       ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="De-Husked Caraf II"                  lovibond="418"       ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="De-Husked Caraf III"                 lovibond="470"       ppg="32"    mashable="1"   category="Grain"/>
+	<malt name="De-Bittered Black"                   lovibond="566"       ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Dextrine Malt"                 		 lovibond="1.8"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Kölsch"                              lovibond="2"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Melanoidin"                          lovibond="25"        ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Lager"                         		 lovibond="1.4"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Maris Otter Pale"              		 lovibond="3.75"      ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Mild"                          		 lovibond="3"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Oat Malt"                      		 lovibond="2"         ppg="28"    mashable="1"   category="Grain"/>
+	<malt name="Pale Chocolate"                		 lovibond="207"       ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Pale Ale"                            lovibond="3.5"       ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Pale Wheat"                          lovibond="1.5"       ppg="39"    mashable="1"   category="Grain"/>
+	<malt name="Peated Malt"                   		 lovibond="2.5"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Red Wheat"                           lovibond="2.5"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Rye"                                 lovibond="3.5"       ppg="38"    mashable="1"   category="Grain"/>
+	<malt name="Roasted Barley"                		 lovibond="550"       ppg="29"    mashable="1"   category="Grain"/>
+	<malt name="Special Roast"                       lovibond="50"        ppg="33"    mashable="1"   category="Grain"/>
+	<malt name="Special B"                           lovibond="115"       ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Spelt Malt"                          lovibond="2"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Smoked Malt"                         lovibond="3"         ppg="37"    mashable="1"   category="Grain"/>
+	<malt name="Unmalted Wheat"                      lovibond="2"         ppg="36"    mashable="1"   category="Grain"/>
+	<malt name="Victory"                             lovibond="28"        ppg="34"    mashable="1"   category="Grain"/>
+	<malt name="Dry Malt Extract Amber"        		 lovibond="10"        ppg="42"    mashable="0"   category="Dry Extract"/>
+	<malt name="Dry Malt Extract Dark"               lovibond="30"        ppg="44"    mashable="0"   category="Dry Extract"/>
+	<malt name="Dry Malt Extract Extra Light"        lovibond="2.5"       ppg="42"    mashable="0"   category="Dry Extract"/>
+	<malt name="Dry Malt Extract Light"              lovibond="4"         ppg="42"    mashable="0"   category="Dry Extract"/>
+	<malt name="Liquid Malt Extract Amber"           lovibond="10"        ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract Dark"            lovibond="30"        ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract Extra Light"     lovibond="2.5"       ppg="37"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract Light"           lovibond="4"         ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract Munich"          lovibond="8"         ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract Pilsen"          lovibond="2"         ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Liquid Malt Extract Wheat"           lovibond="3"         ppg="35"    mashable="0"   category="Liquid Extract"/>
+	<malt name="Belgian Candi Sugar Amber/Brown"     lovibond="60"        ppg="38"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Sugar Clear/Blond"     lovibond="0"         ppg="38"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Sugar Dark"            lovibond="275"       ppg="38"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup Amber"           lovibond="40"        ppg="32"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup Clear"           lovibond="0"         ppg="32"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup D2"              lovibond="160"       ppg="32"    mashable="0"   category="Sugar"/>
+	<malt name="Belgian Candi Syrup Dark"            lovibond="80"        ppg="32"    mashable="0"   category="Sugar"/>
+	<malt name="Brown Sugar"                         lovibond="15"        ppg="45"    mashable="0"   category="Sugar"/>
+	<malt name="Cane Sugar"                          lovibond="0"         ppg="46"    mashable="0"   category="Sugar"/>
+	<malt name="Corn Sugar - Dextrose"               lovibond="0.5"       ppg="46"    mashable="0"   category="Sugar"/>
+	<malt name="Corn Syrup"                          lovibond="0.5"       ppg="37"    mashable="0"   category="Sugar"/>
+	<malt name="Honey "                              lovibond="2"         ppg="42"    mashable="0"   category="Sugar"/>
+	<malt name="Invert Sugar"                        lovibond="1"         ppg="46"    mashable="0"   category="Sugar"/>
+	<malt name="Maple Syrup"                         lovibond="35"        ppg="30"    mashable="0"   category="Sugar"/>
+	<malt name="Milk Sugar"                          lovibond="1"         ppg="35"    mashable="0"   category="Sugar"/>
+	<malt name="Molasses"                           lovibond="80"        ppg="36"    mashable="0"   category="Sugar"/>
+	<malt name="Soft Candi Sugar - Blond"            lovibond="5"         ppg="38"    mashable="0"   category="Sugar"/>
+	<malt name="Soft Candi Sugar - Brown"            lovibond="60"        ppg="38"    mashable="0"   category="Sugar"/>
+</root>

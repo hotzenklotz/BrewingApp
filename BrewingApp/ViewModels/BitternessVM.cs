@@ -4,6 +4,7 @@ using BrewingApp.Models;
 using BrewingApp.Other;
 using System.Linq;
 using System;
+using BrewingApp.Converters;
 
 namespace BrewingApp.ViewModels
 {
@@ -47,7 +48,7 @@ namespace BrewingApp.ViewModels
             ItemList.Add(firstItem);
 
             //default Values
-            BatchVolume = 20;
+            BatchVolume = VolumeConverter.Convert(20);
             SpecificGravity = 1.010f;
 
             //use MVVM LightToolkit messaging for custom controls update notifications
@@ -74,7 +75,7 @@ namespace BrewingApp.ViewModels
             item.Name = Hop.loadHopVarities().Values.First().Name;
             item.AlphaAcid = Hop.loadHopVarities().Values.First().AlphaAcid;
             item.BoilTime = 60;
-            item.Amount = 10;
+            item.Amount = WeightConverter.Convert(10);
         }
 
         /// <summary>

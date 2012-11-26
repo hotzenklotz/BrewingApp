@@ -50,7 +50,7 @@ namespace BrewingApp.ViewModels
             ItemList.Add(firstItem);
 
             //default Values
-            BatchVolume = VolumeConverter.ConvertBack(20);
+            BatchVolume = 20;
             Efficiency = 70;
 
             //use MVVM LightToolkit messaging for custom controls update notifications

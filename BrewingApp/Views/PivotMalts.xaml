@@ -79,8 +79,7 @@
                                 
                                 <TextBox 
             				        HorizontalAlignment="Stretch" 
-            				        x:Name="txtGravityVolumne" 
-            				        Text="{Binding BatchVolume, Mode=TwoWay}" 
+            				        Text="{Binding BatchVolume, Mode=TwoWay, Converter={StaticResource VolumeConverter} }" 
             				        InputScope="NumberFullWidth"/>
                             </StackPanel>
 
@@ -151,10 +150,10 @@
                                             Grid.Column="0" >
 
                                                 <TextBlock
-                                                Text="{Binding Amount}" 
-                                                Margin="10,0,5,0"/>
+                                                    Text="{Binding Amount, Converter={StaticResource WeightConverter},StringFormat=' {0:f2}'}" 
+                                                    Margin="10,0,5,0"/>
                                                 <TextBlock
-                                                Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"/>
+                                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"/>
                                             </StackPanel>
 
                                             <TextBlock

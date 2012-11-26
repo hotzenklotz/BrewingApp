@@ -48,7 +48,7 @@ namespace BrewingApp.ViewModels
             ItemList.Add(firstItem);
 
             //default Values
-            BatchVolume = VolumeConverter.Convert(20);
+            BatchVolume = 20;
             SpecificGravity = 1.010f;
 
             //use MVVM LightToolkit messaging for custom controls update notifications
@@ -75,7 +75,7 @@ namespace BrewingApp.ViewModels
             item.Name = Hop.loadHopVarities().Values.First().Name;
             item.AlphaAcid = Hop.loadHopVarities().Values.First().AlphaAcid;
             item.BoilTime = 60;
-            item.Amount = WeightConverter.Convert(10);
+            item.Amount = 10;
         }
 
         /// <summary>

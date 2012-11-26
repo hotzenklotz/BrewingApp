@@ -25,7 +25,8 @@
         </Grid.RowDefinitions>
 
         <Grid.Resources>
-            <local:WeightConverter x:Key="WeigthConverter"></local:WeightConverter>
+            <local:WeightConverter x:Key="WeigthConverter"/>
+            <local:UnitExtensionConverter x:Key="UnitExtension"/>
         </Grid.Resources>
         
         <StackPanel>
@@ -57,7 +58,7 @@
                     Grid.Column="0">
 
                     <TextBlock 
-                        Text="Amount"
+                        Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight', StringFormat='Amount ({0})'}" 
                         Padding="10,10,0,0"
                     />
                     <toolkit:PhoneTextBox 
@@ -67,7 +68,7 @@
                         Margin="0" 
                         Grid.RowSpan="2" 
                         ActualHintVisibility="Visible"
-                        Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource WeigthConverter}}"
+                        Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource WeigthConverter}, StringFormat=' {0:f3}'}"
                         InputScope="NumberFullWidth">
                     </toolkit:PhoneTextBox>
                 </StackPanel>

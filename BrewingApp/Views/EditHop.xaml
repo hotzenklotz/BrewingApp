@@ -26,6 +26,7 @@
 
         <Grid.Resources>
             <local:WeightConverter x:Key="WeigthConverter"></local:WeightConverter>
+            <local:UnitExtensionConverter x:Key="UnitExtension"/>
         </Grid.Resources>
         
         <StackPanel>
@@ -35,13 +36,13 @@
         </StackPanel>
 
             <toolkit:ListPicker 
-            HorizontalContentAlignment="Stretch"
-            VerticalAlignment="Top" 
-            Header="" 
-            Margin="10,0,10,0" 
-            Name="hopVarityPicker"
-            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-            FullModeHeader="Choose a hop varity!">
+                HorizontalContentAlignment="Stretch"
+                VerticalAlignment="Top" 
+                Header="" 
+                Margin="10,0,10,0" 
+                Name="hopVarityPicker"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                FullModeHeader="Choose a hop varity!">
             </toolkit:ListPicker>
 
             <Grid
@@ -58,17 +59,15 @@
                     Grid.Column="0">
 
                     <TextBlock 
-                        Text="Amount"
+                       Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight', StringFormat='Amount ({0})'}" 
                         Padding="10,10,0,0"
                     />
                     <toolkit:PhoneTextBox 
-                        Hint="Amount"
-                        Name="txtAmount" 
                         HorizontalAlignment="Stretch" 
                         Margin="0" 
                         Grid.RowSpan="2" 
                         ActualHintVisibility="Visible"
-                        Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource WeigthConverter}}"
+                        Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource WeigthConverter}, StringFormat=' {0:f2}'}"
                         InputScope="NumberFullWidth">
                     </toolkit:PhoneTextBox>
                 </StackPanel>
@@ -97,7 +96,7 @@
                     Grid.Column="2">
 
                     <TextBlock 
-                        Text="Boil Time"
+                        Text="Boil Time (min)"
                         Padding="10,10,0,0"
                     />
 

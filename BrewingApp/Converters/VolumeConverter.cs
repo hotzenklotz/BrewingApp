@@ -29,7 +29,7 @@ namespace BrewingApp.Converters
                     factor = 1.0f;
                     break;
                 case "Milliliter":
-                    factor = 0.001f;
+                    factor = 1000.0f;
                     break;
                 case "US Gallon":
                     factor = 0.264172052f;
@@ -64,7 +64,7 @@ namespace BrewingApp.Converters
                     factor = 1.0f;
                     break;
                 case "Milliliter":
-                    factor = 1000.0f;
+                    factor = 0.001f;
                     break;
                 case "US Gallon":
                     factor = 3.78541178f;

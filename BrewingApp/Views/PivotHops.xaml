@@ -47,6 +47,8 @@
                 <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
             </Style>
+            <local:UnitExtensionConverter x:Key="UnitExtension"/>
+            <local:VolumeConverter x:Key="sdf"/>
         </Grid.Resources>
         
         <!--Pivot Control-->
@@ -154,7 +156,7 @@
                                                 Text="{Binding Amount, StringFormat=' {0,2:f3}'}" 
                                                 Margin="10,0,5,0"/>
                                             <TextBlock
-                                                Text="Gram???"/>
+                                                Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"/>
                                         </StackPanel>
 
                                         <TextBlock

@@ -83,6 +83,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\UnitExtensionConverter.cs" />
     <Compile Include="Converters\WeightConverter.cs" />
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Converters\VolumeConverter.cs" />

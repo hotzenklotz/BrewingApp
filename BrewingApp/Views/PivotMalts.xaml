@@ -35,6 +35,7 @@
             </Style>
             <local:WeightConverter x:Key="WeightConverter"/>
             <local:VolumeConverter x:Key="VolumeConverter"/>
+            <local:UnitExtensionConverter x:Key="UnitExtension"/>
         </Grid.Resources>
 
         <!--Pivot Control-->
@@ -58,50 +59,48 @@
                         <!-- VOLUMNE / EFFICIENCY -->
                         <Grid >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.8*"/>
-                                <ColumnDefinition Width="0.4*"/>
+                                <ColumnDefinition Width="0.9*"/>
+                                <ColumnDefinition Width="0.45*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel  
-            			    Orientation="Vertical"
-            			    Grid.Column="0">
+            			        Orientation="Vertical"
+            			        Grid.Column="0">
 
                                 <TextBlock 
-                                Text="Batch Volume" 
-                                FontSize="{StaticResource PhoneFontSizeNormal}" 
-                                FontFamily="{StaticResource PhoneFontFamilyNormal}" 
-                                VerticalAlignment="Top" 
-                                LineHeight="31" 
-                                LineStackingStrategy="BlockLineHeight" 
-                                Foreground="{StaticResource PhoneSubtleBrush}" 
-                                TextWrapping="Wrap" 
-                                Margin="12,0,12,0"/>
+                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Volume', StringFormat='Batch Volume ({0})'}" 
+                                    FontSize="{StaticResource PhoneFontSizeNormal}" 
+                                    FontFamily="{StaticResource PhoneFontFamilyNormal}" 
+                                    VerticalAlignment="Top" 
+                                    LineHeight="31" 
+                                    Foreground="{StaticResource PhoneSubtleBrush}" 
+                                    Margin="12,0,12,0"/>
+                                
                                 <TextBox 
-            				    HorizontalAlignment="Stretch" 
-            				    x:Name="txtGravityVolumne" 
-            				    Text="{Binding BatchVolume, Mode=TwoWay}" 
-            				    InputScope="NumberFullWidth"/>
+            				        HorizontalAlignment="Stretch" 
+            				        x:Name="txtGravityVolumne" 
+            				        Text="{Binding BatchVolume, Mode=TwoWay}" 
+            				        InputScope="NumberFullWidth"/>
                             </StackPanel>
 
                             <StackPanel 
-            			    Orientation="Vertical"
-            			    Grid.Column="1">
+            			        Orientation="Vertical"
+            			        Grid.Column="1">
 
                                 <TextBlock Text="Efficiency" 
-                            FontSize="{StaticResource PhoneFontSizeNormal}"
-                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                            VerticalAlignment="Top"
-                            LineHeight="31"
-                            LineStackingStrategy="BlockLineHeight"
-                            Foreground="{StaticResource PhoneSubtleBrush}"
-                            TextWrapping="Wrap" />
+                                    FontSize="{StaticResource PhoneFontSizeNormal}"
+                                    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                                    VerticalAlignment="Top"
+                                    LineHeight="31"
+                                    Foreground="{StaticResource PhoneSubtleBrush}"
+                                    TextWrapping="Wrap" />
                                 <TextBox 
-            				HorizontalAlignment="Stretch" 
-            				x:Name="txtGravityEfficiency" 
-            				Text="{Binding Efficiency, Mode=TwoWay}" 
-            				InputScope="NumberFullWidth"
-                             Margin="-10,0,-10,0" />
+            				        HorizontalAlignment="Stretch" 
+            				        x:Name="txtGravityEfficiency" 
+            				        Text="{Binding Efficiency, Mode=TwoWay}" 
+            				        InputScope="NumberFullWidth"
+                                     Margin="-10,0,-10,0" />
                             </StackPanel>
 
                             <TextBlock 
@@ -155,7 +154,7 @@
                                                 Text="{Binding Amount}" 
                                                 Margin="10,0,5,0"/>
                                                 <TextBlock
-                                                Text="Gram???"/>
+                                                Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"/>
                                             </StackPanel>
 
                                             <TextBlock

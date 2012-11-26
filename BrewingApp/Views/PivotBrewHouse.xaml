@@ -7,6 +7,8 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:local="clr-namespace:BrewingApp.Converters"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -19,8 +21,108 @@
         <!--Pivot Control-->
         <controls:Pivot Title="Brew House">
             <!--Pivot item one-->
-            <controls:PivotItem Header="item1">
-                <Grid/>
+            <controls:PivotItem Header="Hydrometer" Name="HydrometerPivot">
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <local:WeightConverter x:Key="WeightConverter"/>
+                    </StackPanel.Resources>
+                    <!-- UPPER HALF -->
+
+                    <StackPanel
+                        Margin="0,10,0,0">
+                        <TextBlock Text="Reading"/>
+                        <Rectangle
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Height="1" 
+                            Stroke="Red" 
+                            StrokeThickness="1" />
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel
+                                Grid.Row="0">
+                                <TextBlock 
+                                    Text="Temperature"
+                                    Padding="0,10,0,0" 
+                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <toolkit:PhoneTextBox
+                                    HorizontalAlignment="Stretch" 
+                                    Margin="0" 
+                                    Text="{Binding Temperature, Mode=TwoWay}"
+                                    InputScope="NumberFullWidth"/>
+                            </StackPanel>
+
+                            <StackPanel
+                                Grid.Row="1">
+                                <TextBlock 
+                                    Text="Specific Gravity"
+                                    Padding="0,10,0,0" 
+                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <toolkit:PhoneTextBox
+                                    HorizontalAlignment="Stretch" 
+                                    Margin="0" 
+                                    Text="{Binding Gravity, Mode=TwoWay, StringFormat=' {0:f3}'}"
+                                    InputScope="NumberFullWidth"/>
+                            </StackPanel>
+
+                            <TextBlock
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Padding="0,0,10,0"
+                                Text="{Binding Correction, Mode=TwoWay, StringFormat=' {0:f3}' }" 
+                                FontSize="84" />
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- LOWER HALF-->
+                    <StackPanel>
+                        <TextBlock Text="Hydrometer Properties"/>
+                        <Rectangle
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Height="1" 
+                        Stroke="Red" 
+                        StrokeThickness="1" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel
+                            Grid.Column="0">
+                                <TextBlock 
+                                    Text="Calibration Temperature"
+                                    Padding="0,10,0,0" 
+                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <toolkit:PhoneTextBox
+                                    HorizontalAlignment="Stretch" 
+                                    Margin="0" 
+                                    Text="{Binding Calibration, Mode=TwoWay}"
+                                    InputScope="NumberFullWidth"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </StackPanel>
+
+                </StackPanel>
             </controls:PivotItem>
 
             <!--Pivot item two-->

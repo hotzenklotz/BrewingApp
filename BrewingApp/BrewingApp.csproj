@@ -178,14 +178,14 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Resource Include="Images\icon_grains_big.png" />
     <Resource Include="Images\icon_hops_big.png" />
     <Content Include="Images\Credits.txt" />
     <Content Include="Images\svg\icon_grains.svg" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="XML\MaltVarities.xml" />
     <Content Include="Images\plusButton.png" />
     <Resource Include="Images\icon_scales_big.png" />

@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using BrewingApp.ViewModels;
 
 namespace BrewingApp.Pages
 {
@@ -18,6 +19,8 @@ namespace BrewingApp.Pages
         public PivotPage1()
         {
             InitializeComponent();
+
+            this.HydrometerPivot.DataContext = new HydrometerVM();
         }
     }
 }

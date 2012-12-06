@@ -44,7 +44,7 @@ namespace BrewingApp
                     page = new Uri("/Views/PivotMalts.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "SettingsTile":
-                    page = new Uri("/Views/Settings.xaml", UriKind.RelativeOrAbsolute);
+                    page = new Uri("/Views/PivotSettings.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 default :
                     page = new Uri("");

@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="BrewingApp.Views.Settings"
+    x:Class="BrewingApp.Views.PivotSettings"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -28,9 +28,9 @@
                 <Setter Property="Background" Value="{StaticResource PhoneTextBoxBrush}" />
                 <Setter Property="BorderBrush" Value="{StaticResource PhoneTextBoxBrush}" />
             </Style>
-            
+
         </Grid.Resources>
-        
+
         <controls:Pivot >
 
             <!--Pivot item one-->
@@ -52,10 +52,10 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                
+
                         <StackPanel
                             Grid.Row="0">
-                    
+
                             <TextBlock Text="Default Input Units"></TextBlock>
                             <Rectangle
                                 Grid.Row="1"
@@ -65,13 +65,13 @@
                                 Stroke="Red" 
                                 StrokeThickness="1" >
                             </Rectangle>
-                    
+
                             <toolkit:ListPicker
                                 Header="Temperature Unit" 
                                 ItemsSource="{Binding TemperatureUnitList}"
                                 SelectedItem="{Binding TemperatureSelection, Mode=TwoWay}"
                                 HorizontalAlignment="Stretch"/>
-                    
+
                             <toolkit:ListPicker
                                 Header="Volume Unit" 
                                 ItemsSource="{Binding VolumeUnitList}"
@@ -83,7 +83,7 @@
                                 ItemsSource="{Binding WeightUnitList}"
                                 SelectedItem="{Binding WeightSelection, Mode=TwoWay}"
                                 HorizontalAlignment="Stretch"/>
-                    
+
                         </StackPanel>
 
                         <StackPanel
@@ -98,20 +98,20 @@
                                     Stroke="Red" 
                                     StrokeThickness="1" >
                             </Rectangle>
-                    
+
                             <toolkit:ListPicker
                                 Header="Hop Formula"
                                 ItemsSource="{Binding HopFormulaList}"
                                 SelectedItem="{Binding HopFormulaSelection, Mode=TwoWay}"
                                 HorizontalAlignment="Stretch" OpacityMask="Blue" />
-                    
+
                         </StackPanel>
 
                     </Grid>
                 </Grid>
-                
-                
-            </controls:PivotItem> 
+
+
+            </controls:PivotItem>
         </controls:Pivot>
     </Grid>
 </phone:PhoneApplicationPage>

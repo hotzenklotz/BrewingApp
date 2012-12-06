@@ -110,9 +110,6 @@
     <Compile Include="Views\EditMalt.xaml.cs">
       <DependentUpon>EditMalt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PivotSettings.xaml.cs">
-      <DependentUpon>PivotSettings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\PivotBrewHouse.xaml.cs">
       <DependentUpon>PivotBrewHouse.xaml</DependentUpon>
     </Compile>
@@ -126,6 +123,9 @@
       <DependentUpon>PivotHops.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PivotSettings.xaml.cs">
+      <DependentUpon>PivotSettings.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -144,10 +144,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\PivotSettings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\PivotBrewHouse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PivotHops.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PivotSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

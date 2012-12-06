@@ -53,7 +53,7 @@ namespace BrewingApp.ViewModels
             BatchVolume = 20;
             Efficiency = 70;
 
-            //use MVVM LightToolkit messaging for custom controls update notifications
+            //use MVVM LightToolkit messaging for parent views update notifications
             Messenger.Default.Register<UpdateViewMessage>
                        (
                            this,

@@ -58,9 +58,7 @@
     </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
-      <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Interop" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\MvvmLight.4.1.23.0\lib\sl4-windowsphone71\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -112,8 +110,8 @@
     <Compile Include="Views\EditMalt.xaml.cs">
       <DependentUpon>EditMalt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
+    <Compile Include="Views\PivotSettings.xaml.cs">
+      <DependentUpon>PivotSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PivotBrewHouse.xaml.cs">
       <DependentUpon>PivotBrewHouse.xaml</DependentUpon>
@@ -146,7 +144,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Settings.xaml">
+    <Page Include="Views\PivotSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,10 +181,6 @@
     <Resource Include="Images\icon_hops_big.png" />
     <Content Include="Images\Credits.txt" />
     <Content Include="Images\svg\icon_grains.svg" />
-    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
-    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="XML\MaltVarities.xml" />
     <Content Include="Images\plusButton.png" />
     <Resource Include="Images\icon_scales_big.png" />

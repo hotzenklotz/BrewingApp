@@ -50,8 +50,6 @@ namespace BrewingApp.ViewModels
         {
             T item = new T();
             setDefaultValues(item);
-
-            ItemList.Add(item);
             editItem(item);
         }
 
@@ -77,6 +75,8 @@ namespace BrewingApp.ViewModels
         {
             this._EditItemIndex = ItemList.IndexOf(item);
             PhoneApplicationService.Current.State["EditItem"] = item;
+
+            
         }
 
         /// <summary>
@@ -92,7 +92,13 @@ namespace BrewingApp.ViewModels
         /// </summary>
         public void updateView()
         {
-            ItemList[this._EditItemIndex] = (T) PhoneApplicationService.Current.State["EditItem"];
+            T storedItem =  (T) PhoneApplicationService.Current.State["EditItem"];
+
+            if (ItemList.Contains(storedItem))
+                ItemList[this._EditItemIndex] = storedItem;
+            else
+                ItemList.Add(storedItem);
+
         }
     }
 }

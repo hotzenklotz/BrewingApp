@@ -144,9 +144,11 @@
 
                                                 <TextBlock
                                                     Text="{Binding Amount, Converter={StaticResource WeightConverter},StringFormat=' {0:f2}'}" 
-                                                    Margin="10,0,5,0"/>
+                                                    Margin="10,0,5,0"
+                                                    Style="{StaticResource PhoneTextSubtleStyle}"/>
                                                 <TextBlock
-                                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"/>
+                                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"
+                                                    Style="{StaticResource PhoneTextSubtleStyle}"/>
                                             </StackPanel>
                                         </Grid>
 

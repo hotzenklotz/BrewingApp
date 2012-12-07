@@ -136,9 +136,6 @@
             </controls:PivotItem>
 
             <!--Pivot item two-->
-            <controls:PivotItem Header="item2">
-                <Grid/>
-            </controls:PivotItem>
         </controls:Pivot>
     </Grid>    
 </phone:PhoneApplicationPage>

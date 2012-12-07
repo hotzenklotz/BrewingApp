@@ -46,7 +46,7 @@
                         Grid.Column="0"
                         Margin="12,12,0,0"
                         Title="Brew &#13;House"
-                        Source=""
+                        Source="/BrewingApp;component/Images/icon_hops_small.png"
                         Tap="HubTile_Tap" 
                         Name="BrewHouseTile">
                 </toolkit:HubTile>

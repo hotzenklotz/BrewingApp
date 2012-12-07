@@ -174,15 +174,15 @@
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Images\icon_grains_big.png" />
     <Resource Include="Images\icon_hops_big.png" />
     <Content Include="Images\Credits.txt" />
     <Resource Include="Images\icon_gears_small.png" />
     <Resource Include="Images\icon_grains_small.png" />
     <Resource Include="Images\icon_scales_small.png" />
+    <Resource Include="Images\icon_flask_big.png" />
+    <Resource Include="Images\icon_flask_small.png" />
+    <Content Include="Images\svg\icon_flask.svg" />
     <Content Include="Images\svg\icon_grains.svg" />
     <Content Include="XML\MaltVarities.xml" />
     <Content Include="Images\plusButton.png" />

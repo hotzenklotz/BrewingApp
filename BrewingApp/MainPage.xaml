@@ -37,12 +37,10 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <toolkit:HubTile 
-                        Grid.Row="1" 
+                        Grid.Row="0" 
                         Grid.Column="0"
                         Margin="12,12,0,0"
                         Title="Brew &#13;House"
@@ -51,7 +49,7 @@
                         Name="BrewHouseTile">
                 </toolkit:HubTile>
                 <toolkit:HubTile 
-                        Grid.Row="1" 
+                        Grid.Row="0" 
                         Grid.Column="1" 
                         Margin="12,12,0,0"
                         Title="Hops" 
@@ -59,7 +57,7 @@
                         Tap="HubTile_Tap" 
                         Name="HopsTile" />
                     <toolkit:HubTile 
-                        Grid.Row="2" 
+                        Grid.Row="1" 
                         Grid.Column="0" 
                         Margin="12,12,0,0"
                         Title="Convert &#13;Units" 
@@ -67,7 +65,7 @@
                         Source="/BrewingApp;component/Images/icon_scales_small.png"
                         Name="ConvertersTile" />
                     <toolkit:HubTile 
-                        Grid.Row="2" 
+                        Grid.Row="1" 
                         Grid.Column="1" 
                         Margin="12,12,0,0"
                         Source="/BrewingApp;component/Images/icon_grains_small.png"
@@ -75,7 +73,7 @@
                         Tap="HubTile_Tap" 
                         Name="MaltsTile" />
                     <toolkit:HubTile 
-                        Grid.Row="3" 
+                        Grid.Row="2" 
                         Grid.Column="0" 
                         Source="/BrewingApp;component/Images/icon_gears_small.png"
                         Margin="12,12,0,0"

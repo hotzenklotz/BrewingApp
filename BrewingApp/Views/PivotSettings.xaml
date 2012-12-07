@@ -16,8 +16,15 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush 
+                ImageSource="/BrewingApp;component/Images/icon_gears_big.png" 
+                AlignmentX="Right" 
+                AlignmentY="Bottom" 
+                Stretch="None" 
+                Opacity="0.5" />
+        </Grid.Background>
         <Grid.Resources>
             <SolidColorBrush x:Key="PhoneTextBoxBrush" Color="#BEBEBE"/>
             <Style TargetType="toolkit:ListPicker">
@@ -38,16 +45,8 @@
             <controls:PivotItem Header="Settings" Name="Settings">
 
                 <!--ContentPanel - zusätzliche Inhalte hier platzieren-->
-                <Grid x:Name="ContentPanel" Margin="12,0,12,0">
+                <Grid Margin="12,0,12,0">
                     <Grid>
-                        <Grid.Background>
-                            <ImageBrush 
-                                    ImageSource="/BrewingApp;component/Images/icon_gears_big.png" 
-                                    AlignmentX="Right" 
-                                    AlignmentY="Bottom" 
-                                    Stretch="None" 
-                                    Opacity="0.5" />
-                        </Grid.Background>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="1*"/>
@@ -109,9 +108,21 @@
 
                     </Grid>
                 </Grid>
-
-
             </controls:PivotItem>
+            
+            <!--########## ABOUT ########################-->
+            
+            <controls:PivotItem Name="PivotAbout" Header="About">
+                <Grid>
+                <TextBlock
+                    Text="The credits for several icons used by this app belong to the Noun Project and their respective artists. For more information please visit www.thenounproject.com." 
+                    TextWrapping="Wrap" 
+                    Style="{StaticResource PhoneTextNormalStyle}" />
+
+                </Grid>
+            </controls:PivotItem>
+            
+            
         </controls:Pivot>
     </Grid>
 </phone:PhoneApplicationPage>

@@ -1,8 +1,9 @@
 ﻿All credits to the following images go to the Noun Project (http://thenounproject.com) and their respective artist:
 
-- icon_scales
-- icon_grains
-- icon_gears
+- icon_scales (No. 2542 "txtr" )
+- icon_grains (No. 587)
+- icon_gears (No. 1064  Jeremy Minnick )
+- icon_flask (No. 7667 Tania Jiménez )
 
 All credits to the following images go to Christoph Sterz
 

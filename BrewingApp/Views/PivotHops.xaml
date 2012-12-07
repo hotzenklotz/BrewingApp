@@ -158,11 +158,11 @@
 
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
 
                                         <StackPanel 
@@ -178,17 +178,19 @@
 
                                         <TextBlock
                                             Grid.Column="1"
+                                            Margin="5,0,0,0"
                                             Text="∣"/>
                                         <TextBlock
                                             Text="{Binding AlphaAcid, StringFormat=' {0:f1}%'}"
                                             Grid.Column="2"
-                                            HorizontalAlignment="Center"/>
+                                            Margin="5,0,0,0"/>
                                         <TextBlock
                                             Grid.Column="3"
+                                            Margin="5,0,0,0"
                                             Text="∣"/>
                                         <TextBlock   
                                             Grid.Column="4"
-                                            HorizontalAlignment="Center"
+                                            Margin="5,0,0,0"
                                             Text="{Binding BoilTime, StringFormat=' {0} min'}"
                                             Padding="0,0,0,10" />                
                                     </Grid>   

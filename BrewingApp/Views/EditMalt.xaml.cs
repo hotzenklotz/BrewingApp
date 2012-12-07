@@ -62,8 +62,13 @@ namespace BrewingApp.Views
             this.DataContext = this;
 
             this._MaltItem = PhoneApplicationService.Current.State["EditItem"] as Malt;
+
+            float PPG = this._MaltItem.PPG; //othwise will be overwritten by seting slectedItem 
+
             this._SelectedItem = this._MaltItem.Name;
             NotifyPropertyChanged("SelectedItem");
+
+            this._MaltItem.PPG = PPG;
             NotifyPropertyChanged("Amount");
             NotifyPropertyChanged("PPG");
         }

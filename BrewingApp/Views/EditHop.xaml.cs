@@ -68,8 +68,13 @@ namespace BrewingApp.Views
             this.DataContext = this;
 
             this._HopItem = PhoneApplicationService.Current.State["EditItem"] as Hop;
+
+            float alphaAcid = this._HopItem.AlphaAcid; //otherwise will be overwritten by setting SelectedItem
+
             this._SelectedItem = this._HopItem.Name;
             NotifyPropertyChanged("SelectedItem");
+
+            this._HopItem.AlphaAcid = alphaAcid;
             NotifyPropertyChanged("AlphaAcid");
             NotifyPropertyChanged("Amount");
             NotifyPropertyChanged("BoilTime");

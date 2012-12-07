@@ -64,20 +64,20 @@
                         Margin="12,12,0,0"
                         Title="Convert &#13;Units" 
                         Tap="HubTile_Tap"
-                        Source="/BrewingApp;component/Images/icon_scales_big.png"
+                        Source="/BrewingApp;component/Images/icon_scales_small.png"
                         Name="ConvertersTile" />
                     <toolkit:HubTile 
                         Grid.Row="2" 
                         Grid.Column="1" 
                         Margin="12,12,0,0"
-                        Source="/BrewingApp;component/Images/icon_grains_big.png"
+                        Source="/BrewingApp;component/Images/icon_grains_small.png"
                         Title="Malts" 
                         Tap="HubTile_Tap" 
                         Name="MaltsTile" />
                     <toolkit:HubTile 
                         Grid.Row="3" 
                         Grid.Column="0" 
-                        Source="/BrewingApp;component/Images/icon_gears_big.png"
+                        Source="/BrewingApp;component/Images/icon_gears_small.png"
                         Margin="12,12,0,0"
                         Title="Settings" 
                         Tap="HubTile_Tap" 

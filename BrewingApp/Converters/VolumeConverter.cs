@@ -91,7 +91,7 @@ namespace BrewingApp.Converters
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             float floatValue;
-            float.TryParse((string)value, out floatValue);
+            float.TryParse((string)value, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out floatValue);
 
             return ConvertBack( floatValue, (string)parameter);
         }

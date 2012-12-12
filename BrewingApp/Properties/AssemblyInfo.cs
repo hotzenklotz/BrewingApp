@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BrewingApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Brew Pal")]
+[assembly: AssemblyDescription("A little app helping you to crunch all those numbers during a home brewing session.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BrewingApp")]
+[assembly: AssemblyProduct("Brew Buddy")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

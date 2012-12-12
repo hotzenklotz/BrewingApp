@@ -171,9 +171,6 @@
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Images\icon_grains_big.png" />
     <Resource Include="Images\icon_hops_big.png" />
     <Content Include="Images\Credits.txt" />
@@ -182,6 +179,8 @@
     <Resource Include="Images\icon_scales_small.png" />
     <Resource Include="Images\icon_flask_big.png" />
     <Resource Include="Images\icon_flask_small.png" />
+    <Content Include="Images\icon_app.png" />
+    <Content Include="Images\icon_app_small.png" />
     <Content Include="Images\svg\icon_flask.svg" />
     <Content Include="Images\svg\icon_grains.svg" />
     <Content Include="XML\MaltVarities.xml" />

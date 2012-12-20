@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
+    xmlns:tk="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     x:Class="BrewingApp.App"
     >
 
@@ -14,5 +15,15 @@
             Launching="Application_Launching" Closing="Application_Closing" 
             Activated="Application_Activated" Deactivated="Application_Deactivated"/>
     </Application.ApplicationLifetimeObjects>
+    
+    <!-- neccessary for fixing contrast issues with light WP theme-->
+    <Application.Resources>
+        <DataTemplate x:Name="ListPickerHeader">
+            <TextBlock 
+                Text="{Binding}"
+                Style="{StaticResource PhoneTextNormalStyle}"
+                Margin="-3 0 0 0"/>
+        </DataTemplate>
+    </Application.Resources>
 
 </Application>

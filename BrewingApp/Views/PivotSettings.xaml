@@ -69,19 +69,22 @@
                                 Header="Temperature Unit" 
                                 ItemsSource="{Binding TemperatureUnitList}"
                                 SelectedItem="{Binding TemperatureSelection, Mode=TwoWay}"
-                                HorizontalAlignment="Stretch"/>
+                                HorizontalAlignment="Stretch"
+                                HeaderTemplate="{StaticResource ListPickerHeader}"/>
 
                             <toolkit:ListPicker
                                 Header="Volume Unit" 
                                 ItemsSource="{Binding VolumeUnitList}"
                                 SelectedItem="{Binding VolumeSelection, Mode=TwoWay}"
-                                HorizontalAlignment="Stretch"/>
+                                HorizontalAlignment="Stretch"
+                                HeaderTemplate="{StaticResource ListPickerHeader}"/>
 
                             <toolkit:ListPicker
                                 Header="Weight Unit" 
                                 ItemsSource="{Binding WeightUnitList}"
                                 SelectedItem="{Binding WeightSelection, Mode=TwoWay}"
-                                HorizontalAlignment="Stretch"/>
+                                HorizontalAlignment="Stretch"
+                                HeaderTemplate="{StaticResource ListPickerHeader}"/>
 
                         </StackPanel>
 
@@ -102,7 +105,8 @@
                                 Header="Hop Formula"
                                 ItemsSource="{Binding HopFormulaList}"
                                 SelectedItem="{Binding HopFormulaSelection, Mode=TwoWay}"
-                                HorizontalAlignment="Stretch" OpacityMask="Blue" />
+                                HorizontalAlignment="Stretch" 
+                                HeaderTemplate="{StaticResource ListPickerHeader}"/>
 
                         </StackPanel>
 

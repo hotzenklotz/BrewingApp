@@ -42,7 +42,8 @@
             Margin="10,0,10,0" 
             Name="maltVarityPicker"
             SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-            FullModeHeader="Choose a malt varity!">
+            FullModeHeader="Choose a malt varity!"
+            HeaderTemplate="{StaticResource ListPickerHeader}">
             </toolkit:ListPicker>
 
             <Grid

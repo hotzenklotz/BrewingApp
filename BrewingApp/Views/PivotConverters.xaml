@@ -20,11 +20,11 @@
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush 
-                            ImageSource="/BrewingApp;component/Images/icon_gears_big.png" 
-                            AlignmentX="Right" 
-                            AlignmentY="Bottom" 
-                            Stretch="None" 
-                            Opacity="0.5" />
+                ImageSource="/BrewingApp;component/Images/icon_scales_big.png" 
+                AlignmentX="Right" 
+                AlignmentY="Bottom" 
+                Stretch="None" 
+                Opacity="0.5" />
         </Grid.Background>
         <!--Pivot Control-->
         <controls:Pivot Title="Unit Converters" Name="ConverterPivot">

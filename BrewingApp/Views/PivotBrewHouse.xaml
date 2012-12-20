@@ -64,7 +64,7 @@
                                 <TextBlock 
                                     Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Temperature', StringFormat='Temperature ({0})'}" 
                                     Padding="0,10,0,0" 
-                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    Style="{StaticResource PhoneTextNormalStyle}" />
 
                                 <toolkit:PhoneTextBox
                                     HorizontalAlignment="Stretch" 
@@ -78,7 +78,7 @@
                                 <TextBlock 
                                     Text="Specific Gravity"
                                     Padding="0,10,0,0" 
-                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    Style="{StaticResource PhoneTextNormalStyle}" />
 
                                 <toolkit:PhoneTextBox
                                     HorizontalAlignment="Stretch" 
@@ -120,7 +120,7 @@
                                 <TextBlock 
                                     Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Temperature', StringFormat='Calibration Temperature ({0})'}" 
                                     Padding="0,10,0,0" 
-                                    Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    Style="{StaticResource PhoneTextNormalStyle}" />
 
                                 <toolkit:PhoneTextBox
                                     HorizontalAlignment="Stretch" 

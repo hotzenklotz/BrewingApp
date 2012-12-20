@@ -42,7 +42,8 @@
                 Margin="10,0,10,0" 
                 Name="hopVarityPicker"
                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                FullModeHeader="Choose a hop varity!">
+                FullModeHeader="Choose a hop varity!"
+                HeaderTemplate="{StaticResource ListPickerHeader}">
             </toolkit:ListPicker>
 
             <Grid

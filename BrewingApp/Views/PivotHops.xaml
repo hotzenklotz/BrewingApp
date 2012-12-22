@@ -19,14 +19,6 @@
  
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <Grid.Background>
-            <ImageBrush 
-                ImageSource="/BrewingApp;component/Images/icon_hops_big.png" 
-                AlignmentX="Right" 
-                AlignmentY="Bottom" 
-                Stretch="None" 
-                Opacity="0.5" />
-        </Grid.Background>
         
         <Grid.Resources>
             <SolidColorBrush x:Key="PhoneTextBoxBrush" Color="#BEBEBE"/>
@@ -52,7 +44,21 @@
             <local:VolumeConverter x:Key="VolumeConverter"/>
             <local:WeightConverter x:Key="WeightConverter"/>
         </Grid.Resources>
-        
+
+        <!-- background -->
+        <Rectangle
+        Fill="{StaticResource PhoneForegroundBrush}" 
+        VerticalAlignment="Bottom"
+        HorizontalAlignment="Right"
+        Width="250"
+        Height="250">
+            <Rectangle.OpacityMask>
+                <ImageBrush 
+                    ImageSource="/BrewingApp;component/Images/icon_hops_big.png" 
+                    Opacity="0.5" />
+            </Rectangle.OpacityMask>
+        </Rectangle>
+
         <!--Pivot Control-->
         <controls:Pivot Title="Hops">
 
@@ -341,6 +347,10 @@
         Mode="Minimized"
         Opacity="0.99">
     </sh:AdvancedApplicationBar>
+        
+        
+
+
     </Grid>
     
 </phone:PhoneApplicationPage>

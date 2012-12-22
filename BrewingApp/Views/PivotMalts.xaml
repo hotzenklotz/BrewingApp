@@ -19,15 +19,7 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <Grid.Background>
-            <ImageBrush 
-                ImageSource="/BrewingApp;component/Images/icon_grains_big.png" 
-                AlignmentX="Right" 
-                AlignmentY="Bottom" 
-                Stretch="None" 
-                Opacity="0.5" />
-        </Grid.Background>
-        
+
         <Grid.Resources>
             <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
                 <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -37,6 +29,20 @@
             <local:VolumeConverter x:Key="VolumeConverter"/>
             <local:UnitExtensionConverter x:Key="UnitExtension"/>
         </Grid.Resources>
+
+        <!-- background -->
+        <Rectangle
+            Fill="{StaticResource PhoneForegroundBrush}" 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Width="250"
+            Height="250">
+                <Rectangle.OpacityMask>
+                    <ImageBrush 
+                        ImageSource="/BrewingApp;component/Images/icon_grains_big.png" 
+                        Opacity="0.5" />
+                </Rectangle.OpacityMask>
+        </Rectangle>
 
         <!--Pivot Control-->
         <controls:Pivot Title="Malts">

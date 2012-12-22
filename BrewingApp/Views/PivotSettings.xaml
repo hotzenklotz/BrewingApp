@@ -17,14 +17,7 @@
 
     <!--LayoutRoot ist das Stammraster, in dem alle anderen Seiteninhalte platziert werden-->
     <Grid x:Name="LayoutRoot">
-        <Grid.Background>
-            <ImageBrush 
-                ImageSource="/BrewingApp;component/Images/icon_gears_big.png" 
-                AlignmentX="Right" 
-                AlignmentY="Bottom" 
-                Stretch="None" 
-                Opacity="0.5" />
-        </Grid.Background>
+
         <Grid.Resources>
             <SolidColorBrush x:Key="PhoneTextBoxBrush" Color="#BEBEBE"/>
             <Style TargetType="toolkit:ListPicker">
@@ -37,6 +30,20 @@
             </Style>
 
         </Grid.Resources>
+
+        <!-- background -->
+        <Rectangle
+            Fill="{StaticResource PhoneForegroundBrush}" 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Width="250"
+            Height="250">
+                <Rectangle.OpacityMask>
+                    <ImageBrush 
+                        ImageSource="/BrewingApp;component/Images/icon_gears_big.png" 
+                        Opacity="0.5" />
+                </Rectangle.OpacityMask>
+        </Rectangle>
 
         <controls:Pivot >
 

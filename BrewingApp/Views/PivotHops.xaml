@@ -66,15 +66,10 @@
             <!--BITTERNESS-->
             <controls:PivotItem Header="Bitterness" Name="BitternessPivot">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
                     <Grid >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
                         <!-- VOLUMNE / SG -->
@@ -141,14 +136,23 @@
 
                         <!-- LISTBOX WITH HOPS-->
                         <ListBox
-                        Grid.Row="1"
-            			x:Name="HopList"
-            			VerticalAlignment="Top" 
-                        
-            			ItemsSource="{Binding ItemList}" 
-                        Padding="10,10,0,10"
-                        ItemContainerStyle="{StaticResource ListBoxItemStyle}">
-                        <ListBox.ItemTemplate>
+                            Grid.Row="1"
+            			    x:Name="HopList"
+            			    VerticalAlignment="Top" 
+            			    ItemsSource="{Binding ItemList}" 
+                            Margin="10,10,10,25"
+                            ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+                            <ListBox.Template>
+                                <ControlTemplate>
+                                    <ScrollViewer 
+                                            HorizontalScrollBarVisibility="Disabled"
+                                            VerticalScrollBarVisibility="Visible">
+                                        <ItemsPresenter/>
+                                    </ScrollViewer>
+                                </ControlTemplate>
+                            </ListBox.Template>
+                            
+                            <ListBox.ItemTemplate>
                             <DataTemplate>
 
                                 <StackPanel

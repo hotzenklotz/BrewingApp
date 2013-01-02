@@ -51,15 +51,10 @@
             <!-- SPECIFIC GRAVITY-->
             <controls:PivotItem Header="Gravity" Name="GravityPivot">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-
                     <Grid >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*" x:Name="ListBoxGrid" />
                         </Grid.RowDefinitions>
 
                         <!-- VOLUMNE / EFFICIENCY -->
@@ -114,63 +109,75 @@
                         </Grid>
 
                         <Rectangle
-                    Grid.Row="1"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Top"
-                    Height="1" 
-                    Stroke="Red" 
-                    StrokeThickness="1" 
-                    Margin="0,0,0,15">
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Height="1" 
+                            Stroke="Red" 
+                            StrokeThickness="1" 
+                            Margin="0,0,0,15">
                         </Rectangle>
 
                         <!-- LISTBOX WITH MALTS-->
-                        <ListBox
-                    Grid.Row="1"
-            		x:Name="MaltList"
-            		VerticalAlignment="Stretch"         
-            		ItemsSource="{Binding ItemList}" 
-                    Padding="10,10,0,10"
-                    ItemContainerStyle="{StaticResource ListBoxItemStyle}">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
+                        <Grid
+                            Grid.Row="1">
+                            <ListBox
+            		            x:Name="MaltList"
+                                ItemsSource="{Binding ItemList}" 
+                                Margin="10,10,10,25"
+                                ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+                                <ListBox.Template>
+                                    <ControlTemplate>
+                                        <ScrollViewer 
+                                            HorizontalScrollBarVisibility="Disabled"
+                                            VerticalScrollBarVisibility="Visible">
+                                            <ItemsPresenter/>
+                                        </ScrollViewer>
+                                    </ControlTemplate>
+                                </ListBox.Template>
+                                
+                                <ListBox.ItemTemplate>
+                                    
+                                    <DataTemplate>
 
-                                    <StackPanel>
-                                        <TextBlock 
-                                        Style="{StaticResource PhoneTextExtraLargeStyle}" 
-                                        Text="{Binding Name}" 
-                                        VerticalAlignment="Bottom"/>
+                                        <StackPanel>
+                                            <TextBlock 
+                                            Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                                            Text="{Binding Name}" 
+                                            VerticalAlignment="Bottom"/>
 
-                                        <Grid>
-                                            <StackPanel 
-                                            Orientation="Horizontal" >
+                                            <StackPanel>
+                                                <StackPanel 
+                                                Orientation="Horizontal" >
 
-                                                <TextBlock
-                                                    Text="{Binding Amount, Converter={StaticResource WeightConverter},StringFormat=' {0:f2}'}" 
-                                                    Margin="10,0,5,0"
-                                                    Style="{StaticResource PhoneTextNormalStyle}"/>
-                                                <TextBlock
-                                                    Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"
-                                                    Style="{StaticResource PhoneTextNormalStyle}"/>
+                                                    <TextBlock
+                                                        Text="{Binding Amount, Converter={StaticResource WeightConverter},StringFormat=' {0:f2}'}" 
+                                                        Margin="10,0,5,0"
+                                                        Style="{StaticResource PhoneTextNormalStyle}"/>
+                                                    <TextBlock
+                                                        Text="{Binding ., Converter={StaticResource UnitExtension}, ConverterParameter='Weight'}"
+                                                        Style="{StaticResource PhoneTextNormalStyle}"/>
+                                                </StackPanel>
                                             </StackPanel>
-                                        </Grid>
 
-                                        <toolkit:ContextMenuService.ContextMenu>
-                                            <toolkit:ContextMenu>
-                                                <toolkit:MenuItem                                                 
-                                                Header="Edit"
-                                                Command="{Binding ElementName=MaltList, Path=DataContext.EditCommand}"
-                                                CommandParameter="{Binding}"/>
-                                                <toolkit:MenuItem 
-                                                Header="Remove"
-            						            Command="{Binding ElementName=MaltList, Path=DataContext.RemoveCommand}"
-                                                CommandParameter="{Binding}"/>
-                                            </toolkit:ContextMenu>
-                                        </toolkit:ContextMenuService.ContextMenu>
-                                    </StackPanel>
+                                            <toolkit:ContextMenuService.ContextMenu>
+                                                <toolkit:ContextMenu>
+                                                    <toolkit:MenuItem                                                 
+                                                    Header="Edit"
+                                                    Command="{Binding ElementName=MaltList, Path=DataContext.EditCommand}"
+                                                    CommandParameter="{Binding}"/>
+                                                    <toolkit:MenuItem 
+                                                    Header="Remove"
+            						                Command="{Binding ElementName=MaltList, Path=DataContext.RemoveCommand}"
+                                                    CommandParameter="{Binding}"/>
+                                                </toolkit:ContextMenu>
+                                            </toolkit:ContextMenuService.ContextMenu>
+                                        </StackPanel>
 
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>        
                     </Grid>
                     <sh:AdvancedApplicationBarIconButton 
                         Command="{Binding ElementName=GravityPivot, Path=DataContext.AddCommand}" 

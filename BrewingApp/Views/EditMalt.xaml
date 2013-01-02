@@ -79,7 +79,7 @@
                     Grid.Column="1">
 
                     <TextBlock 
-                        Text="Pounds Per Gallon???"
+                        Text="Pounds Per Gallon"
                         Padding="10,10,0,0"
                     />
                     <toolkit:PhoneTextBox  

@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 using GalaSoft.MvvmLight;
-using BrewingApp.Other;
+using BrewBuddy.Other;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class SettingsVM : ViewModelBase
     {

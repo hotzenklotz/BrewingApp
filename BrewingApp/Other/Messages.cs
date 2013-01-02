@@ -8,10 +8,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 using System.Text.RegularExpressions;
 
-namespace BrewingApp.Other
+namespace BrewBuddy.Other
 {
  
     public class NavigateMessage

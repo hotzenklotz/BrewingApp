@@ -1,8 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using System.Windows;
-using BrewingApp.Converters;
+using BrewBuddy.Converters;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class HydrometerVM : ViewModelBase
     {

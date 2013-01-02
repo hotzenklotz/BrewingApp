@@ -2,12 +2,12 @@
 using System.Linq;
 using Microsoft.Phone.Controls;
 using GalaSoft.MvvmLight.Messaging;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 using System.ComponentModel;
 using Microsoft.Phone.Shell;
-using BrewingApp.Other;
+using BrewBuddy.Other;
 
-namespace BrewingApp.Views
+namespace BrewBuddy.Views
 {
     public partial class EditMalt : PhoneApplicationPage, INotifyPropertyChanged
     {      

@@ -1,9 +1,9 @@
-﻿using BrewingApp.Converters;
+﻿using BrewBuddy.Converters;
 using GalaSoft.MvvmLight;
 using System.Collections.ObjectModel;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class TemperatureVM : ViewModelBase
     {

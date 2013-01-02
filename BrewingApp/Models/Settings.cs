@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
 using System.Collections.ObjectModel;
 
-namespace BrewingApp.Models
+namespace BrewBuddy.Models
 {
     public class Settings
     {

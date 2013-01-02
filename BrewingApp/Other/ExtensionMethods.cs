@@ -9,9 +9,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp.Other
+namespace BrewBuddy.Other
 {
     public static class ExtensionMethods
     {

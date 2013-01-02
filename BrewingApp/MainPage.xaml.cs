@@ -10,9 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp
+namespace BrewBuddy
 {
     public partial class MainPage : PhoneApplicationPage
     {

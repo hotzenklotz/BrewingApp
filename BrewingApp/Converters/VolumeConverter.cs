@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Data;
 using System.IO.IsolatedStorage;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp.Converters
+namespace BrewBuddy.Converters
 {
     public class VolumeConverter : IValueConverter
     {

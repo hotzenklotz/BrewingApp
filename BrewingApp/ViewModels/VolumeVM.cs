@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
-using BrewingApp.Converters;
-using BrewingApp.Models;
+using BrewBuddy.Converters;
+using BrewBuddy.Models;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class VolumeVM : ViewModelBase
     {

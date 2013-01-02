@@ -1,10 +1,10 @@
 ﻿using System;
-using BrewingApp.Other;
-using BrewingApp.ViewModels;
+using BrewBuddy.Other;
+using BrewBuddy.ViewModels;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
 
-namespace BrewingApp.Pages
+namespace BrewBuddy.Pages
 {
     public partial class PivotMalts : PhoneApplicationPage
     {

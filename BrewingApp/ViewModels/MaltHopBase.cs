@@ -1,14 +1,14 @@
 ﻿using GalaSoft.MvvmLight;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Messaging;
-using BrewingApp.Other;
+using BrewBuddy.Other;
 using GalaSoft.MvvmLight.Command;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 using System.Collections.ObjectModel;
 using System;
 using Microsoft.Phone.Shell;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class MaltHopBase <T> : ViewModelBase where T : new()
     {

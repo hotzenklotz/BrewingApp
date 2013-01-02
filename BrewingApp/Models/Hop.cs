@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Linq;
-using BrewingApp.Converters;
+using BrewBuddy.Converters;
 
-namespace BrewingApp.Models
+namespace BrewBuddy.Models
 {
     public class Hop
     {

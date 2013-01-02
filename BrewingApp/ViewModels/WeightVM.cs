@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GalaSoft.MvvmLight;
-using BrewingApp.Models;
-using BrewingApp.Converters;
+using BrewBuddy.Models;
+using BrewBuddy.Converters;
 using System.Collections.ObjectModel;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class WeightVM : ViewModelBase
     {

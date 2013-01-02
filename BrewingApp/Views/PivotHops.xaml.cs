@@ -10,11 +10,11 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using BrewingApp.ViewModels;
+using BrewBuddy.ViewModels;
 using GalaSoft.MvvmLight.Messaging;
-using BrewingApp.Other;
+using BrewBuddy.Other;
 
-namespace BrewingApp.Pages
+namespace BrewBuddy.Pages
 {
     public partial class PivotHops : PhoneApplicationPage
     {

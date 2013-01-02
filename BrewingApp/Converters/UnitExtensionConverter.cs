@@ -1,8 +1,8 @@
 ﻿using System.Windows.Data;
 using System;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp.Converters
+namespace BrewBuddy.Converters
 {
     /// <summary>
     /// Converts all measurement unit' names to their equivalent abbreviations.

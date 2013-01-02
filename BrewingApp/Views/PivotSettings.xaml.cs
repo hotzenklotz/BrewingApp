@@ -1,7 +1,7 @@
 ﻿using Microsoft.Phone.Controls;
-using BrewingApp.ViewModels;
+using BrewBuddy.ViewModels;
 
-namespace BrewingApp.Views
+namespace BrewBuddy.Views
 {
     public partial class PivotSettings : PhoneApplicationPage
     {

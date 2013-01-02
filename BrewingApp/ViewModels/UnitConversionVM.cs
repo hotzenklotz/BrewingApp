@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
-using BrewingApp.ViewModels;
+using BrewBuddy.ViewModels;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
    public class UnitConversionVM
     {

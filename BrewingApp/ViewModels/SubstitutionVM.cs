@@ -11,9 +11,9 @@ using System.Windows.Shapes;
 using GalaSoft.MvvmLight;
 using System.Collections.Generic;
 using System.Linq;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class SubstitutionVM : ViewModelBase
     {

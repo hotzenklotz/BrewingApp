@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Data;
-using BrewingApp.Models;
+using BrewBuddy.Models;
 
-namespace BrewingApp.Converters
+namespace BrewBuddy.Converters
 {
     public class WeightConverter : IValueConverter
     {

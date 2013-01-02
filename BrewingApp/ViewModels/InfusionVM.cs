@@ -9,9 +9,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using GalaSoft.MvvmLight;
-using BrewingApp.Converters;
+using BrewBuddy.Converters;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class InfusionVM : ViewModelBase
     {

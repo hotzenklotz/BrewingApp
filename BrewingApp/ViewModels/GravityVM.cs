@@ -1,12 +1,12 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
-using BrewingApp.Models;
-using BrewingApp.Other;
+using BrewBuddy.Models;
+using BrewBuddy.Other;
 using System;
 using System.Linq;
-using BrewingApp.Converters;
+using BrewBuddy.Converters;
 
-namespace BrewingApp.ViewModels
+namespace BrewBuddy.ViewModels
 {
     public class GravityVM : MaltHopBase<Malt> 
     {
